@@ -1,0 +1,26 @@
+{
+  "slug": "jorge-entendeu-o-edital",
+  "title": "Jorge entendeu o edital",
+  "hook": "MEI tentando ler edital pela 1ª vez",
+  "mentionsGarimpo": true,
+  "outro": "",
+  "lines": [
+    { "character": "jorge", "location": "padaria", "emotion": "radiante, sonhando alto", "text": "Dona Cida! A prefeitura quer eletricista. Esse contrato troca a minha van!" },
+    { "character": "cida", "location": "padaria", "emotion": "desconfiada, mas com carinho", "text": "E você entendeu o edital, meu filho?" },
+    { "character": "jorge", "location": "padaria", "emotion": "certeza absoluta", "text": "Tudo! Pede habilitação: tenho, categoria B." },
+    { "character": "jorge", "location": "padaria", "emotion": "certeza absoluta, explicando o óbvio", "text": "É pregão, então eu levo o martelo." },
+    { "character": "jorge", "location": "padaria", "emotion": "certeza absoluta, mais rápido", "text": "Tem que dar lance. Levo a escada." },
+    { "character": "bia", "location": "padaria", "emotion": "seca, lendo no celular", "text": "Aqui diz que o último pregão foi fracassado." },
+    { "character": "jorge", "location": "padaria", "emotion": "pausa, ofendido de verdade, baixinho", "text": "Também não precisa ofender." },
+    { "character": "bia", "location": "padaria", "emotion": "seca, sem tirar o olho do celular", "text": "Joguei no Garimpo. Edital nota setenta e oito: vale a pena." },
+    { "character": "jorge", "location": "padaria", "emotion": "esperançoso, peito estufado", "text": "E a minha leitura?" },
+    { "character": "bia", "location": "padaria", "emotion": "seca, sem piscar", "text": "Zero." }
+  ],
+  "post": {
+    "tiktok": "Edital de licitação pra MEI: o Jorge leu tudo e entendeu... do jeito dele 😅 Qual palavra de edital te enganou? Segue pra mais",
+    "reels": "Licitação pra MEI na vida real 😅 Manda pra quem jura que leu o edital inteiro.",
+    "shortsTitle": "MEI tentando ler edital de licitação pela 1ª vez 😅",
+    "shortsDescription": "Habilitação, pregão, lance: o Jorge entendeu tudo, do jeito dele. A Bia conferiu no garimpoeditais.com.br.",
+    "hashtags": ["licitacao", "mei", "editais", "pequenosnegocios", "humor", "empreendedorismo"]
+  }
+}

@@ -1,0 +1,792 @@
+{
+  "slug": "liquidacao-da-katia",
+  "hook": "A liquidação da loja da frente",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. A Kátia colocou placa de liquidação…",
+      "emotion": "cochichando, deliciada com a fofoca",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/lici-6f8c1b8d6b.mp3",
+      "durationMs": 4150,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 560
+        },
+        {
+          "text": "senta.",
+          "startMs": 1080,
+          "endMs": 1400
+        },
+        {
+          "text": "A",
+          "startMs": 1840,
+          "endMs": 1960
+        },
+        {
+          "text": "Kátia",
+          "startMs": 1960,
+          "endMs": 2280
+        },
+        {
+          "text": "colocou",
+          "startMs": 2280,
+          "endMs": 2780
+        },
+        {
+          "text": "placa",
+          "startMs": 2780,
+          "endMs": 3060
+        },
+        {
+          "text": "de",
+          "startMs": 3060,
+          "endMs": 3400
+        },
+        {
+          "text": "liquidação…",
+          "startMs": 3400,
+          "endMs": 4000
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Estratégia. Amadores.",
+      "emotion": "fria, superior, seca",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/katia-9e2baf446d.mp3",
+      "durationMs": 2410,
+      "words": [
+        {
+          "text": "Estratégia.",
+          "startMs": 0,
+          "endMs": 1420
+        },
+        {
+          "text": "Amadores.",
+          "startMs": 1780,
+          "endMs": 2260
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "…mas aumentou o preço antes!",
+      "emotion": "escandalizada, revelando o segredo",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/lici-60b374351c.mp3",
+      "durationMs": 2590,
+      "words": [
+        {
+          "text": "…mas",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "aumentou",
+          "startMs": 580,
+          "endMs": 1340
+        },
+        {
+          "text": "o",
+          "startMs": 1340,
+          "endMs": 2000
+        },
+        {
+          "text": "preço",
+          "startMs": 2000,
+          "endMs": 2000
+        },
+        {
+          "text": "antes!",
+          "startMs": 2000,
+          "endMs": 2440
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "A placa não foi formalizada com a administração.",
+      "emotion": "solene, indignado com a irregularidade",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/norberto-b02be4c66f.mp3",
+      "durationMs": 3070,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "placa",
+          "startMs": 300,
+          "endMs": 680
+        },
+        {
+          "text": "não",
+          "startMs": 680,
+          "endMs": 1120
+        },
+        {
+          "text": "foi",
+          "startMs": 1120,
+          "endMs": 1360
+        },
+        {
+          "text": "formalizada",
+          "startMs": 1360,
+          "endMs": 2020
+        },
+        {
+          "text": "com",
+          "startMs": 2020,
+          "endMs": 2260
+        },
+        {
+          "text": "a",
+          "startMs": 2260,
+          "endMs": 2460
+        },
+        {
+          "text": "administração.",
+          "startMs": 2460,
+          "endMs": 2920
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Eu também vou fazer liquidação!",
+      "emotion": "empolgado, decidido",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/ze-899df34379.mp3",
+      "durationMs": 2470,
+      "words": [
+        {
+          "text": "Eu",
+          "startMs": 0,
+          "endMs": 400
+        },
+        {
+          "text": "também",
+          "startMs": 400,
+          "endMs": 800
+        },
+        {
+          "text": "vou",
+          "startMs": 800,
+          "endMs": 1200
+        },
+        {
+          "text": "fazer",
+          "startMs": 1200,
+          "endMs": 1620
+        },
+        {
+          "text": "liquidação!",
+          "startMs": 1620,
+          "endMs": 2320
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "O que é que eu vendo essa semana mesmo?",
+      "emotion": "perdido, baixinho, tentando lembrar",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/ze-9b0c24f474.mp3",
+      "durationMs": 2330,
+      "words": [
+        {
+          "text": "O",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "que",
+          "startMs": 300,
+          "endMs": 480
+        },
+        {
+          "text": "é",
+          "startMs": 480,
+          "endMs": 700
+        },
+        {
+          "text": "que",
+          "startMs": 700,
+          "endMs": 820
+        },
+        {
+          "text": "eu",
+          "startMs": 820,
+          "endMs": 1000
+        },
+        {
+          "text": "vendo",
+          "startMs": 1000,
+          "endMs": 1200
+        },
+        {
+          "text": "essa",
+          "startMs": 1200,
+          "endMs": 1540
+        },
+        {
+          "text": "semana",
+          "startMs": 1540,
+          "endMs": 1860
+        },
+        {
+          "text": "mesmo?",
+          "startMs": 1860,
+          "endMs": 2180
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Drone, Zé.",
+      "emotion": "cansada, sem surpresa",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/lici-c2037d5ce8.mp3",
+      "durationMs": 1370,
+      "words": [
+        {
+          "text": "Drone,",
+          "startMs": 0,
+          "endMs": 760
+        },
+        {
+          "text": "Zé.",
+          "startMs": 960,
+          "endMs": 1220
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Drone com noventa por cento de desconto!",
+      "emotion": "empolgado, anunciando como camelô",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/ze-cabc3367f7.mp3",
+      "durationMs": 2650,
+      "words": [
+        {
+          "text": "Drone",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "com",
+          "startMs": 460,
+          "endMs": 720
+        },
+        {
+          "text": "noventa",
+          "startMs": 720,
+          "endMs": 1320
+        },
+        {
+          "text": "por",
+          "startMs": 1320,
+          "endMs": 1600
+        },
+        {
+          "text": "cento",
+          "startMs": 1600,
+          "endMs": 1900
+        },
+        {
+          "text": "de",
+          "startMs": 1900,
+          "endMs": 2220
+        },
+        {
+          "text": "desconto!",
+          "startMs": 2220,
+          "endMs": 2500
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Noventa e cinco na minha.",
+      "emotion": "fria, competitiva, sem piscar",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/katia-adfea4fd91.mp3",
+      "durationMs": 1570,
+      "words": [
+        {
+          "text": "Noventa",
+          "startMs": 0,
+          "endMs": 720
+        },
+        {
+          "text": "e",
+          "startMs": 720,
+          "endMs": 780
+        },
+        {
+          "text": "cinco",
+          "startMs": 780,
+          "endMs": 1020
+        },
+        {
+          "text": "na",
+          "startMs": 1020,
+          "endMs": 1180
+        },
+        {
+          "text": "minha.",
+          "startMs": 1180,
+          "endMs": 1420
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Cem por cento!",
+      "emotion": "eufórico, gritando sem pensar",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/ze-96dbc599be.mp3",
+      "durationMs": 1450,
+      "words": [
+        {
+          "text": "Cem",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "por",
+          "startMs": 540,
+          "endMs": 900
+        },
+        {
+          "text": "cento!",
+          "startMs": 900,
+          "endMs": 1300
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Cem por cento é doação. Tem formulário.",
+      "emotion": "solene, indignado com a irregularidade",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/norberto-a2d6e47896.mp3",
+      "durationMs": 3230,
+      "words": [
+        {
+          "text": "Cem",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "por",
+          "startMs": 480,
+          "endMs": 780
+        },
+        {
+          "text": "cento",
+          "startMs": 780,
+          "endMs": 1120
+        },
+        {
+          "text": "é",
+          "startMs": 1120,
+          "endMs": 1360
+        },
+        {
+          "text": "doação.",
+          "startMs": 1360,
+          "endMs": 1740
+        },
+        {
+          "text": "Tem",
+          "startMs": 2480,
+          "endMs": 2540
+        },
+        {
+          "text": "formulário.",
+          "startMs": 2540,
+          "endMs": 3080
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Acabou o estoque! Vendi tudo!",
+      "emotion": "triunfante, sem fôlego",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/ze-abcdab872c.mp3",
+      "durationMs": 3150,
+      "words": [
+        {
+          "text": "Acabou",
+          "startMs": 0,
+          "endMs": 860
+        },
+        {
+          "text": "o",
+          "startMs": 860,
+          "endMs": 1440
+        },
+        {
+          "text": "estoque!",
+          "startMs": 1440,
+          "endMs": 1760
+        },
+        {
+          "text": "Vendi",
+          "startMs": 2460,
+          "endMs": 2560
+        },
+        {
+          "text": "tudo!",
+          "startMs": 2560,
+          "endMs": 3000
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Você deu tudo, Zé.",
+      "emotion": "cansada, com pena",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/lici-5387dd2fcf.mp3",
+      "durationMs": 1930,
+      "words": [
+        {
+          "text": "Você",
+          "startMs": 0,
+          "endMs": 880
+        },
+        {
+          "text": "deu",
+          "startMs": 880,
+          "endMs": 1100
+        },
+        {
+          "text": "tudo,",
+          "startMs": 1100,
+          "endMs": 1540
+        },
+        {
+          "text": "Zé.",
+          "startMs": 1760,
+          "endMs": 1780
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Isso aí tem ouro, sô!",
+      "emotion": "eufórico, gritando o bordão",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "brilho+queda",
+      "fxProp": "drone",
+      "fxTarget": "norberto",
+      "audio": "episodes/liquidacao-da-katia/ze-fb165a6b9e.mp3",
+      "durationMs": 2470,
+      "words": [
+        {
+          "text": "Isso",
+          "startMs": 0,
+          "endMs": 720
+        },
+        {
+          "text": "aí",
+          "startMs": 720,
+          "endMs": 1020
+        },
+        {
+          "text": "tem",
+          "startMs": 1020,
+          "endMs": 1500
+        },
+        {
+          "text": "ouro,",
+          "startMs": 1500,
+          "endMs": 1840
+        },
+        {
+          "text": "sô!",
+          "startMs": 2080,
+          "endMs": 2320
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… olha quem alugou a loja do lado.",
+      "emotion": "cochichando, escandalizada, olhando para fora",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "audio": "episodes/liquidacao-da-katia/lici-486c255f7c.mp3",
+      "durationMs": 3750,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 1000,
+          "endMs": 1760
+        },
+        {
+          "text": "olha",
+          "startMs": 1760,
+          "endMs": 1840
+        },
+        {
+          "text": "quem",
+          "startMs": 1840,
+          "endMs": 2220
+        },
+        {
+          "text": "alugou",
+          "startMs": 2220,
+          "endMs": 2660
+        },
+        {
+          "text": "a",
+          "startMs": 2660,
+          "endMs": 3140
+        },
+        {
+          "text": "loja",
+          "startMs": 3140,
+          "endMs": 3140
+        },
+        {
+          "text": "do",
+          "startMs": 3140,
+          "endMs": 3360
+        },
+        {
+          "text": "lado.",
+          "startMs": 3360,
+          "endMs": 3600
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.461,
+          "y": 0.328,
+          "rx": 0.063,
+          "ry": 0.042
+        },
+        "animado": {
+          "x": 0.492,
+          "y": 0.286,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.461,
+          "y": 0.323,
+          "rx": 0.078,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.469,
+          "y": 0.333,
+          "rx": 0.07,
+          "ry": 0.047
+        }
+      }
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "animado": {
+          "x": 0.469,
+          "y": 0.313,
+          "rx": 0.06,
+          "ry": 0.036
+        },
+        "bravo": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.052
+        },
+        "chocado": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.036
+        }
+      }
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.445,
+          "y": 0.328,
+          "rx": 0.078,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.453,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.438,
+          "y": 0.375,
+          "rx": 0.102,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.461,
+          "y": 0.344,
+          "rx": 0.094,
+          "ry": 0.047
+        }
+      }
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.484,
+          "y": 0.25,
+          "rx": 0.07,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.224,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.477,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "chocado": {
+          "x": 0.477,
+          "y": 0.255,
+          "rx": 0.078,
+          "ry": 0.042
+        }
+      }
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "drone": "props/drone.png"
+  },
+  "showHandle": false,
+  "outro": "",
+  "speechRate": 1.3
+}

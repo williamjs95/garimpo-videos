@@ -1,54 +1,53 @@
-# Remotion video
+# garimpo-videos
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Série cômica em vídeo vertical (TikTok, Reels, Shorts) ambientada numa galeria comercial de bairro, com elenco fixo: Dona Lici, Zé Garimpo, Seu Norberto e Kátia. A marca Garimpo aparece só em piscadelas (os nomes, a bateia do Zé que brilha) e no link da bio. A premissa, o elenco e as regras de roteiro estão em [docs/guia-de-comedia.md](docs/guia-de-comedia.md).
 
-Welcome to your Remotion project!
+Único custo: a sua chave da OpenAI. O Remotion renderiza localmente e é grátis para equipes de até 3 pessoas ([licença](https://www.remotion.dev/docs/license)).
 
-## Commands
+## Primeira vez
 
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
+```bash
+npm install
+cp .env.example .env.local   # cole sua OPENAI_API_KEY
+npm run art               # desenha elenco (4 poses, com boca aberta e fechada), cenários e objetos
 ```
 
-**Start Preview**
+Confira as imagens em `public/cast` e `public/bg`. Não gostou de alguma? Ajuste a descrição em `cast.json` e redesenhe só ela: `npm run art -- ze`. Isso refaz o personagem inteiro, com todas as poses. O `art` só desenha o que falta, então rode de novo sempre que um roteiro declarar um objeto novo.
 
-```console
-npm run dev
+## Um episódio, do roteiro ao MP4
+
+```bash
+npm run make                          # inventa um episódio
+npm run make -- "O cliente pede desconto no Pix"
 ```
 
-**Render video**
+Ou passo a passo, para revisar entre as etapas:
 
-```console
-npx remotion render
-```
+| Comando | O que faz | Saída |
+|---|---|---|
+| `npm run write -- "ideia"` | Roteiro com gancho, falas e legendas dos posts | `episodes/<slug>/script.json` |
+| `npm run voice -- <slug>` | Voz de cada fala + tempo de cada palavra (para a legenda) | `public/episodes/<slug>/*.mp3`, `episodes/<slug>/props.json` |
+| `npm run render -- <slug>` | Vídeo 1080×1920 + 3 quadros de conferência + textos dos posts | `out/<slug>.mp4`, `out/<slug>/*.png`, `episodes/<slug>/post.md` |
+| `npm run dev` | Abre o Remotion Studio para ajustar o visual | — |
 
-**Upgrade Remotion**
+Para mudar uma fala: edite `script.json`, apague o mp3 daquela fala em `public/episodes/<slug>/` e rode `voice` e `render` de novo. As vozes que já existem não são regeradas.
 
-```console
-npx remotion upgrade
-```
+## Publicar
 
-## Docs
+Abra `episodes/<slug>/post.md`, suba `out/<slug>.mp4` no app de cada rede e cole a legenda correspondente. No TikTok, escolha um som em alta com volume baixo para ganhar alcance.
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+## Onde mexer
 
-## Help
+- Premissa, elenco, temas e regras de roteiro: `docs/guia-de-comedia.md` (o `write` carrega esse arquivo)
+- Personagens, vozes, poses, altura e cenários: `cast.json`
+- Animação (palco, câmera, boca, brilho, queda de objeto): `src/Stage.tsx`
+- Legenda, gancho e selo final: `src/Overlay.tsx`
+- Efeitos sonoros: `src/Sound.tsx` (automáticos, a partir do que acontece em cena). O baque e os passos são gerados por `npm run sfx`
+- Modelos da OpenAI e velocidade da fala: `.env.local` (veja `.env.example`)
 
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
+## Direção de cena no roteiro
 
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Cada fala do `script.json` traz a direção de quem fala e de quem escuta: `pose`, `camera`, `move` (entra ou
+sai andando), `plateia` (reação de quem escuta), `som` e `fx` (brilho, queda de objeto). A lista completa,
+com quando usar cada um, está na seção "Direção de cena" de [docs/guia-de-comedia.md](docs/guia-de-comedia.md).
+Objetos novos entram na lista `props` do roteiro e são desenhados pelo `npm run art`.

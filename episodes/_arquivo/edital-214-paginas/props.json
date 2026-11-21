@@ -1,0 +1,622 @@
+{
+  "slug": "edital-214-paginas",
+  "hook": "MEI tentando ler edital pela 1ª vez",
+  "lines": [
+    {
+      "character": "jorge",
+      "text": "Prefeitura quer eletricista pras escolas. Duzentas e catorze páginas. Leio hoje.",
+      "emotion": "confiante e empolgado, como quem achou ouro",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/00-jorge.mp3",
+      "durationMs": 6090,
+      "words": [
+        {
+          "text": "Prefeitura",
+          "startMs": 0,
+          "endMs": 740
+        },
+        {
+          "text": "quer",
+          "startMs": 740,
+          "endMs": 1060
+        },
+        {
+          "text": "eletricista",
+          "startMs": 1060,
+          "endMs": 2060
+        },
+        {
+          "text": "pras",
+          "startMs": 2060,
+          "endMs": 2340
+        },
+        {
+          "text": "escolas.",
+          "startMs": 2340,
+          "endMs": 2800
+        },
+        {
+          "text": "Duzentas",
+          "startMs": 3500,
+          "endMs": 3880
+        },
+        {
+          "text": "e",
+          "startMs": 3880,
+          "endMs": 4060
+        },
+        {
+          "text": "catorze",
+          "startMs": 4060,
+          "endMs": 4440
+        },
+        {
+          "text": "páginas.",
+          "startMs": 4440,
+          "endMs": 5260
+        },
+        {
+          "text": "Leio",
+          "startMs": 5560,
+          "endMs": 5660
+        },
+        {
+          "text": "hoje.",
+          "startMs": 5660,
+          "endMs": 5940
+        }
+      ]
+    },
+    {
+      "character": "cida",
+      "text": "Jorge, você não leu nem o manual da sua TV.",
+      "emotion": "irônica e dramática, revirando os olhos",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/01-cida.mp3",
+      "durationMs": 3570,
+      "words": [
+        {
+          "text": "Jorge,",
+          "startMs": 0,
+          "endMs": 760
+        },
+        {
+          "text": "você",
+          "startMs": 1340,
+          "endMs": 1460
+        },
+        {
+          "text": "não",
+          "startMs": 1460,
+          "endMs": 1660
+        },
+        {
+          "text": "leu",
+          "startMs": 1660,
+          "endMs": 1840
+        },
+        {
+          "text": "nem",
+          "startMs": 1840,
+          "endMs": 2260
+        },
+        {
+          "text": "o",
+          "startMs": 2260,
+          "endMs": 2460
+        },
+        {
+          "text": "manual",
+          "startMs": 2460,
+          "endMs": 2680
+        },
+        {
+          "text": "da",
+          "startMs": 2680,
+          "endMs": 2920
+        },
+        {
+          "text": "sua",
+          "startMs": 2920,
+          "endMs": 3280
+        },
+        {
+          "text": "TV.",
+          "startMs": 3280,
+          "endMs": 3420
+        }
+      ]
+    },
+    {
+      "character": "jorge",
+      "text": "Página três. Qualificação econômico-financeira... Eu só queria trocar lâmpada.",
+      "emotion": "sonolento, bocejando",
+      "location": "van",
+      "audio": "episodes/edital-214-paginas/02-jorge.mp3",
+      "durationMs": 6590,
+      "words": [
+        {
+          "text": "Página",
+          "startMs": 0,
+          "endMs": 552
+        },
+        {
+          "text": "três.",
+          "startMs": 552,
+          "endMs": 1012
+        },
+        {
+          "text": "Qualificação",
+          "startMs": 1012,
+          "endMs": 2116
+        },
+        {
+          "text": "econômico-financeira...",
+          "startMs": 2116,
+          "endMs": 4232
+        },
+        {
+          "text": "Eu",
+          "startMs": 4232,
+          "endMs": 4416
+        },
+        {
+          "text": "só",
+          "startMs": 4416,
+          "endMs": 4600
+        },
+        {
+          "text": "queria",
+          "startMs": 4600,
+          "endMs": 5152
+        },
+        {
+          "text": "trocar",
+          "startMs": 5152,
+          "endMs": 5704
+        },
+        {
+          "text": "lâmpada.",
+          "startMs": 5704,
+          "endMs": 6440
+        }
+      ]
+    },
+    {
+      "character": "jorge",
+      "text": "Agora tem BDI, SICAF e minuta de contrato! Isso é edital ou feitiço?",
+      "emotion": "desesperado, à beira do choro",
+      "location": "van",
+      "audio": "episodes/edital-214-paginas/03-jorge.mp3",
+      "durationMs": 6150,
+      "words": [
+        {
+          "text": "Agora",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "tem",
+          "startMs": 480,
+          "endMs": 900
+        },
+        {
+          "text": "BDI,",
+          "startMs": 900,
+          "endMs": 1420
+        },
+        {
+          "text": "SICAF",
+          "startMs": 2100,
+          "endMs": 2440
+        },
+        {
+          "text": "e",
+          "startMs": 2440,
+          "endMs": 2880
+        },
+        {
+          "text": "minuta",
+          "startMs": 2880,
+          "endMs": 3260
+        },
+        {
+          "text": "de",
+          "startMs": 3260,
+          "endMs": 3540
+        },
+        {
+          "text": "contrato!",
+          "startMs": 3540,
+          "endMs": 3840
+        },
+        {
+          "text": "Isso",
+          "startMs": 4480,
+          "endMs": 4600
+        },
+        {
+          "text": "é",
+          "startMs": 4600,
+          "endMs": 4740
+        },
+        {
+          "text": "edital",
+          "startMs": 4740,
+          "endMs": 5120
+        },
+        {
+          "text": "ou",
+          "startMs": 5120,
+          "endMs": 5560
+        },
+        {
+          "text": "feitiço?",
+          "startMs": 5560,
+          "endMs": 6000
+        }
+      ]
+    },
+    {
+      "character": "bia",
+      "text": "Joguei no Garimpo. Nota setenta e oito: vale participar.",
+      "emotion": "seca, sem tirar o olho do celular",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/04-bia.mp3",
+      "durationMs": 3750,
+      "words": [
+        {
+          "text": "Joguei",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "no",
+          "startMs": 580,
+          "endMs": 740
+        },
+        {
+          "text": "Garimpo.",
+          "startMs": 740,
+          "endMs": 1200
+        },
+        {
+          "text": "Nota",
+          "startMs": 1720,
+          "endMs": 1820
+        },
+        {
+          "text": "setenta",
+          "startMs": 1820,
+          "endMs": 2280
+        },
+        {
+          "text": "e",
+          "startMs": 2280,
+          "endMs": 2500
+        },
+        {
+          "text": "oito:",
+          "startMs": 2500,
+          "endMs": 2600
+        },
+        {
+          "text": "vale",
+          "startMs": 3200,
+          "endMs": 3200
+        },
+        {
+          "text": "participar.",
+          "startMs": 3200,
+          "endMs": 3600
+        }
+      ]
+    },
+    {
+      "character": "jorge",
+      "text": "Em dez segundos?! Eu levei uma hora pra achar o índice.",
+      "emotion": "chocado, indignado",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/05-jorge.mp3",
+      "durationMs": 3690,
+      "words": [
+        {
+          "text": "Em",
+          "startMs": 0,
+          "endMs": 280
+        },
+        {
+          "text": "dez",
+          "startMs": 280,
+          "endMs": 600
+        },
+        {
+          "text": "segundos?!",
+          "startMs": 600,
+          "endMs": 1680
+        },
+        {
+          "text": "Eu",
+          "startMs": 1680,
+          "endMs": 1860
+        },
+        {
+          "text": "levei",
+          "startMs": 1860,
+          "endMs": 2180
+        },
+        {
+          "text": "uma",
+          "startMs": 2180,
+          "endMs": 2400
+        },
+        {
+          "text": "hora",
+          "startMs": 2400,
+          "endMs": 2620
+        },
+        {
+          "text": "pra",
+          "startMs": 2620,
+          "endMs": 2900
+        },
+        {
+          "text": "achar",
+          "startMs": 2900,
+          "endMs": 3120
+        },
+        {
+          "text": "o",
+          "startMs": 3120,
+          "endMs": 3440
+        },
+        {
+          "text": "índice.",
+          "startMs": 3440,
+          "endMs": 3540
+        }
+      ]
+    },
+    {
+      "character": "bia",
+      "text": "Prazo até sexta. Mas falta um documento seu.",
+      "emotion": "sem paciência",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/06-bia.mp3",
+      "durationMs": 3170,
+      "words": [
+        {
+          "text": "Prazo",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "até",
+          "startMs": 460,
+          "endMs": 860
+        },
+        {
+          "text": "sexta.",
+          "startMs": 860,
+          "endMs": 1360
+        },
+        {
+          "text": "Mas",
+          "startMs": 1780,
+          "endMs": 1940
+        },
+        {
+          "text": "falta",
+          "startMs": 1940,
+          "endMs": 2160
+        },
+        {
+          "text": "um",
+          "startMs": 2160,
+          "endMs": 2360
+        },
+        {
+          "text": "documento",
+          "startMs": 2360,
+          "endMs": 2800
+        },
+        {
+          "text": "seu.",
+          "startMs": 2800,
+          "endMs": 3020
+        }
+      ]
+    },
+    {
+      "character": "jorge",
+      "text": "Fácil! Qual?",
+      "emotion": "confiante demais",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/07-jorge.mp3",
+      "durationMs": 1250,
+      "words": [
+        {
+          "text": "Fácil!",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "Qual?",
+          "startMs": 1080,
+          "endMs": 1100
+        }
+      ]
+    },
+    {
+      "character": "bia",
+      "text": "Atestado de capacidade técnica. Já fez serviço igual pra alguém?",
+      "emotion": "encarando, com suspense",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/08-bia.mp3",
+      "durationMs": 3990,
+      "words": [
+        {
+          "text": "Atestado",
+          "startMs": 0,
+          "endMs": 740
+        },
+        {
+          "text": "de",
+          "startMs": 740,
+          "endMs": 920
+        },
+        {
+          "text": "capacidade",
+          "startMs": 920,
+          "endMs": 1420
+        },
+        {
+          "text": "técnica.",
+          "startMs": 1420,
+          "endMs": 1940
+        },
+        {
+          "text": "Já",
+          "startMs": 2420,
+          "endMs": 2560
+        },
+        {
+          "text": "fez",
+          "startMs": 2560,
+          "endMs": 2780
+        },
+        {
+          "text": "serviço",
+          "startMs": 2780,
+          "endMs": 3200
+        },
+        {
+          "text": "igual",
+          "startMs": 3200,
+          "endMs": 3420
+        },
+        {
+          "text": "pra",
+          "startMs": 3420,
+          "endMs": 3640
+        },
+        {
+          "text": "alguém?",
+          "startMs": 3640,
+          "endMs": 3840
+        }
+      ]
+    },
+    {
+      "character": "jorge",
+      "text": "Dona Cida... lembra da fiação da padaria?",
+      "emotion": "sorriso amarelo, puxando assunto com cuidado",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/09-jorge.mp3",
+      "durationMs": 3370,
+      "words": [
+        {
+          "text": "Dona",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "Cida...",
+          "startMs": 580,
+          "endMs": 1960
+        },
+        {
+          "text": "lembra",
+          "startMs": 1960,
+          "endMs": 1980
+        },
+        {
+          "text": "da",
+          "startMs": 1980,
+          "endMs": 2220
+        },
+        {
+          "text": "fiação",
+          "startMs": 2220,
+          "endMs": 2640
+        },
+        {
+          "text": "da",
+          "startMs": 2640,
+          "endMs": 2880
+        },
+        {
+          "text": "padaria?",
+          "startMs": 2880,
+          "endMs": 3220
+        }
+      ]
+    },
+    {
+      "character": "cida",
+      "text": "Aquela que pegou fogo?!",
+      "emotion": "horrorizada, gritando, dramática",
+      "location": "padaria",
+      "audio": "episodes/edital-214-paginas/10-cida.mp3",
+      "durationMs": 1950,
+      "words": [
+        {
+          "text": "Aquela",
+          "startMs": 0,
+          "endMs": 600
+        },
+        {
+          "text": "que",
+          "startMs": 600,
+          "endMs": 820
+        },
+        {
+          "text": "pegou",
+          "startMs": 820,
+          "endMs": 1100
+        },
+        {
+          "text": "fogo?!",
+          "startMs": 1100,
+          "endMs": 1800
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "cida",
+      "name": "Dona Cida",
+      "color": "#8a4b2a",
+      "image": "cast/cida.png"
+    },
+    {
+      "id": "jorge",
+      "name": "Jorge",
+      "color": "#a87a1f",
+      "image": "cast/jorge.png"
+    },
+    {
+      "id": "bia",
+      "name": "Bia",
+      "color": "#2a2420",
+      "image": "cast/bia.png"
+    },
+    {
+      "id": "rodrigo",
+      "name": "Rodrigo",
+      "color": "#3f5a52",
+      "image": "cast/rodrigo.png"
+    }
+  ],
+  "backgrounds": {
+    "padaria": "bg/padaria.png",
+    "calcada": "bg/calcada.png",
+    "van": "bg/van.png",
+    "cozinha": "bg/cozinha.png",
+    "escritorio": "bg/escritorio.png"
+  },
+  "showHandle": true,
+  "outro": "Parte 2 →",
+  "speechRate": 1.3
+}

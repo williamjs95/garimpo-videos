@@ -1,0 +1,153 @@
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { dirname, join } from "node:path";
+import OpenAI from "openai";
+
+export const ROOT = join(import.meta.dirname, "..", "..");
+export const PUBLIC = join(ROOT, "public");
+export const EPISODES = join(ROOT, "episodes");
+
+// .env.local first so it wins: loadEnvFile never overwrites a variable already set.
+for (const file of [".env.local", ".env"]) {
+  if (existsSync(join(ROOT, file))) {
+    process.loadEnvFile(join(ROOT, file));
+  }
+}
+
+export const MODELS = {
+  text: process.env.OPENAI_TEXT_MODEL ?? "gpt-5-mini",
+  tts: process.env.OPENAI_TTS_MODEL ?? "gpt-audio-1.5",
+  image: process.env.OPENAI_IMAGE_MODEL ?? "gpt-image-1-mini",
+  /** Draws poses from the base drawing. Needs a model with high input fidelity so poses stay aligned. */
+  imageEdit: process.env.OPENAI_IMAGE_EDIT_MODEL ?? "gpt-image-1.5",
+  transcribe: process.env.OPENAI_TRANSCRIBE_MODEL ?? "whisper-1",
+  /** 0.25 to 4. Short-form pacing wants a bit faster than natural. */
+  ttsSpeed: Number(process.env.OPENAI_TTS_SPEED ?? "1.2"),
+};
+
+let client: OpenAI | undefined;
+export const openai = (): OpenAI => {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error(
+      "OPENAI_API_KEY não encontrada. Copie .env.example para .env.local e preencha a chave.",
+    );
+  }
+  client ??= new OpenAI();
+  return client;
+};
+
+export type Character = {
+  id: string;
+  name: string;
+  role: string;
+  look: string;
+  /** Fixed line the character is known for. */
+  catchphrase: string;
+  /** Height relative to the tallest character (1). Short characters use less. */
+  scale?: number;
+  /** Pose directions that replace the shared ones for this character. */
+  poses?: Record<string, string>;
+  voice: string;
+  voiceStyle: string;
+  color: string;
+};
+
+export type Cast = {
+  style: string;
+  /** pose id -> drawing direction. "neutro" is the base every other pose is drawn from. */
+  poses: Record<string, string>;
+  characters: Character[];
+  locations: Record<string, string>;
+};
+
+export const loadCast = (): Cast =>
+  JSON.parse(readFileSync(join(ROOT, "cast.json"), "utf8")) as Cast;
+
+export type ScriptLine = {
+  character: string;
+  text: string;
+  emotion: string;
+  location: string;
+  /** Drawing used while this line plays; a key of cast.poses. */
+  pose: string;
+  /** "close" pushes in on the speaker's face. */
+  camera: "normal" | "close";
+  /** Visual gag: "brilho" lights up the speaker, "queda" drops fxProp on fxTarget after the line. */
+  fx: "" | "brilho" | "queda" | "brilho+queda";
+  fxProp: string;
+  fxTarget: string;
+  /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. */
+  move?: "" | "entra" | "sai";
+  /** Pose of everyone who is listening during this line. Empty means neutro. */
+  plateia?: string;
+  /** Sound effect at the start of the line. */
+  som?: "" | "scratch" | "ding" | "whoosh";
+};
+
+export type ScriptProp = { id: string; description: string };
+
+export type EpisodeScript = {
+  slug: string;
+  title: string;
+  hook: string;
+  mentionsGarimpo: boolean;
+  /** End-card call to action, e.g. "Parte 2 →". Empty string for none. */
+  outro?: string;
+  /** Objects used by "queda" gags, drawn once by npm run art. */
+  props?: ScriptProp[];
+  lines: ScriptLine[];
+  post: {
+    tiktok: string;
+    reels: string;
+    shortsTitle: string;
+    shortsDescription: string;
+    hashtags: string[];
+  };
+};
+
+export const readJson = <T>(path: string): T =>
+  JSON.parse(readFileSync(path, "utf8")) as T;
+
+export const writeJson = (path: string, data: unknown): void => {
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
+};
+
+export const episodeDir = (slug: string): string => join(EPISODES, slug);
+
+export const requireSlug = (): string => {
+  const slug = process.argv[2];
+  if (!slug) {
+    throw new Error(
+      "Informe o slug do episódio. Ex.: npm run voice -- cida-wifi",
+    );
+  }
+  if (!existsSync(join(episodeDir(slug), "script.json"))) {
+    throw new Error(
+      `episodes/${slug}/script.json não existe. Rode npm run write primeiro.`,
+    );
+  }
+  return slug;
+};
+
+export const log = (msg: string): void => {
+  console.log(`› ${msg}`);
+};
+
+/**
+ * Audio file name for a line, derived from everything that shapes the voice.
+ * A line keeps its recording when the script is reordered, and gets a new one
+ * as soon as its text, direction or voice changes.
+ */
+export const voiceFile = (character: Character, line: ScriptLine): string => {
+  const key = [
+    character.voice,
+    character.voiceStyle,
+    line.text,
+    line.emotion,
+    MODELS.tts,
+    MODELS.ttsSpeed,
+  ].join("|");
+  const hash = createHash("sha1").update(key).digest("hex").slice(0, 10);
+  return `${character.id}-${hash}.mp3`;
+};

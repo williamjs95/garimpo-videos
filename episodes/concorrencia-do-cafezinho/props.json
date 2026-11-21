@@ -1,0 +1,959 @@
+{
+  "slug": "concorrencia-do-cafezinho",
+  "hook": "A concorrência do cafezinho",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. O Norberto abriu concorrência pro café da reunião.",
+      "emotion": "falando rápido, deliciada com a fofoca, sem pausas",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/lici-b14a3f4357.mp3",
+      "durationMs": 3390,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "senta.",
+          "startMs": 760,
+          "endMs": 880
+        },
+        {
+          "text": "O",
+          "startMs": 1100,
+          "endMs": 1180
+        },
+        {
+          "text": "Norberto",
+          "startMs": 1180,
+          "endMs": 1600
+        },
+        {
+          "text": "abriu",
+          "startMs": 1600,
+          "endMs": 1880
+        },
+        {
+          "text": "concorrência",
+          "startMs": 1880,
+          "endMs": 2360
+        },
+        {
+          "text": "pro",
+          "startMs": 2360,
+          "endMs": 2580
+        },
+        {
+          "text": "café",
+          "startMs": 2580,
+          "endMs": 2800
+        },
+        {
+          "text": "da",
+          "startMs": 2800,
+          "endMs": 2960
+        },
+        {
+          "text": "reunião.",
+          "startMs": 2960,
+          "endMs": 3240
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Três orçamentos, em duas vias, até sexta.",
+      "emotion": "solene, ditando regra",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/norberto-191c9a7b0b.mp3",
+      "durationMs": 3500,
+      "words": [
+        {
+          "text": "Três",
+          "startMs": 0,
+          "endMs": 340
+        },
+        {
+          "text": "orçamentos,",
+          "startMs": 340,
+          "endMs": 1200
+        },
+        {
+          "text": "em",
+          "startMs": 1460,
+          "endMs": 1680
+        },
+        {
+          "text": "duas",
+          "startMs": 1680,
+          "endMs": 1900
+        },
+        {
+          "text": "vias,",
+          "startMs": 1900,
+          "endMs": 2400
+        },
+        {
+          "text": "até",
+          "startMs": 2700,
+          "endMs": 2920
+        },
+        {
+          "text": "sexta.",
+          "startMs": 2920,
+          "endMs": 3380
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Já ganhei. Amadores.",
+      "emotion": "fria, superior, seca",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/katia-a586097b7c.mp3",
+      "durationMs": 2070,
+      "words": [
+        {
+          "text": "Já",
+          "startMs": 0,
+          "endMs": 260
+        },
+        {
+          "text": "ganhei.",
+          "startMs": 260,
+          "endMs": 700
+        },
+        {
+          "text": "Amadores.",
+          "startMs": 1520,
+          "endMs": 1920
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vendo café!",
+      "emotion": "empolgado, chegando correndo",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "pensando",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/ze-89b6078d0a.mp3",
+      "durationMs": 1730,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "semana",
+          "startMs": 320,
+          "endMs": 820
+        },
+        {
+          "text": "eu",
+          "startMs": 820,
+          "endMs": 1000
+        },
+        {
+          "text": "vendo",
+          "startMs": 1000,
+          "endMs": 1180
+        },
+        {
+          "text": "café!",
+          "startMs": 1180,
+          "endMs": 1580
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Meu café é gourmet. Trinta reais a xícara.",
+      "emotion": "esnobe, rápida e seca",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/katia-0923fd7368.mp3",
+      "durationMs": 2830,
+      "words": [
+        {
+          "text": "Meu",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "café",
+          "startMs": 300,
+          "endMs": 700
+        },
+        {
+          "text": "é",
+          "startMs": 700,
+          "endMs": 820
+        },
+        {
+          "text": "gourmet.",
+          "startMs": 820,
+          "endMs": 1180
+        },
+        {
+          "text": "Trinta",
+          "startMs": 1700,
+          "endMs": 1980
+        },
+        {
+          "text": "reais",
+          "startMs": 1980,
+          "endMs": 2220
+        },
+        {
+          "text": "a",
+          "startMs": 2220,
+          "endMs": 2500
+        },
+        {
+          "text": "xícara.",
+          "startMs": 2500,
+          "endMs": 2680
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "O meu é dois reais. Com biscoito.",
+      "emotion": "orgulhoso, simples",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/ze-950f3b6a5f.mp3",
+      "durationMs": 2550,
+      "words": [
+        {
+          "text": "O",
+          "startMs": 0,
+          "endMs": 260
+        },
+        {
+          "text": "meu",
+          "startMs": 260,
+          "endMs": 500
+        },
+        {
+          "text": "é",
+          "startMs": 500,
+          "endMs": 600
+        },
+        {
+          "text": "dois",
+          "startMs": 600,
+          "endMs": 920
+        },
+        {
+          "text": "reais.",
+          "startMs": 920,
+          "endMs": 1360
+        },
+        {
+          "text": "Com",
+          "startMs": 1840,
+          "endMs": 1920
+        },
+        {
+          "text": "biscoito.",
+          "startMs": 1920,
+          "endMs": 2400
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Biscoito não consta no formulário.",
+      "emotion": "indignado com a irregularidade",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/norberto-3ecf4e8c12.mp3",
+      "durationMs": 2650,
+      "words": [
+        {
+          "text": "Biscoito",
+          "startMs": 0,
+          "endMs": 760
+        },
+        {
+          "text": "não",
+          "startMs": 760,
+          "endMs": 1160
+        },
+        {
+          "text": "consta",
+          "startMs": 1160,
+          "endMs": 1760
+        },
+        {
+          "text": "no",
+          "startMs": 1760,
+          "endMs": 1900
+        },
+        {
+          "text": "formulário.",
+          "startMs": 1900,
+          "endMs": 2500
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "E se eu anexar o biscoito?",
+      "emotion": "matutando, devagar, tendo a ideia",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/ze-18fea5ec9c.mp3",
+      "durationMs": 1710,
+      "words": [
+        {
+          "text": "E",
+          "startMs": 0,
+          "endMs": 220
+        },
+        {
+          "text": "se",
+          "startMs": 220,
+          "endMs": 380
+        },
+        {
+          "text": "eu",
+          "startMs": 380,
+          "endMs": 480
+        },
+        {
+          "text": "anexar",
+          "startMs": 480,
+          "endMs": 900
+        },
+        {
+          "text": "o",
+          "startMs": 900,
+          "endMs": 1020
+        },
+        {
+          "text": "biscoito?",
+          "startMs": 1020,
+          "endMs": 1560
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Anexo! Finalmente alguém leu o formulário.",
+      "emotion": "emocionado, quase chorando de alegria",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/norberto-8ceed65790.mp3",
+      "durationMs": 3670,
+      "words": [
+        {
+          "text": "Anexo!",
+          "startMs": 0,
+          "endMs": 1020
+        },
+        {
+          "text": "Finalmente",
+          "startMs": 1640,
+          "endMs": 1980
+        },
+        {
+          "text": "alguém",
+          "startMs": 1980,
+          "endMs": 2460
+        },
+        {
+          "text": "leu",
+          "startMs": 2460,
+          "endMs": 2740
+        },
+        {
+          "text": "o",
+          "startMs": 2740,
+          "endMs": 3060
+        },
+        {
+          "text": "formulário.",
+          "startMs": 3060,
+          "endMs": 3520
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Ele foi o único que leu o papel.",
+      "emotion": "debochada, com gosto",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/lici-db34f641b3.mp3",
+      "durationMs": 2850,
+      "words": [
+        {
+          "text": "Ele",
+          "startMs": 0,
+          "endMs": 600
+        },
+        {
+          "text": "foi",
+          "startMs": 600,
+          "endMs": 960
+        },
+        {
+          "text": "o",
+          "startMs": 960,
+          "endMs": 1340
+        },
+        {
+          "text": "único",
+          "startMs": 1340,
+          "endMs": 1700
+        },
+        {
+          "text": "que",
+          "startMs": 1700,
+          "endMs": 2000
+        },
+        {
+          "text": "leu",
+          "startMs": 2000,
+          "endMs": 2400
+        },
+        {
+          "text": "o",
+          "startMs": 2400,
+          "endMs": 2700
+        },
+        {
+          "text": "papel.",
+          "startMs": 2700,
+          "endMs": 2700
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Isso aí tem ouro, sô!",
+      "emotion": "eufórico, gritando o bordão",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/ze-6a338157ea.mp3",
+      "durationMs": 1710,
+      "words": [
+        {
+          "text": "Isso",
+          "startMs": 0,
+          "endMs": 400
+        },
+        {
+          "text": "aí",
+          "startMs": 400,
+          "endMs": 740
+        },
+        {
+          "text": "tem",
+          "startMs": 740,
+          "endMs": 980
+        },
+        {
+          "text": "ouro,",
+          "startMs": 980,
+          "endMs": 1240
+        },
+        {
+          "text": "sô!",
+          "startMs": 1560,
+          "endMs": 1560
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Entrega amanhã. Duzentas xícaras.",
+      "emotion": "burocrático, sem emoção",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/norberto-7fbe2a05ae.mp3",
+      "durationMs": 2410,
+      "words": [
+        {
+          "text": "Entrega",
+          "startMs": 0,
+          "endMs": 520
+        },
+        {
+          "text": "amanhã.",
+          "startMs": 520,
+          "endMs": 1100
+        },
+        {
+          "text": "Duzentas",
+          "startMs": 1260,
+          "endMs": 1760
+        },
+        {
+          "text": "xícaras.",
+          "startMs": 1760,
+          "endMs": 2260
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Tinha isso no papel?",
+      "emotion": "baixinho, apavorado",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/ze-33d7627b5e.mp3",
+      "durationMs": 1390,
+      "words": [
+        {
+          "text": "Tinha",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "isso",
+          "startMs": 580,
+          "endMs": 820
+        },
+        {
+          "text": "no",
+          "startMs": 820,
+          "endMs": 960
+        },
+        {
+          "text": "papel?",
+          "startMs": 960,
+          "endMs": 1240
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Página catorze.",
+      "emotion": "seco, sem piscar",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "queda",
+      "fxProp": "papelada",
+      "fxTarget": "ze",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/concorrencia-do-cafezinho/norberto-e2998bb974.mp3",
+      "durationMs": 1390,
+      "words": [
+        {
+          "text": "Página",
+          "startMs": 0,
+          "endMs": 560
+        },
+        {
+          "text": "catorze.",
+          "startMs": 560,
+          "endMs": 1240
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… a Kátia tá comprando todo o café do bairro.",
+      "emotion": "falando rápido, escandalizada, sem pausas",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 700,
+      "audio": "episodes/concorrencia-do-cafezinho/lici-bc0dd1c52d.mp3",
+      "durationMs": 3070,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 60,
+          "endMs": 540
+        },
+        {
+          "text": "a",
+          "startMs": 540,
+          "endMs": 780
+        },
+        {
+          "text": "Kátia",
+          "startMs": 780,
+          "endMs": 920
+        },
+        {
+          "text": "tá",
+          "startMs": 920,
+          "endMs": 1060
+        },
+        {
+          "text": "comprando",
+          "startMs": 1060,
+          "endMs": 1600
+        },
+        {
+          "text": "todo",
+          "startMs": 1600,
+          "endMs": 2080
+        },
+        {
+          "text": "o",
+          "startMs": 2080,
+          "endMs": 2300
+        },
+        {
+          "text": "café",
+          "startMs": 2300,
+          "endMs": 2360
+        },
+        {
+          "text": "do",
+          "startMs": 2360,
+          "endMs": 2800
+        },
+        {
+          "text": "bairro.",
+          "startMs": 2800,
+          "endMs": 2920
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      }
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.688,
+          "y": 0.38,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      }
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.609,
+          "y": 0.349,
+          "rx": 0.102,
+          "ry": 0.052
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.344,
+          "y": 0.318,
+          "rx": 0.06,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      }
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.57,
+          "y": 0.245,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      }
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "papelada": "props/papelada.png"
+  },
+  "showHandle": false,
+  "outro": "",
+  "speechRate": 1.1
+}

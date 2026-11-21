@@ -1,0 +1,194 @@
+{
+  "slug": "liquidacao-da-katia",
+  "title": "A liquidação da Kátia",
+  "hook": "A liquidação da loja da frente",
+  "mentionsGarimpo": false,
+  "outro": "",
+  "props": [
+    {
+      "id": "drone",
+      "description": "small toy quadcopter drone with four propellers, seen from the front, slightly dented"
+    }
+  ],
+  "lines": [
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "cochichando, deliciada com a fofoca",
+      "text": "Menina, senta. A Kátia colocou placa de liquidação…"
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "fria, superior, seca",
+      "text": "Estratégia. Amadores."
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "escandalizada, revelando o segredo",
+      "text": "…mas aumentou o preço antes!"
+    },
+    {
+      "character": "norberto",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "solene, indignado com a irregularidade",
+      "text": "A placa não foi formalizada com a administração."
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "empolgado, decidido",
+      "text": "Eu também vou fazer liquidação!"
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "perdido, baixinho, tentando lembrar",
+      "text": "O que é que eu vendo essa semana mesmo?"
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "cansada, sem surpresa",
+      "text": "Drone, Zé."
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "empolgado, anunciando como camelô",
+      "text": "Drone com noventa por cento de desconto!"
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "fria, competitiva, sem piscar",
+      "text": "Noventa e cinco na minha."
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "eufórico, gritando sem pensar",
+      "text": "Cem por cento!"
+    },
+    {
+      "character": "norberto",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "solene, indignado com a irregularidade",
+      "text": "Cem por cento é doação. Tem formulário."
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "triunfante, sem fôlego",
+      "text": "Acabou o estoque! Vendi tudo!"
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "cansada, com pena",
+      "text": "Você deu tudo, Zé."
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "brilho+queda",
+      "fxProp": "drone",
+      "fxTarget": "norberto",
+      "emotion": "eufórico, gritando o bordão",
+      "text": "Isso aí tem ouro, sô!"
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "cochichando, escandalizada, olhando para fora",
+      "text": "Menina… olha quem alugou a loja do lado."
+    }
+  ],
+  "post": {
+    "tiktok": "Liquidação de loja: toda galeria tem uma Kátia 😅 Marca quem já caiu nessa.",
+    "reels": "Toda galeria tem: a que sabe de tudo, a rival, o síndico e o que muda de negócio toda semana 😅 Qual deles é você?",
+    "shortsTitle": "A liquidação da loja da frente 😅",
+    "shortsDescription": "A Kátia colocou placa de liquidação. A Dona Lici já sabe de tudo. E o Zé teve uma ideia.",
+    "hashtags": [
+      "humor",
+      "comercio",
+      "lojista",
+      "pequenosnegocios",
+      "empreendedor",
+      "vidadelojista"
+    ]
+  }
+}

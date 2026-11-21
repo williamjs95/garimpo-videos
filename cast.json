@@ -1,0 +1,70 @@
+{
+  "style": "2D cartoon character, flat colors with soft cel shading, thick clean dark-brown outlines, bright varied colors with strong contrast between clothes, hair and skin, expressive oversized head, full body standing, facing the viewer, centered, whole figure inside the frame with margin, no ground shadow, plain transparent background, no text, no logo",
+  "poses": {
+    "neutro": "relaxed neutral expression, mouth closed",
+    "animado": "thrilled, huge closed-mouth smile, eyebrows up, one fist raised in celebration",
+    "bravo": "annoyed, deep frown, eyebrows down, lips pressed, hands on hips",
+    "chocado": "shocked, eyes very wide, eyebrows raised high, lips pressed tight, both hands up near the face",
+    "explicando": "explaining with total confidence, slight closed-mouth smile, one hand raised with the index finger pointing up",
+    "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, one hand on the chin"
+  },
+  "characters": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "role": "Dona do salão de beleza da galeria, 55 anos. Sabe de tudo antes de todo mundo. Perspectiva cômica: tudo é novela. Fofoqueira de coração bom, narra a vida dos outros como capítulo de novela.",
+      "catchphrase": "Menina, senta que lá vem…",
+      "look": "Brazilian woman in her mid 50s, warm brown skin, tall voluminous copper-red bouffant hairdo, big gold hoop earrings, teal hairdresser smock over a magenta blouse, purple trousers, reading glasses hanging on a chain, holding a round hairbrush like a microphone, lively gossiping eyes",
+      "voice": "coral",
+      "voiceStyle": "Mulher brasileira de 55 anos, paulista, fofoqueira e dramática, fala como quem narra novela e conta um segredo escandaloso.",
+      "color": "#8a4b2a",
+      "scale": 0.92
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "role": "Muda de negócio toda semana (açaí, drone, curso de crochê), 35 anos, mineiro. Perspectiva cômica: tudo é oportunidade. Otimista incurável, anda sempre com uma bateia de garimpo que brilha quando ele tem uma ideia. A ideia é sempre um fracasso.",
+      "catchphrase": "Isso aí tem ouro, sô!",
+      "look": "Brazilian man around 35, lanky, light brown skin, messy dark brown hair under a pale straw hat, short stubble, red and white plaid shirt with rolled sleeves, blue jeans with a patched knee, brown boots, holding a round shallow shiny golden metal prospecting pan against his chest with one hand, wide optimistic grin",
+      "voice": "cedar",
+      "voiceStyle": "Homem brasileiro de 35 anos, mineiro do interior com sotaque bem marcado, empolgado e otimista demais, fala como quem acabou de achar ouro.",
+      "color": "#a87a1f",
+      "scale": 0.88,
+      "poses": {
+        "animado": "thrilled, huge open smile, eyebrows up, proudly lifting the round golden pan high above his head with both hands",
+        "bravo": "annoyed, deep frown, eyebrows down, lips pressed, one hand on his hip, the other hand still holding the round golden pan against his chest",
+        "chocado": "shocked, eyes very wide, eyebrows raised high, lips pressed tight, clutching the round golden pan against his chest with both hands",
+        "explicando": "explaining with total confidence, slight closed-mouth smile, one hand raised with the index finger pointing up, the other hand holding the round golden pan against his chest",
+        "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, scratching his head under the hat with one hand, the other hand holding the round golden pan against his chest"
+      }
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "role": "Síndico da galeria, 62 anos. Perspectiva cômica: tudo precisa de protocolo. Tem regra, formulário e carimbo para tudo, leva a administração da galeria como se fosse um ministério.",
+      "catchphrase": "Isso tem que ser formalizado.",
+      "look": "Brazilian man in his early 60s, short and round, light tan skin, bald on top with grey hair on the sides, thick grey moustache, square glasses, light blue short-sleeved button shirt with a pocket full of pens, navy blue tie, charcoal grey trousers, black shoes, big ring of keys on his belt, hugging a green clipboard, stern bureaucratic expression",
+      "voice": "onyx",
+      "voiceStyle": "Homem brasileiro de 62 anos, voz grave e pausada de funcionário de cartório, solene e burocrático, leva tudo a sério demais.",
+      "color": "#5b4a3a",
+      "scale": 0.8
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "role": "Dona da loja da frente, 38 anos, rival de todos. Perspectiva cômica: tudo é competição. Trata a galeria como final de campeonato e os vizinhos como concorrência a ser esmagada.",
+      "catchphrase": "Amadores.",
+      "look": "Brazilian woman around 38, medium brown skin, sharp chin-length black bob haircut, emerald green blazer over a white top, black trousers, red pointed shoes, arms crossed, one eyebrow raised, confident smirk",
+      "voice": "marin",
+      "voiceStyle": "Mulher brasileira de 38 anos, paulistana, fria, competitiva e superior, fala curto e seco, com desprezo elegante.",
+      "color": "#2a2420",
+      "scale": 1
+    }
+  ],
+  "locations": {
+    "galeria": "wide interior corridor of a small Brazilian neighborhood shopping arcade, row of little shop fronts with striped awnings and glass windows on the back wall, patterned tile floor, hanging plants, a cork noticeboard on the wall, soft daylight",
+    "salao": "wide interior of a small cozy Brazilian neighborhood beauty salon, mirrors with light bulbs, salon chairs, hair dryers, shelves of products, magazines, warm light",
+    "loja-ze": "wide interior of a tiny improvised shop in a Brazilian neighborhood arcade, mismatched shelves with random unrelated products, cardboard boxes, a handwritten blank sign, a small counter",
+    "administracao": "wide interior of a cramped building-manager office in a Brazilian neighborhood arcade, metal filing cabinets, a desk covered in stamps and stacked forms, a wall key rack, a ticking wall clock, fluorescent light"
+  }
+}
