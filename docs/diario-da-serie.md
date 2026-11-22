@@ -18,6 +18,7 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 | 7 | A festa da Lici | Dia a dia | Lici e o resto da galeria | Lici: a última a saber da própria festa, que ainda era no mês errado | Lici em jogo pela primeira vez (quer saber, se dá mal, é amada); Zé e Kátia como aliados que se atrapalham; Kátia competente (tirou o alvará no nome do Norberto) | Lici: aberta e ninguém senta, fechada invertida ("senta… que eu já sabia"); Kátia contra o próprio aliado | Sem queda: virada pela prancheta e gancho em plano de dois | Kátia: já tirou o alvará, no nome do Norberto |
 | 8 | O artigo quarenta e um | Dia a dia (condomínio) | Norberto e Kátia (estreia do par) | Norberto: tenta escapar da festa pelo regimento e perde pelo artigo seguinte | Norberto rebaixado pela própria regra; Kátia leu o regimento inteiro e usa a "página catorze" contra ele | Página catorze dita pela Kátia; Norberto vereditos | Regimento pesado cai no Norberto e fica na cabeça | Lici: chegou um cliente que só vai dar uma olhadinha |
 | 9 | Só uma olhadinha | Dia a dia (cliente) | Os quatro contra um cliente (POV) | Todos: disputam o cliente até ele ir embora | Primeiro episódio em POV (o espectador é o cliente); Zé e Kátia disputam juntos, sem romance; Norberto transforma a venda em licitação | Zé: "Mas ele olhou" (afeto depois da derrota); Kátia direto; ninguém diz o bordão da Lici inteiro | Sem objeto: o cliente some e sobra a briga | Norberto: toda fofoca agora precisa constar em ata |
+| 10 | A ata da fofoca | Dia a dia (condomínio) | Lici e Norberto | Lici: vira escrivã oficial da fofoca e o primeiro item é sobre ela | Lici e Norberto como aliados que viram adversários; Kátia faz o segundo gesto e nega ("Ficou bonito. Não registra isso."); o cabelo novo da Lici entra na história | Abertura do Norberto, não da Lici; "Menina…" sem "senta" | Placa "VINHO" e olhar parado da Lici | Norberto: próxima reunião, leitura da ata em voz alta |
 ## Pares
 
 | Par | Episódios em que contracenaram de verdade | O que ainda não foi usado |
@@ -26,7 +27,7 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 | Zé e Norberto | 1, 3, 6 | O Zé como único aliado das regras do Norberto |
 | Lici e Kátia | 2, 4 | A fofoca como arma que a Kátia tenta comprar |
 | Lici e Zé | 5 | Lici como conselheira sentimental que piora tudo |
-| Lici e Norberto | 7 (ele corrige a data dela) | A fofoca contra a ata: quem é o registro oficial da galeria? |
+| Lici e Norberto | 7 (ele corrige a data dela), 10 | A fofoca contra a ata: quem é o registro oficial da galeria? |
 | Norberto e Kátia | 8 | Dois que só jogam por cima: a regra contra o ganhar a qualquer custo |
 
 ## Situação de cada personagem
@@ -46,8 +47,8 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 - A Kátia ficou com o edital dos duzentos buquês (do episódio 6). O Zé agora vende guarda-chuva.
 - O Norberto tem que pagar a festa da Lici em março (do episódio 8, artigo 41).
-- A partir de hoje, toda fofoca precisa constar em ata (do episódio 9): abre a Lici contra o Norberto, o
-  episódio 10 do plano.
+- A ata da fofoca será lida em voz alta na próxima reunião (do episódio 10).
+- A Lici pintou o cabelo de vinho (episódio 10): é a cor dela daqui em diante.
 - A festa da Lici é em março; a galeria fez em novembro (do episódio 7).
 - A Kátia sonhou com o Zé; ele ficou feliz mesmo sabendo que era para ser esmagado (do episódio 4).
 - O Norberto se elegeu síndico vitalício numa ata que ninguém assinou (do episódio 3).
@@ -56,4 +57,3 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 | Ep. | Ideia | O que desenvolve |
 |---|---|---|
-| 10 | Lici contra Norberto: a fofoca contra a ata | Par inédito; gesto de afeto da Kátia |

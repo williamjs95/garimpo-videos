@@ -38,6 +38,12 @@ export type Line = {
   tela?: string;
   /** Poses that stick from this line on (someone falls asleep), until changed. */
   estado?: { quem: string; pose: string }[];
+  /**
+   * Mouth opening for each video frame of the line (0 closed, 1 half, 2 open),
+   * from the voice's loudness and the lip-closing letters. Frames past the
+   * end are closed.
+   */
+  mouth?: number[];
   /** Playback speed of this line when it differs from the episode's (a line that is unclear sped up). */
   rate?: number;
   /** Silence trimmed from the start of the audio file. */

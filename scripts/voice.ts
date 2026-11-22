@@ -7,6 +7,7 @@ import {
   createReadStream,
   existsSync,
   mkdirSync,
+  rmSync,
   writeFileSync,
 } from "node:fs";
 import { join } from "node:path";
@@ -19,9 +20,12 @@ import {
 } from "../src/types.ts";
 import { findFeet } from "./lib/feet.ts";
 import {
+  envelope,
+  tightenPauses,
   hear,
   LIMIT,
   listen,
+  mouthTrack,
   levelVoice,
   longestPause,
   MAX_PAUSE,
@@ -149,16 +153,22 @@ for (const [i, l] of script.lines.entries()) {
     writeFileSync(path, await speak(character, l));
   }
 
-  // Every line plays at the same level, so quiet takes are not lost.
+  // Long pauses inside the line are shortened, then every line is brought to
+  // the same level, so quiet takes are not lost. Everything below uses this file.
   const leveled = path.replace(/\.mp3$/, ".nivel.mp3");
-  if (!existsSync(leveled)) levelVoice(path, leveled);
+  if (!existsSync(leveled)) {
+    const tight = path.replace(/\.mp3$/, ".curto.mp3");
+    tightenPauses(path, tight);
+    levelVoice(tight, leveled);
+    rmSync(tight, { force: true });
+  }
 
   // Heard as the viewer hears it. A line that is only clear at normal speed
   // plays at normal speed; one that is unclear either way is reported.
   let rate: number | undefined;
-  const fast = missed(l.text, await hear(path, SPEECH_RATE, names));
+  const fast = missed(l.text, await hear(leveled, SPEECH_RATE, names));
   if (fast > LIMIT) {
-    const normal = missed(l.text, await hear(path, 1, names));
+    const normal = missed(l.text, await hear(leveled, 1, names));
     if (normal <= LIMIT) {
       rate = 1;
       slowed++;
@@ -171,7 +181,7 @@ for (const [i, l] of script.lines.entries()) {
 
   const tr = await openai().audio.transcriptions.create({
     model: MODELS.transcribe,
-    file: createReadStream(path),
+    file: createReadStream(leveled),
     language: "pt",
     prompt: l.text,
     response_format: "verbose_json",
@@ -207,6 +217,11 @@ for (const [i, l] of script.lines.entries()) {
     tela: l.tela ?? "",
     estado: l.estado ?? [],
     ...(rate ? { rate } : {}),
+    mouth: mouthTrack(
+      envelope(leveled, offsetMs, rate ?? SPEECH_RATE),
+      alignToScript(l.text, words),
+      rate ?? SPEECH_RATE,
+    ),
     offsetMs,
     audio: `episodes/${slug}/${file.replace(/\.mp3$/, ".nivel.mp3")}`,
     // Cut trailing silence: end shortly after the last spoken word.

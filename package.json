@@ -42,7 +42,8 @@
     "lint": "eslint src scripts && tsc",
     "upgrade": "remotion upgrade",
     "sfx": "node scripts/sfx.ts",
-    "diccao": "node scripts/diccao.ts"
+    "diccao": "node scripts/diccao.ts",
+    "cores": "node scripts/cores.ts"
   },
   "allowScripts": {
     "esbuild": false

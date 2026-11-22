@@ -4,7 +4,7 @@
  * Also measures loudness, so every line plays at the same level.
  */
 import { execFileSync } from "node:child_process";
-import { createReadStream, mkdtempSync } from "node:fs";
+import { createReadStream, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { MODELS, openai, ROOT } from "./shared.ts";
@@ -267,4 +267,179 @@ export const masterVideo = (src: string, out: string): Loudness => {
     resolve(out),
   ]);
   return loudness(out);
+};
+
+/**
+ * Loudness of the voice for each video frame (30 fps) as it plays: from
+ * `offsetMs`, at `rate`. Values are RMS in 0..1.
+ */
+export const envelope = (
+  file: string,
+  offsetMs: number,
+  rate: number,
+): number[] => {
+  const SAMPLE_RATE = 16000;
+  const wav = join(scratch, `${counter++}.wav`);
+  ffmpeg([
+    "-loglevel",
+    "error",
+    "-ss",
+    String(offsetMs / 1000),
+    "-i",
+    resolve(file),
+    "-af",
+    `atempo=${rate}`,
+    "-ac",
+    "1",
+    "-ar",
+    String(SAMPLE_RATE),
+    "-c:a",
+    "pcm_s16le",
+    wav,
+  ]);
+  const bytes = readFileSync(wav);
+  // Samples start after the "data" chunk header.
+  const data = bytes.indexOf("data", 12);
+  const pcm = bytes.subarray(data < 0 ? 44 : data + 8);
+  const perFrame = SAMPLE_RATE / 30;
+  const samples = Math.floor(pcm.length / 2);
+  const frames: number[] = [];
+  for (let k = 0; Math.floor(k * perFrame) < samples; k++) {
+    const from = Math.floor(k * perFrame);
+    const to = Math.min(samples, Math.floor((k + 1) * perFrame));
+    let sum = 0;
+    for (let n = from; n < to; n++) {
+      const v = pcm.readInt16LE(n * 2) / 32768;
+      sum += v * v;
+    }
+    frames.push(Math.sqrt(sum / Math.max(1, to - from)));
+  }
+  return frames;
+};
+
+/** Letters that close the lips in Portuguese; a word-final "m" does not ("tem", "um"). */
+const closesLips = (word: string, i: number): boolean => {
+  const ch = word[i]?.toLowerCase();
+  if (ch === "p" || ch === "b") return true;
+  if (ch !== "m") return false;
+  return /[a-záéíóúâêôãõà]/i.test(word.slice(i + 1));
+};
+
+/**
+ * Mouth opening per video frame: closed in silence, half or fully open with
+ * the voice's loudness, closed on p, b and m. Each shape holds at least two
+ * frames, so the mouth never flickers.
+ */
+export const mouthTrack = (
+  loud: number[],
+  words: { text: string; startMs: number; endMs: number }[],
+  rate: number,
+): number[] => {
+  const sorted = [...loud].sort((a, b) => a - b);
+  const peak = sorted[Math.floor(sorted.length * 0.9)] ?? 0;
+  if (peak <= 0) return loud.map(() => 0);
+  const raw = loud.map((v) => (v < peak * 0.16 ? 0 : v < peak * 0.55 ? 1 : 2));
+  // Lips meet on p, b and m: place each letter by its position in the word.
+  const frameOf = (ms: number): number => Math.floor((ms / rate / 1000) * 30);
+  for (const w of words) {
+    const letters = w.text.replace(/[^\p{L}]/gu, "");
+    for (let i = 0; i < letters.length; i++) {
+      if (!closesLips(letters, i)) continue;
+      const ms =
+        w.startMs + ((i + 0.3) / letters.length) * (w.endMs - w.startMs);
+      const f = frameOf(ms);
+      if (f >= 0 && f < raw.length) raw[f] = 0;
+    }
+  }
+  // Hold every shape at least two frames.
+  const out = [...raw];
+  for (let f = 1; f < out.length - 1; f++) {
+    if (out[f] !== out[f - 1] && out[f] !== out[f + 1]) {
+      out[f + 1] = out[f] ?? 0;
+      f++;
+    }
+  }
+  return out;
+};
+
+/** Silences inside a line longer than this are shortened to KEEP_PAUSE. */
+const PAUSE_LIMIT = 0.3;
+const KEEP_PAUSE = 0.15;
+
+/**
+ * Shortens long silences inside a take (after a colon, between sentences),
+ * leaving a short breath, so the scene keeps moving. Returns how many seconds
+ * were cut. Leading and trailing silence is left for the later trim.
+ */
+export const tightenPauses = (src: string, out: string): number => {
+  const log = execFileSync(
+    "/bin/sh",
+    [
+      "-c",
+      `"$1" -hide_banner -nostats -i "$2" -af silencedetect=noise=-35dB:d=${PAUSE_LIMIT} -f null - 2>&1`,
+      "sh",
+      FFMPEG,
+      resolve(src),
+    ],
+    { cwd: dirname(FFMPEG), encoding: "utf8" },
+  );
+  const time = /Duration: (\d+):(\d+):([\d.]+)/.exec(log);
+  const duration = time
+    ? Number(time[1]) * 3600 + Number(time[2]) * 60 + Number(time[3])
+    : 0;
+  const starts = [...log.matchAll(/silence_start: (-?[\d.]+)/g)].map((m) =>
+    Number(m[1]),
+  );
+  const ends = [...log.matchAll(/silence_end: ([\d.]+)/g)].map((m) =>
+    Number(m[1]),
+  );
+  // Keep everything except the middle of each inner silence.
+  const cuts = starts
+    .map((start, i) => [start, ends[i] ?? duration] as const)
+    .filter(([start, end]) => start > 0.05 && end < duration - 0.05)
+    .map(
+      ([start, end]) => [start + KEEP_PAUSE / 2, end - KEEP_PAUSE / 2] as const,
+    );
+  if (cuts.length === 0 || duration === 0) {
+    ffmpeg([
+      "-loglevel",
+      "error",
+      "-i",
+      resolve(src),
+      "-c",
+      "copy",
+      resolve(out),
+    ]);
+    return 0;
+  }
+  const keep: [number, number][] = [];
+  let from = 0;
+  for (const [a, b] of cuts) {
+    keep.push([from, a]);
+    from = b;
+  }
+  keep.push([from, duration]);
+  const parts = keep
+    .map(
+      ([a, b], i) =>
+        `[0:a]atrim=${a.toFixed(3)}:${b.toFixed(3)},asetpts=PTS-STARTPTS[p${i}]`,
+    )
+    .join(";");
+  const joined = keep.map((_, i) => `[p${i}]`).join("");
+  ffmpeg([
+    "-loglevel",
+    "error",
+    "-i",
+    resolve(src),
+    "-filter_complex",
+    `${parts};${joined}concat=n=${keep.length}:v=0:a=1[out]`,
+    "-map",
+    "[out]",
+    "-c:a",
+    "libmp3lame",
+    "-q:a",
+    "2",
+    resolve(out),
+  ]);
+  return cuts.reduce((s, [a, b]) => s + (b - a), 0);
 };

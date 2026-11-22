@@ -491,6 +491,11 @@ export const Stage: React.FC<{
               phase={present.indexOf(id) * 23}
               speaker={speaker}
               talking={speaker && isSpeaking(line, ms)}
+              mouthLevel={
+                speaker && line.mouth
+                  ? (line.mouth[Math.floor(local)] ?? 0)
+                  : undefined
+              }
               squash={
                 (struck
                   ? weight.squash *
@@ -640,6 +645,8 @@ const Character: React.FC<{
   reacting: boolean;
   /** Frames since this character caught a thrown prop; negative before. */
   catching: number;
+  /** 0 closed, 1 half open, 2 open, from the voice; undefined uses the old flap. */
+  mouthLevel?: number;
   /** Degrees the walk tilts the body (into the motion, then settling). */
   lean: number;
   /** 0 to 1: how far the character has stepped toward the camera. */
@@ -664,6 +671,7 @@ const Character: React.FC<{
   toward,
   reacting,
   catching,
+  mouthLevel,
   lean,
   approach,
   from,
@@ -744,7 +752,11 @@ const Character: React.FC<{
     member.blink !== null && (frame + phase * 7) % 96 < 4 && !talking;
 
   // Lip sync: flap the mouth about six times a second while a word is spoken.
-  const mouthOpen = talking && Math.floor(local / 2.5) % 2 === 0;
+  // The mouth follows the voice when a track exists: closed, half or open.
+  // Half open shows only the middle of the open mouth.
+  const level =
+    mouthLevel ?? (talking && Math.floor(local / 2.5) % 2 === 0 ? 2 : 0);
+  const mouthOpen = level > 0;
   const shown = poses.includes(drawn) ? drawn : "neutro";
   // Soles on the floor line, with a shadow that shrinks as the body lifts.
   const sink = (1 - (member.feet ?? 1)) * CHAR_H * member.scale;
@@ -789,7 +801,13 @@ const Character: React.FC<{
           } as const;
           // Only the mouth region of the talking drawing is shown, so the
           // slight color drift between the two drawings never flickers.
-          const mask = mouth ? region(mouth) : undefined;
+          const mask = mouth
+            ? region(
+                level === 1
+                  ? { ...mouth, rx: mouth.rx * 0.8, ry: mouth.ry * 0.5 }
+                  : mouth,
+              )
+            : undefined;
           return (
             <div key={p} style={{ ...fill, opacity: p === shown ? 1 : 0 }}>
               <Img src={staticFile(`${member.dir}/${p}.png`)} style={fill} />

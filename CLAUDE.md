@@ -26,5 +26,9 @@ A pesquisa que o embasa está em `reports/Comédia e drama em esquetes curtos.md
 
 - Poses e bocas são edições do desenho-base (`public/cast/<id>/neutro.png`). `npm run art -- <id>` apaga
   e redesenha o personagem inteiro, inclusive o base.
+- O modelo de imagem pinta toda pele de desenho no mesmo laranja. O campo `cores` de cada personagem no
+  `cast.json` corrige pele (e o cabelo da Lici) em todo desenho novo; `npm run cores` aplica nos
+  existentes. Cada desenho é corrigido uma vez só (lista em `public/cast/<id>/cores.json`). Para mudar as
+  cores, restaure os desenhos originais pelo git e apague o `cores.json` antes.
 - Evite descrições que lembrem personagens famosos (um eletricista de bigode, macacão e boné foi
   bloqueado pelo filtro de imagens).

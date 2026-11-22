@@ -1,3 +1,4 @@
+import type { Recolor } from "./color.ts";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
@@ -49,7 +50,9 @@ export type Character = {
   poses?: Record<string, string>;
   voice: string;
   voiceStyle: string;
-  color: string;
+  color: string; /** Color correction applied to every drawing (see scripts/lib/color.ts). */
+  cores?: Recolor; /** Mouth regions set by hand where automatic detection got them wrong. */
+  bocas?: Record<string, { x: number; y: number; rx: number; ry: number }>;
 };
 
 export type Cast = {

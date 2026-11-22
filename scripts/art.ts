@@ -30,7 +30,7 @@ import {
   readJson,
   writeJson,
 } from "./lib/shared.ts";
-import { matchColors } from "./lib/color.ts";
+import { matchColors, recolorCharacter } from "./lib/color.ts";
 import { findMouth } from "./lib/mouth.ts";
 import type { Mouth } from "../src/types.ts";
 
@@ -262,6 +262,7 @@ for (const c of cast.characters) {
   }
   const blink = join(dir, "neutro-pisca.png");
   if (drawn.has(blink)) matchColors(blink, base);
+
   const pairs = Object.keys(cast.poses)
     .map((p) => ({
       pose: p,
@@ -302,7 +303,12 @@ for (const c of cast.characters) {
     else
       log(`${c.name} (${p.pose}): boca não localizada, fala só com movimento`);
   }
+  // Hand-set regions win over detection (cast.json "bocas").
+  Object.assign(mouths, c.bocas ?? {});
   writeJson(join(dir, "mouths.json"), mouths);
+
+  // Each character's own skin (and hair) tone, on drawings not yet corrected.
+  if (c.cores) recolorCharacter(dir, c.cores, Object.keys(cast.poses), mouths);
 
   // The eyes are just above the mouth; a blink covers both, so take them whole.
   const eyes = existsSync(blink)

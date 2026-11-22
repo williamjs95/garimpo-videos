@@ -22,7 +22,7 @@ Cada personagem tem uma perspectiva cômica só e reage a qualquer assunto por e
 
 | Personagem | Quem é | Perspectiva | Bordão |
 |---|---|---|---|
-| Dona Lici | Dona do salão, sabe de tudo antes de todo mundo | Tudo é novela | "Menina, senta que lá vem…" |
+| Dona Lici | Dona do salão, sabe de tudo antes de todo mundo; cabelo vinho desde o episódio 10 | Tudo é novela | "Menina, senta que lá vem…" |
 | Zé Garimpo | Muda de negócio toda semana (açaí, drone, curso de crochê) | Tudo é oportunidade | "Isso aí tem ouro, sô!" |
 | Seu Norberto | Síndico da galeria, regra para tudo | Tudo precisa de protocolo | "Isso tem que ser formalizado." |
 | Kátia | Dona da loja da frente, rival de todos | Tudo é competição | "Amadores." |

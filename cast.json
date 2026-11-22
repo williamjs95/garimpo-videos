@@ -15,11 +15,24 @@
       "name": "Dona Lici",
       "role": "Dona do salão de beleza da galeria, 55 anos. Sabe de tudo antes de todo mundo. Perspectiva cômica: tudo é novela. Fofoqueira de coração bom, narra a vida dos outros como capítulo de novela.",
       "catchphrase": "Menina, senta que lá vem…",
-      "look": "Brazilian woman in her mid 50s, warm brown skin, tall voluminous copper-red bouffant hairdo, big gold hoop earrings, teal hairdresser smock over a magenta blouse, purple trousers, reading glasses hanging on a chain, holding a round hairbrush like a microphone, lively gossiping eyes",
+      "look": "Brazilian woman in her mid 50s, warm brown skin, tall voluminous deep wine-red bouffant hairdo, big gold hoop earrings, teal hairdresser smock over a magenta blouse, purple trousers, reading glasses hanging on a chain, holding a round hairbrush like a microphone, lively gossiping eyes",
       "voice": "coral",
       "voiceStyle": "Mulher brasileira de 55 anos, paulista, fofoqueira e dramática, fala como quem narra novela e conta um segredo escandaloso.",
       "color": "#8a4b2a",
-      "scale": 0.92
+      "scale": 0.92,
+      "cores": {
+        "pele": [220, 104, 43],
+        "peleAlvo": [168, 104, 74],
+        "cabeloMatiz": 338
+      },
+      "bocas": {
+        "neutro": {
+          "x": 0.483,
+          "y": 0.305,
+          "rx": 0.07,
+          "ry": 0.045
+        }
+      }
     },
     {
       "id": "ze",
@@ -38,6 +51,10 @@
         "explicando": "explaining with total confidence, slight closed-mouth smile, one hand raised with the index finger pointing up, the other hand holding the round golden pan against his chest",
         "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, scratching his head under the hat with one hand, the other hand holding the round golden pan against his chest",
         "dormindo": "fast asleep while standing up, both eyes closed, head tilted to one side, peaceful face, mouth slightly open, hugging the round golden pan against his chest like a pillow"
+      },
+      "cores": {
+        "pele": [247, 141, 60],
+        "peleAlvo": [214, 150, 108]
       }
     },
     {
@@ -49,7 +66,19 @@
       "voice": "onyx",
       "voiceStyle": "Homem brasileiro de 62 anos, voz grave e pausada de funcionário de cartório, solene e burocrático, leva tudo a sério demais.",
       "color": "#5b4a3a",
-      "scale": 0.8
+      "scale": 0.8,
+      "cores": {
+        "pele": [255, 164, 91],
+        "peleAlvo": [236, 184, 148]
+      },
+      "bocas": {
+        "neutro": {
+          "x": 0.507,
+          "y": 0.3,
+          "rx": 0.1,
+          "ry": 0.055
+        }
+      }
     },
     {
       "id": "katia",
@@ -60,7 +89,11 @@
       "voice": "marin",
       "voiceStyle": "Mulher brasileira de 38 anos, paulistana, fria, competitiva e superior, fala curto e seco, com desprezo elegante.",
       "color": "#2a2420",
-      "scale": 1
+      "scale": 1,
+      "cores": {
+        "pele": [231, 115, 53],
+        "peleAlvo": [190, 116, 84]
+      }
     }
   ],
   "locations": {
