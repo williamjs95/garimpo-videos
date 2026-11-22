@@ -39,6 +39,8 @@ Abra `episodes/<slug>/post.md`, suba `out/<slug>.mp4` no app de cada rede e cole
 
 Os episódios são numerados: o vídeo sai em `out/ep03-<slug>.mp4` e os quadros de conferência em `out/ep03-<slug>/`.
 
+Toda gravação passa por uma checagem de dicção (a fala é transcrita como o público ouve, sem ver o roteiro) e por um nivelamento de volume. O vídeo final sai em cerca de -14 LUFS. Para conferir um episódio já gravado: `npm run diccao -- <slug>`.
+
 ## Onde mexer
 
 - Premissa, elenco, temas e regras de roteiro: `docs/guia-de-comedia.md` (o `write` carrega esse arquivo)

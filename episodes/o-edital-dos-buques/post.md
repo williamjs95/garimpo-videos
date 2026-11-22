@@ -3,18 +3,18 @@
 Vídeo: out/ep06-o-edital-dos-buques.mp4
 
 ## TikTok
-Ep. 6 · Todo mundo conhece alguém que larga o negócio certo pela ideia nova 😅 Marca o Zé da sua vida.
+Ep. 6 · A prefeitura queria comprar dele: edital lido, documento em dia, prazo hoje. Ele largou tudo pela ideia nova 😅
 
-#humor #lojista #pequenosnegocios #empreendedor #burocracia #vidadelojista
+#humor #edital #empreendedor #pequenosnegocios
 
 ## Instagram Reels
-Ep. 6 · A prefeitura queria comprar dele. Era só assinar 😅 Quem aí já largou tudo por uma ideia nova?
+Ep. 6 · Era só assinar o edital da prefeitura 😅 Quem aí já largou o negócio certo por uma ideia nova?
 
-#humor #lojista #pequenosnegocios #empreendedor #burocracia #vidadelojista
+#humor #edital #empreendedor #pequenosnegocios
 
 ## YouTube Shorts
-Título: O edital dos buquês 😅 | Ep. 6
+Título: Edital da prefeitura: era só assinar, e ele largou tudo 😅 | Ep. 6
 
 Duzentos buquês, um edital de duzentas e catorze páginas e um prazo que vence hoje.
 
-#humor #lojista #pequenosnegocios #empreendedor #burocracia #vidadelojista #shorts
+#humor #edital #empreendedor #pequenosnegocios #shorts

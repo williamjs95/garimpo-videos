@@ -18,6 +18,8 @@ import {
   type Word,
 } from "../src/types.ts";
 import { findFeet } from "./lib/feet.ts";
+import { hear, LIMIT, levelVoice, missed } from "./lib/diction.ts";
+import { tmpdir } from "node:os";
 import {
   type Character,
   type EpisodeScript,
@@ -94,6 +96,11 @@ if (!existsSync(join(PUBLIC, DEFAULT_MUSIC))) {
   throw new Error("Falta a música da série. Rode npm run sfx primeiro.");
 }
 
+const names = cast.characters.map((c) => c.name);
+/** Lines a listener may not understand, reported at the end. */
+const unclear: string[] = [];
+let slowed = 0;
+
 const lines: Line[] = [];
 for (const [i, l] of script.lines.entries()) {
   const character = cast.characters.find((c) => c.id === l.character);
@@ -134,6 +141,26 @@ for (const [i, l] of script.lines.entries()) {
     writeFileSync(path, await speak(character, l));
   }
 
+  // Every line plays at the same level, so quiet takes are not lost.
+  const leveled = path.replace(/\.mp3$/, ".nivel.mp3");
+  if (!existsSync(leveled)) levelVoice(path, leveled);
+
+  // Heard as the viewer hears it. A line that is only clear at normal speed
+  // plays at normal speed; one that is unclear either way is reported.
+  let rate: number | undefined;
+  const fast = missed(l.text, await hear(path, SPEECH_RATE, names));
+  if (fast > LIMIT) {
+    const normal = missed(l.text, await hear(path, 1, names));
+    if (normal <= LIMIT) {
+      rate = 1;
+      slowed++;
+    } else {
+      unclear.push(
+        `${character.name}: "${l.text}" (${Math.round(Math.min(fast, normal) * 100)}% das palavras não entendidas)`,
+      );
+    }
+  }
+
   const tr = await openai().audio.transcriptions.create({
     model: MODELS.transcribe,
     file: createReadStream(path),
@@ -171,8 +198,9 @@ for (const [i, l] of script.lines.entries()) {
     placa: l.placa ?? "",
     tela: l.tela ?? "",
     estado: l.estado ?? [],
+    ...(rate ? { rate } : {}),
     offsetMs,
-    audio: `episodes/${slug}/${file}`,
+    audio: `episodes/${slug}/${file.replace(/\.mp3$/, ".nivel.mp3")}`,
     // Cut trailing silence: end shortly after the last spoken word.
     durationMs: Math.min(
       Math.round(tr.duration * 1000) - offsetMs,
@@ -210,6 +238,8 @@ async function speak(character: Character, line: ScriptLine): Promise<Buffer> {
   }
 
   const wanted = plain(line.text).length;
+  // The best take so far, by how much of it a listener would miss.
+  let best: { data: Buffer; miss: number } | undefined;
   for (let attempt = 1; ; attempt++) {
     const res = await openai().chat.completions.create({
       model: MODELS.tts,
@@ -218,7 +248,7 @@ async function speak(character: Character, line: ScriptLine): Promise<Buffer> {
       messages: [
         {
           role: "system",
-          content: `Você é dublador brasileiro de desenho animado de comédia. Interprete o personagem: ${character.voiceStyle} Fale em português do Brasil, com naturalidade e ritmo ágil de esquete, sem pausas longas e sem silêncio no começo. Diga EXATAMENTE a fala que receber, sem acrescentar, cortar nem comentar nada.`,
+          content: `Você é dublador brasileiro de desenho animado de comédia. Interprete o personagem: ${character.voiceStyle} Fale em português do Brasil com dicção clara: articule cada sílaba e termine cada palavra, mesmo com emoção forte. Grite pela intenção, sem estourar nem embolar a voz. Ritmo vivo de esquete, sem atropelar as palavras, sem pausas longas e sem silêncio no começo. Diga EXATAMENTE a fala que receber, sem acrescentar, cortar nem comentar nada.`,
         },
         {
           role: "user",
@@ -229,12 +259,22 @@ async function speak(character: Character, line: ScriptLine): Promise<Buffer> {
     const audio = res.choices[0]?.message.audio;
     const said = plain(audio?.transcript ?? "").length;
     if (audio && Math.abs(said - wanted) <= 1) {
-      return Buffer.from(audio.data, "base64");
+      const data = Buffer.from(audio.data, "base64");
+      const take = join(tmpdir(), `take-${process.pid}-${attempt}.mp3`);
+      writeFileSync(take, data);
+      const miss = missed(line.text, await hear(take, SPEECH_RATE, names));
+      if (!best || miss < best.miss) best = { data, miss };
+      if (miss <= LIMIT) return data;
+      log(
+        `Fala pouco clara (${Math.round(miss * 100)}% perdido), gravando de novo…`,
+      );
+    } else {
+      log("A voz fugiu do roteiro, gravando de novo…");
     }
-    if (attempt >= 3) {
+    if (attempt >= 4) {
+      if (best) return best.data;
       throw new Error(`A voz não seguiu o roteiro na fala: "${line.text}"`);
     }
-    log("A voz fugiu do roteiro, gravando de novo…");
   }
 }
 
@@ -299,4 +339,13 @@ const props: EpisodeProps = {
 writeJson(join(episodeDir(slug), "props.json"), props);
 const total = lines.reduce((s, l) => s + l.durationMs, 0) / 1000;
 log(`Vozes e legendas prontas (${total.toFixed(1)}s de fala).`);
+log(
+  `Dicção: ${lines.filter((l) => l.text).length} falas conferidas, ${slowed} tocadas em velocidade normal para ficarem claras.`,
+);
+if (unclear.length > 0) {
+  log(
+    `Atenção, ${unclear.length} fala(s) ainda pouco clara(s). Reescreva ou mude a atuação e rode de novo:`,
+  );
+  for (const u of unclear) console.log(`  - ${u}`);
+}
 console.log(`Próximo passo: npm run render -- ${slug}`);

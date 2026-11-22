@@ -3,18 +3,18 @@
 Vídeo: out/ep02-monopolio-do-cafe.mp4
 
 ## TikTok
-Ep. 2 · Toda galeria tem uma Kátia que prefere falir a perder 😅 Marca a pessoa mais competitiva que você conhece.
+Ep. 2 · Toda galeria tem uma lojista que prefere falir a perder. A Kátia comprou todo o café do bairro 😅
 
-#humor #condominio #lojista #pequenosnegocios #concorrencia #vidadelojista
+#humor #lojista #concorrencia #pequenosnegocios
 
 ## Instagram Reels
-Ep. 2 · Ela comprou todo o café do bairro só pra ninguém mais vender 😅 Quem é a Kátia da sua rua?
+Ep. 2 · Ela comprou todo o café do bairro só pra ninguém mais vender 😅 Concorrência entre lojistas chega a esse ponto?
 
-#humor #condominio #lojista #pequenosnegocios #concorrencia #vidadelojista
+#humor #lojista #concorrencia #pequenosnegocios
 
 ## YouTube Shorts
-Título: O monopólio do café 😅 | Ep. 2
+Título: Lojista compra todo o café do bairro pra ninguém vender 😅 | Ep. 2
 
 Quatrocentos quilos de café, uma reunião de condomínio e uma cláusula na página catorze.
 
-#humor #condominio #lojista #pequenosnegocios #concorrencia #vidadelojista #shorts
+#humor #lojista #concorrencia #pequenosnegocios #shorts

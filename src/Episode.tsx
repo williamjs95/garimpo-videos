@@ -51,7 +51,7 @@ export const Episode: React.FC<EpisodeProps> = ({
       />
 
       <Captions
-        speechRate={speechRate}
+        speechRate={line.rate ?? speechRate}
         line={line}
         lineFrom={current.from}
         speaker={cast.find((c) => c.id === line.character)}
@@ -74,7 +74,7 @@ export const Episode: React.FC<EpisodeProps> = ({
           >
             <Audio
               src={staticFile(l.audio)}
-              playbackRate={speechRate}
+              playbackRate={l.rate ?? speechRate}
               trimBefore={Math.round((l.offsetMs / 1000) * fps)}
             />
           </Sequence>

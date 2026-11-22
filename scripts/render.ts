@@ -4,7 +4,7 @@
  * Usage: npm run render -- <slug>
  */
 import { execFileSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { totalFrames } from "../src/timing.ts";
 import type { EpisodeProps } from "../src/types.ts";
@@ -17,6 +17,7 @@ import {
   requireSlug,
   ROOT,
 } from "./lib/shared.ts";
+import { masterVideo } from "./lib/diction.ts";
 
 const slug = requireSlug();
 const dir = episodeDir(slug);
@@ -50,13 +51,15 @@ for (const [still, frame] of [
 }
 
 log("Renderizando vídeo 1080x1920…");
-remotion([
-  "render",
-  "Episode",
-  join("out", `${name}.mp4`),
-  "--codec=h264",
-  "--crf=20",
-]);
+const raw = join("out", `${name}.bruto.mp4`);
+remotion(["render", "Episode", raw, "--codec=h264", "--crf=20"]);
+
+// Same loudness as the rest of the feed (about -14 LUFS), so nobody has to
+// turn the phone up to understand the lines.
+log("Ajustando o volume final…");
+const master = masterVideo(join(ROOT, raw), join(ROOT, "out", `${name}.mp4`));
+rmSync(join(ROOT, raw));
+log(`Volume final: ${master.lufs} LUFS, pico ${master.peak} dBTP`);
 
 const tags = script.post.hashtags
   .map((h) => (h.startsWith("#") ? h : `#${h}`))

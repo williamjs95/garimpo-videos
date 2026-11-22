@@ -1,0 +1,919 @@
+{
+  "slug": "a-festa-da-lici",
+  "number": 7,
+  "order": [
+    "ze",
+    "lici",
+    "norberto",
+    "katia"
+  ],
+  "hook": "Todo mundo sabia. Menos ela.",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta que lá vem novidade!",
+      "emotion": "animada, abrindo os braços para a plateia",
+      "location": "salao",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 860,
+      "audio": "episodes/a-festa-da-lici/lici-1ed55ec118.nivel.mp3",
+      "durationMs": 2330,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 60,
+          "endMs": 572
+        },
+        {
+          "text": "senta",
+          "startMs": 572,
+          "endMs": 937
+        },
+        {
+          "text": "que",
+          "startMs": 937,
+          "endMs": 1157
+        },
+        {
+          "text": "lá",
+          "startMs": 1157,
+          "endMs": 1303
+        },
+        {
+          "text": "vem",
+          "startMs": 1303,
+          "endMs": 1522
+        },
+        {
+          "text": "novidade!",
+          "startMs": 1522,
+          "endMs": 2180
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Psiu! A Lici não pode saber.",
+      "emotion": "cochichando alto, sem perceber que ela ouve",
+      "location": "salao",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 1220,
+      "audio": "episodes/a-festa-da-lici/ze-0f911aa482.nivel.mp3",
+      "durationMs": 2110,
+      "words": [
+        {
+          "text": "Psiu!",
+          "startMs": 60,
+          "endMs": 473
+        },
+        {
+          "text": "A",
+          "startMs": 473,
+          "endMs": 556
+        },
+        {
+          "text": "Lici",
+          "startMs": 556,
+          "endMs": 886
+        },
+        {
+          "text": "não",
+          "startMs": 886,
+          "endMs": 1134
+        },
+        {
+          "text": "pode",
+          "startMs": 1134,
+          "endMs": 1464
+        },
+        {
+          "text": "saber.",
+          "startMs": 1464,
+          "endMs": 1960
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Saber o quê?",
+      "emotion": "desconfiada, devagar, articulando bem",
+      "location": "salao",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/lici-386f5f0150.nivel.mp3",
+      "durationMs": 1650,
+      "words": [
+        {
+          "text": "Saber",
+          "startMs": 0,
+          "endMs": 800
+        },
+        {
+          "text": "o",
+          "startMs": 800,
+          "endMs": 1260
+        },
+        {
+          "text": "quê?",
+          "startMs": 1260,
+          "endMs": 1500
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "É segredo de condomínio.",
+      "emotion": "solene, misterioso",
+      "location": "salao",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/norberto-441be2b237.nivel.mp3",
+      "durationMs": 1910,
+      "words": [
+        {
+          "text": "É",
+          "startMs": 0,
+          "endMs": 340
+        },
+        {
+          "text": "segredo",
+          "startMs": 340,
+          "endMs": 1060
+        },
+        {
+          "text": "de",
+          "startMs": 1060,
+          "endMs": 1200
+        },
+        {
+          "text": "condomínio.",
+          "startMs": 1200,
+          "endMs": 1760
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Alguém vai fechar a loja!",
+      "emotion": "dramática, como em capítulo de novela",
+      "location": "salao",
+      "pose": "pensando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "pensando",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/lici-3cc446f290.nivel.mp3",
+      "durationMs": 3290,
+      "words": [
+        {
+          "text": "Alguém",
+          "startMs": 0,
+          "endMs": 900
+        },
+        {
+          "text": "vai",
+          "startMs": 900,
+          "endMs": 1900
+        },
+        {
+          "text": "fechar",
+          "startMs": 1900,
+          "endMs": 2520
+        },
+        {
+          "text": "a",
+          "startMs": 2520,
+          "endMs": 3060
+        },
+        {
+          "text": "loja!",
+          "startMs": 3060,
+          "endMs": 3140
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Muito pior que isso.",
+      "emotion": "fria, saboreando o suspense",
+      "location": "salao",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/katia-c06d38699d.nivel.mp3",
+      "durationMs": 1630,
+      "words": [
+        {
+          "text": "Muito",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "pior",
+          "startMs": 540,
+          "endMs": 920
+        },
+        {
+          "text": "que",
+          "startMs": 920,
+          "endMs": 1160
+        },
+        {
+          "text": "isso.",
+          "startMs": 1160,
+          "endMs": 1480
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Alguém tá namorando, e eu não sei?",
+      "emotion": "horrorizada, ofendida de verdade",
+      "location": "salao",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/lici-0717276397.nivel.mp3",
+      "durationMs": 3770,
+      "words": [
+        {
+          "text": "Alguém",
+          "startMs": 0,
+          "endMs": 900
+        },
+        {
+          "text": "tá",
+          "startMs": 900,
+          "endMs": 1240
+        },
+        {
+          "text": "namorando,",
+          "startMs": 1240,
+          "endMs": 2060
+        },
+        {
+          "text": "e",
+          "startMs": 2620,
+          "endMs": 2780
+        },
+        {
+          "text": "eu",
+          "startMs": 2780,
+          "endMs": 3060
+        },
+        {
+          "text": "não",
+          "startMs": 3060,
+          "endMs": 3340
+        },
+        {
+          "text": "sei?",
+          "startMs": 3340,
+          "endMs": 3620
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vou vender balão!",
+      "emotion": "empolgado, mostrando o celular sem querer",
+      "location": "salao",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "Grupo da galeria|Festa da Lici",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/ze-07f5a5b7b0.nivel.mp3",
+      "durationMs": 3350,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 560
+        },
+        {
+          "text": "semana",
+          "startMs": 560,
+          "endMs": 1260
+        },
+        {
+          "text": "eu",
+          "startMs": 1260,
+          "endMs": 1880
+        },
+        {
+          "text": "vou",
+          "startMs": 1880,
+          "endMs": 2140
+        },
+        {
+          "text": "vender",
+          "startMs": 2140,
+          "endMs": 2520
+        },
+        {
+          "text": "balão!",
+          "startMs": 2520,
+          "endMs": 3200
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Amadores.",
+      "emotion": "seca, bem articulada, olhando para o Zé",
+      "location": "salao",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/katia-521d5769a0.nivel.mp3",
+      "durationMs": 750,
+      "words": [
+        {
+          "text": "Amadores.",
+          "startMs": 0,
+          "endMs": 600
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Uma festa… pra mim?",
+      "emotion": "emocionada, com a voz embargando, devagar",
+      "location": "salao",
+      "pose": "pensando",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "animado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/lici-4c2b832496.nivel.mp3",
+      "durationMs": 2650,
+      "words": [
+        {
+          "text": "Uma",
+          "startMs": 0,
+          "endMs": 560
+        },
+        {
+          "text": "festa…",
+          "startMs": 560,
+          "endMs": 1980
+        },
+        {
+          "text": "pra",
+          "startMs": 1980,
+          "endMs": 2220
+        },
+        {
+          "text": "mim?",
+          "startMs": 2220,
+          "endMs": 2500
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Consta aqui: a senhora faz aniversário em março.",
+      "emotion": "lendo a prancheta, burocrático, sem maldade",
+      "location": "salao",
+      "pose": "pensando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "scratch",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/norberto-c5e7405d16.nivel.mp3",
+      "durationMs": 4130,
+      "words": [
+        {
+          "text": "Consta",
+          "startMs": 0,
+          "endMs": 740
+        },
+        {
+          "text": "aqui:",
+          "startMs": 740,
+          "endMs": 1260
+        },
+        {
+          "text": "a",
+          "startMs": 1260,
+          "endMs": 1680
+        },
+        {
+          "text": "senhora",
+          "startMs": 1680,
+          "endMs": 2060
+        },
+        {
+          "text": "faz",
+          "startMs": 2060,
+          "endMs": 2500
+        },
+        {
+          "text": "aniversário",
+          "startMs": 2500,
+          "endMs": 3260
+        },
+        {
+          "text": "em",
+          "startMs": 3260,
+          "endMs": 3740
+        },
+        {
+          "text": "março.",
+          "startMs": 3740,
+          "endMs": 3980
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina, senta… que eu já sabia.",
+      "emotion": "recompondo-se, superior, salvando a pose",
+      "location": "salao",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/lici-9386943414.nivel.mp3",
+      "durationMs": 3810,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 1180
+        },
+        {
+          "text": "senta…",
+          "startMs": 1740,
+          "endMs": 2560
+        },
+        {
+          "text": "que",
+          "startMs": 2560,
+          "endMs": 2660
+        },
+        {
+          "text": "eu",
+          "startMs": 2660,
+          "endMs": 2940
+        },
+        {
+          "text": "já",
+          "startMs": 2940,
+          "endMs": 3180
+        },
+        {
+          "text": "sabia.",
+          "startMs": 3180,
+          "endMs": 3660
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Festa no salão exige alvará.",
+      "emotion": "solene, ditando regra",
+      "location": "salao",
+      "pose": "bravo",
+      "camera": "dupla",
+      "com": "katia",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/norberto-065c94649f.nivel.mp3",
+      "durationMs": 3290,
+      "words": [
+        {
+          "text": "Festa",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "no",
+          "startMs": 540,
+          "endMs": 840
+        },
+        {
+          "text": "salão",
+          "startMs": 840,
+          "endMs": 1440
+        },
+        {
+          "text": "exige",
+          "startMs": 1440,
+          "endMs": 2340
+        },
+        {
+          "text": "alvará.",
+          "startMs": 2340,
+          "endMs": 3140
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Já tirei. No nome do senhor.",
+      "emotion": "fria, vitoriosa, sem piscar",
+      "location": "salao",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/a-festa-da-lici/katia-4c4b79fec7.nivel.mp3",
+      "durationMs": 2430,
+      "words": [
+        {
+          "text": "Já",
+          "startMs": 0,
+          "endMs": 240
+        },
+        {
+          "text": "tirei.",
+          "startMs": 240,
+          "endMs": 840
+        },
+        {
+          "text": "No",
+          "startMs": 1280,
+          "endMs": 1480
+        },
+        {
+          "text": "nome",
+          "startMs": 1480,
+          "endMs": 1680
+        },
+        {
+          "text": "do",
+          "startMs": 1680,
+          "endMs": 1920
+        },
+        {
+          "text": "senhor.",
+          "startMs": 1920,
+          "endMs": 2280
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "caixa-de-bolo": "props/caixa-de-bolo.png"
+  },
+  "scenery": [
+    {
+      "prop": "caixa-de-bolo",
+      "beside": "katia",
+      "side": 1,
+      "height": 360
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

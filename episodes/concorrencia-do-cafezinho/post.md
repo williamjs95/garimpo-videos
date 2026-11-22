@@ -3,18 +3,18 @@
 Vídeo: out/ep01-concorrencia-do-cafezinho.mp4
 
 ## TikTok
-Ep. 1 · Reunião de condomínio: toda galeria tem um Seu Norberto 😅 Marca quem nunca lê o papel até o fim.
+Ep. 1 · Reunião de condomínio: o síndico pediu três orçamentos pro cafezinho, e o Zé ganhou sem ler a página catorze 😅
 
-#humor #condominio #lojista #pequenosnegocios #burocracia #vidadelojista
+#humor #condominio #lojista #pequenosnegocios
 
 ## Instagram Reels
-Ep. 1 · O síndico abriu concorrência pro cafezinho da reunião 😅 Quem é o Seu Norberto do seu trabalho?
+Ep. 1 · O síndico abriu concorrência pro cafezinho da reunião 😅 Toda galeria tem um Seu Norberto. Qual é o do seu condomínio?
 
-#humor #condominio #lojista #pequenosnegocios #burocracia #vidadelojista
+#humor #condominio #lojista #pequenosnegocios
 
 ## YouTube Shorts
-Título: A concorrência do cafezinho 😅 | Ep. 1
+Título: Condomínio abre concorrência pro cafezinho 😅 | Ep. 1
 
 Três orçamentos, duas vias e um biscoito em anexo. O Zé jura que leu o papel inteiro.
 
-#humor #condominio #lojista #pequenosnegocios #burocracia #vidadelojista #shorts
+#humor #condominio #lojista #pequenosnegocios #shorts

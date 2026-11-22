@@ -43,7 +43,7 @@ mostra uma faceta, um par ou um gesto que ainda não tinha aparecido, sem contra
 | **Status que prefere** | Alto pela informação; comenta de fora | Baixo e contente: perde e segue feliz | Alto pela autoridade do cargo | Alto pelo desprezo; não suporta ficar por baixo |
 | **Facetas já vistas** | Torce pelo romance dos outros; empresta dinheiro que nem é dela | Pobre de verdade ("dois reais é o lucro da semana"); romântico que não deixa de vender | Emociona-se quando leem o formulário; usa a regra em proveito próprio | Sonha com o Zé, ainda que seja para esmagá-lo |
 | **Derrota fixa** | Nunca é ela o assunto, e nunca entende direito o que soube primeiro | Nunca fecha o grande negócio | Nunca recebe o formulário certo | Nunca vence de vez |
-| **Marca de fala e de cena** | "Menina…"; a escova como microfone | "Uai", "sô"; a bateia | Vereditos de carimbo ("Deferido!", "Quitado!"); a "página catorze" | Frases de duas palavras; o olhar parado antes de responder; uma pilha de mercadoria ao lado |
+| **Marca de fala e de cena** | "Menina…"; a escova como microfone | "Uai", "sô"; a bateia; "Essa semana eu vou vender…" | Vereditos de carimbo ("Deferido!", "Quitado!"); a "página catorze" | Frases de duas palavras; o olhar parado antes de responder; uma pilha de mercadoria ao lado |
 
 **A loja da Kátia** vende o que o vizinho estiver vendendo, só que mais caro. Por isso ela já teve café
 gourmet, todo o café do bairro e uma floricultura: ela entra no ramo de quem quer derrotar.
@@ -127,6 +127,31 @@ a série e para quem não voltar: o gancho final é um bônus, não uma "Parte 2
 - Seu Norberto nunca abre mão de uma regra. Kátia nunca admite que perdeu. Dona Lici sempre já sabia.
 - Nos 5% de menção direta, o Garimpo só faz três coisas: nota de 0 a 100 (vale participar?), documentos que faltam, prazo. Nunca invente outro recurso.
 
+## Dicção: escrever para ser entendido
+
+As vozes são geradas e tocadas a 1,1x. Uma checagem de seis episódios, transcrevendo cada fala como o
+público ouve e sem ver o roteiro, achou falas emboladas. Os padrões e as regras que saíram dela:
+
+- **A atuação nunca pede pressa.** Não escreva "falando rápido", "sem pausas" nem "gritando" em
+  `emotion`. Use a emoção ("empolgada", "escandalizada", "eufórico"), e a voz encontra o ritmo. As
+  aberturas da Lici com "falando rápido, sem pausas" estavam entre as falas mais emboladas, e são o
+  gancho do episódio.
+- **O bordão é dito com clareza, não gritado.** "Isso aí tem ouro, sô!" gritado foi ouvido como "E a
+  saída é a hora só" e "tem urso". Escreva com uma pausa antes do "sô": "Isso aí tem ouro… sô!".
+- **Fuja de palavras que se fundem.** "Eu vendo empréstimo" foi ouvido como "é o Venmo empréstimo";
+  "assinar a ata", como "assinata"; "Consta em ata", como "Constanhata". Se o fim de uma palavra e o
+  começo da outra viram uma palavra só, reescreva ("Essa semana eu vou vender empréstimo!", "Só falta
+  a assinatura na ata", "Fica registrado:").
+- **Nome no começo da fala some.** "Kátia, aceita uma flor?" virou "Caixa, acima flor"; "Lici, me
+  empresta" virou "Liz". Ponha o nome depois do verbo ou com um apoio antes ("Ô Kátia…", "Aceita uma
+  flor, Kátia?").
+- **Fala de uma a três palavras precisa de consoantes fortes.** "Chá é quente" virou "Chai quente";
+  "Cento e vinte", "Sábado, dia 20". Prefira palavras que não se confundem ("Chá também é quente.",
+  "Cento e vinte reais.").
+- A checagem automática roda em todo `npm run voice`: regrava a fala pouco clara até quatro vezes, toca
+  em velocidade normal a fala que só fica clara assim, e lista no fim as que continuam emboladas.
+  Reescreva essas antes de renderizar. `npm run diccao -- <slug>` mostra o relatório de um episódio.
+
 ## Direção de cena
 
 Cada fala do roteiro traz a direção de quem fala e de quem escuta. Personagem parado é personagem morto:
@@ -167,6 +192,8 @@ Use no máximo uma queda por episódio, guardada para o fim.
 - [ ] O gancho final é uma fala só e não segura a resolução.
 - [ ] Nenhuma fala cita o site: o endereço aparece só no fecho fixo.
 - [ ] Há pelo menos uma melhoria de roteiro e uma gráfica em relação ao episódio anterior.
+- [ ] Nenhuma `emotion` pede pressa ou grito; nenhuma fala começa com nome seguido de vírgula; nenhuma junção de palavras vira outra palavra.
+- [ ] O `npm run voice` terminou sem falas pouco claras (ou elas foram reescritas).
 - [ ] 12 a 15 falas, 75 a 100 palavras, lido em voz alta com cronômetro.
 - [ ] Faz sentido sem som e para quem nunca viu a série.
 - [ ] Isso parece anúncio? Então corta.

@@ -26,12 +26,7 @@
       "altura": 640
     }
   ],
-  "posicoes": [
-    "ze",
-    "katia",
-    "lici",
-    "norberto"
-  ],
+  "posicoes": ["ze", "katia", "lici", "norberto"],
   "lines": [
     {
       "character": "lici",
@@ -287,17 +282,10 @@
     }
   ],
   "post": {
-    "tiktok": "Todo comerciante já vendeu fiado e se arrependeu 😅 Marca quem ainda te deve dois reais.",
-    "reels": "Dois reais de fiado viraram quatrocentos com juros 😅 Quem aí tem um caderninho de fiado?",
-    "shortsTitle": "Dois reais de fiado 😅",
+    "tiktok": "Todo comerciante já vendeu fiado e se arrependeu. O Zé devia dois reais e pagou quatrocentos 😅",
+    "reels": "Dois reais de fiado viraram quatrocentos com juros 😅 Quem aí ainda mantém o caderninho de fiado?",
+    "shortsTitle": "Fiado de dois reais vira quatrocentos com juros 😅",
     "shortsDescription": "Uma dívida de dois reais, uma moeda que dá a volta na galeria e quatrocentos de juros.",
-    "hashtags": [
-      "humor",
-      "fiado",
-      "lojista",
-      "pequenosnegocios",
-      "comercio",
-      "vidadelojista"
-    ]
+    "hashtags": ["humor", "fiado", "comercio", "pequenosnegocios"]
   }
 }

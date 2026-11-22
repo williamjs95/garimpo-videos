@@ -41,7 +41,8 @@
     "typecheck": "tsc",
     "lint": "eslint src scripts && tsc",
     "upgrade": "remotion upgrade",
-    "sfx": "node scripts/sfx.ts"
+    "sfx": "node scripts/sfx.ts",
+    "diccao": "node scripts/diccao.ts"
   },
   "allowScripts": {
     "esbuild": false

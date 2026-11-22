@@ -15,22 +15,23 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 | 5 | Dois reais de fiado | Dor de empresário | Zé e Kátia | Zé: quita a dívida e sobram os juros | Zé é pobre de verdade; a moeda passa pelos quatro | Zé negado | Boleto cai no Zé | Lici: a prefeitura quer duzentos buquês e o Zé está de nome sujo |
 | 6 | O edital dos buquês | Menção direta | Zé e Norberto | Zé: tem nota, documento e prazo, e larga tudo porque a semana virou | Norberto tem ciúme de quem lê melhor que ele e sofre quando o formulário perfeito é abandonado; Kátia perdoa a dívida e disfarça ("eu quero concorrência"); Lici é interrompida e fica por último | Kátia direto, vitoriosa | Zé sai de cena; Kátia fica com o edital | Norberto: consta em ata que a Lici foi a última a saber |
 
+| 7 | A festa da Lici | Dia a dia | Lici e o resto da galeria | Lici: a última a saber da própria festa, que ainda era no mês errado | Lici em jogo pela primeira vez (quer saber, se dá mal, é amada); Zé e Kátia como aliados que se atrapalham; Kátia competente (tirou o alvará no nome do Norberto) | Lici: aberta e ninguém senta, fechada invertida ("senta… que eu já sabia"); Kátia contra o próprio aliado | Sem queda: virada pela prancheta e gancho em plano de dois | Kátia: já tirou o alvará, no nome do Norberto |
 ## Pares
 
 | Par | Episódios em que contracenaram de verdade | O que ainda não foi usado |
 |---|---|---|
-| Zé e Kátia | 2, 4, 5 | Kátia precisando do Zé; Zé ganhando sem perceber |
+| Zé e Kátia | 2, 4, 5, 7 (como aliados) | Kátia precisando do Zé; Zé ganhando sem perceber |
 | Zé e Norberto | 1, 3, 6 | O Zé como único aliado das regras do Norberto |
 | Lici e Kátia | 2, 4 | A fofoca como arma que a Kátia tenta comprar |
 | Lici e Zé | 5 | Lici como conselheira sentimental que piora tudo |
-| Lici e Norberto | nenhum | A fofoca contra a ata: quem é o registro oficial da galeria? |
+| Lici e Norberto | 7 (ele corrige a data dela) | A fofoca contra a ata: quem é o registro oficial da galeria? |
 | Norberto e Kátia | nenhum | Dois que só jogam por cima: a regra contra o ganhar a qualquer custo |
 
 ## Situação de cada personagem
 
-- **Dona Lici:** abriu os seis episódios e fechou os cinco primeiros. No 6 foi interrompida na abertura e
-  o Norberto registrou em ata que ela foi a última a saber: é a porta para o episódio dela. Ainda deve
-  um episódio em que ela quer algo e se dá mal. O salão dela nunca foi cenário.
+- **Dona Lici:** teve o episódio dela no 7, no salão (primeira vez como cenário): quis saber, foi a última,
+  se emocionou e salvou a pose com "eu já sabia". O bordão foi aberto sem ninguém sentar e fechado
+  invertido. Não fechou o 6 nem o 7: o gancho final voltou a variar.
 - **Zé Garimpo:** o mais completo. Bordão usado direto (1), estendido (3) e negado (5), ausente no 6; a
   negação deve continuar rara. Já vendeu café, flores e empréstimo, e saiu do 6 para vender guarda-chuva.
   Chegou perto do grande negócio uma vez (6) e largou por conta própria.
@@ -42,7 +43,8 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 ## Fios abertos
 
 - A Kátia ficou com o edital dos duzentos buquês (do episódio 6). O Zé agora vende guarda-chuva.
-- Consta em ata que a Lici foi a última a saber (do episódio 6).
+- A Kátia tirou o alvará da festa no nome do Norberto (do episódio 7): abre o Norberto contra a Kátia.
+- A festa da Lici é em março; a galeria fez em novembro (do episódio 7).
 - A Kátia sonhou com o Zé; ele ficou feliz mesmo sabendo que era para ser esmagado (do episódio 4).
 - O Norberto se elegeu síndico vitalício numa ata que ninguém assinou (do episódio 3).
 
@@ -50,7 +52,6 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 | Ep. | Ideia | O que desenvolve |
 |---|---|---|
-| 7 | No salão: a fofoca do dia é sobre a própria Lici, e ela é a última a perceber. Não nasce do gancho do 6 | Lici em jogo pela primeira vez; cenário novo |
 | 8 | Norberto contra Kátia: ela descobre uma brecha no regimento | Par inédito; Norberto rebaixado; Kátia competente |
 | 9 | Um cliente de fora ("só vou dar uma olhadinha") atravessa a galeria inteira | Tema dos 80%; alguém de fora; gancho final de outro personagem |
 | 10 | Lici contra Norberto: a fofoca contra a ata | Par inédito; gesto de afeto da Kátia |

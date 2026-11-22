@@ -38,6 +38,8 @@ export type Line = {
   tela?: string;
   /** Poses that stick from this line on (someone falls asleep), until changed. */
   estado?: { quem: string; pose: string }[];
+  /** Playback speed of this line when it differs from the episode's (a line that is unclear sped up). */
+  rate?: number;
   /** Silence trimmed from the start of the audio file. */
   offsetMs: number;
   /** Path relative to public/, used with staticFile(). */

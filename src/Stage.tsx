@@ -109,7 +109,7 @@ export const Stage: React.FC<{
   if (!line || !time) return null;
 
   const local = frame - time.from;
-  const ms = (local / fps) * 1000 * speechRate;
+  const ms = (local / fps) * 1000 * (line.rate ?? speechRate);
   const present = presentIn(lines, line.location, placed);
   const xOf = (id: string): number =>
     slotX(present.length, Math.max(0, present.indexOf(id)));
@@ -209,6 +209,37 @@ export const Stage: React.FC<{
     if (struck || stillShocked(id) || hanging) return "chocado";
     return line.plateia || "neutro";
   };
+  // The pose each character held when line i ended: where a take starts from.
+  const settledPose = (i: number, id: string): string => {
+    const l = lines[i];
+    if (!l) return "neutro";
+    const held: Record<string, string> = {};
+    lines.forEach((x, j) => {
+      if (j > i || x.location !== l.location) return;
+      for (const s of x.estado ?? []) {
+        if (s.pose) held[s.quem] = s.pose;
+        else delete held[s.quem];
+      }
+    });
+    if (held[id]) return held[id];
+    if (l.character === id) return l.pose;
+    for (let j = i; j >= 0; j--) {
+      const x = lines[j];
+      if (!x || x.location !== l.location) break;
+      if ((x.fx.includes("queda") || x.fx === "briga") && x.fxTarget === id)
+        return "chocado";
+    }
+    return l.plateia || "neutro";
+  };
+  const fromPose = (id: string): string =>
+    prev && prev.location === line.location
+      ? settledPose(index - 1, id)
+      : poseOf(id);
+  // Listeners react one after another, a few frames apart, never in unison.
+  const listeners = present.filter((id) => id !== line.character);
+  const changeAt = (id: string): number =>
+    id === line.character ? 0 : 2 + listeners.indexOf(id) * 3;
+
   const shake = hit
     ? 24 * Math.exp(-sinceImpact / 5)
     : line.fx === "briga"
@@ -350,6 +381,8 @@ export const Stage: React.FC<{
               member={member}
               poses={posesOf(lines, id)}
               pose={poseOf(id)}
+              from={struck || hanging ? poseOf(id) : fromPose(id)}
+              changeAt={changeAt(id)}
               x={xOf(id) + walk.dx}
               stride={walk.stride}
               toward={Math.sign(speakerX - xOf(id))}
@@ -508,6 +541,10 @@ const Character: React.FC<{
   reacting: boolean;
   /** Frames since this character caught a thrown prop; negative before. */
   catching: number;
+  /** Pose held before this line; a change from it plays as a take. */
+  from: string;
+  /** Frame of the line the change happens on (listeners are staggered). */
+  changeAt: number;
   /** 0 to 1 pulse on each spoken word. */
   emphasis: number;
 }> = ({
@@ -524,6 +561,8 @@ const Character: React.FC<{
   toward,
   reacting,
   catching,
+  from,
+  changeAt,
   emphasis,
 }) => {
   const frame = useCurrentFrame();
@@ -542,12 +581,33 @@ const Character: React.FC<{
     config: { damping: 14, stiffness: 120 },
   });
   const hop = reacting
-    ? Math.sin(Math.min(1, Math.max(0, (local - 2) / 9)) * Math.PI) * 34
+    ? Math.sin(Math.min(1, Math.max(0, (local - changeAt) / 9)) * Math.PI) * 24
     : 0;
   // A little jump on the catch.
   const grab =
     catching >= 0 ? Math.sin(Math.min(1, catching / 8) * Math.PI) * 40 : 0;
   const walking = stride > 0;
+
+  // A take: the body sinks a little in the old pose (anticipation), the new
+  // drawing appears already stretched, then settles with a small wobble.
+  // Timings follow the classic take (School of Motion), converted to 30 fps.
+  const strong = ["chocado", "animado", "bravo"].includes(pose);
+  const antic = strong ? 6 : 4;
+  const amount = strong ? 1 : 0.5;
+  const sinceChange = local - changeAt;
+  const changing = from !== pose && !walking;
+  let drawn = pose;
+  let take = 1;
+  if (changing && sinceChange < antic) {
+    drawn = from;
+    if (sinceChange >= 0) {
+      take = 1 - 0.08 * amount * (1 - (1 - sinceChange / antic) ** 2);
+    }
+  } else if (changing && sinceChange < antic + 20) {
+    const u = sinceChange - antic;
+    take = 1 + 0.1 * amount * Math.exp(-u / 4) * Math.cos(u * 0.6);
+  }
+
   const step = walking ? Math.abs(Math.sin(stride * 0.75)) * 24 : 0;
   const bob =
     (talking ? -Math.abs(Math.sin(local * 0.9)) * 8 : 0) -
@@ -561,12 +621,17 @@ const Character: React.FC<{
     toward * 2.4 * attention;
   // Running stretches the body tall and thin; an impact squashes it flat.
   const stretch = walking ? 0.07 : 0;
+  // Squash and stretch keep the body's area: what it loses in height it
+  // gains in width.
   const scaleY =
     (0.94 + 0.06 * pop + breath + 0.02 * emphasis) *
     (1 - 0.2 * squash) *
-    (1 + stretch);
+    (1 + stretch) *
+    take;
   const scaleX =
-    (1 - breath - 0.01 * emphasis) * (1 + 0.14 * squash) * (1 - stretch);
+    ((1 - breath - 0.01 * emphasis) * (1 - stretch)) /
+    (1 - 0.2 * squash) /
+    take;
 
   // Blink every three seconds or so, each character on their own beat.
   const blinking =
@@ -574,7 +639,7 @@ const Character: React.FC<{
 
   // Lip sync: flap the mouth about six times a second while a word is spoken.
   const mouthOpen = talking && Math.floor(local / 2.5) % 2 === 0;
-  const shown = poses.includes(pose) ? pose : "neutro";
+  const shown = poses.includes(drawn) ? drawn : "neutro";
   // Soles on the floor line, with a shadow that shrinks as the body lifts.
   const sink = (1 - (member.feet ?? 1)) * CHAR_H * member.scale;
   const shadowW = CHAR_W * member.scale * 0.56;
@@ -935,11 +1000,12 @@ const Phone: React.FC<{
         style={{
           fontFamily: displayFont,
           fontWeight: 800,
-          fontSize: 50,
-          lineHeight: 1,
+          // Long labels shrink so they fit on one or two lines.
+          fontSize: label.length > 10 ? 34 : 50,
+          lineHeight: 1.05,
           color: colors.card,
           backgroundColor: colors.terra,
-          padding: "12px 26px",
+          padding: "12px 22px",
           borderRadius: 999,
           textTransform: "uppercase",
         }}

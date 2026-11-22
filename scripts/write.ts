@@ -66,7 +66,7 @@ ${usage || "(nenhum episódio ainda)"}
 
 SAÍDA
 - "hook" é o texto na tela no primeiro frame: 4 a 7 palavras, sem emoji, no tom de fofoca (ex.: "A liquidação da loja da frente").
-- "emotion" de cada fala é a indicação de atuação (ex.: "cochichando, deliciada", "fria, seca").
+- "emotion" de cada fala é a indicação de atuação (ex.: "cochichando, deliciada", "fria, seca"). Nunca peça pressa nem grito ("falando rápido", "sem pausas", "gritando"): siga a seção "Dicção" do guia.
 - "pose", "camera", "move", "plateia", "som", "fx", "fxProp" e "fxTarget" seguem a seção "Direção de cena" do guia. Quando não se aplicam, use "".
 - "props": lista dos objetos usados em "queda" e em "cenario", com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
 - "cenario": objetos que ficam em cena o episódio inteiro ao lado de um personagem (ex.: uma torre de caixas junto da Kátia). Cada item tem "prop" (id declarado em "props"), "junto" (personagem), "lado" ("esquerda" ou "direita") e "altura" em pixels (um personagem tem uns 1000). Lista vazia se não houver.
@@ -78,9 +78,9 @@ SAÍDA
 - "mentionsGarimpo": true só se alguma fala citar o Garimpo ou vender para o governo.
 
 POST
-- tiktok/reels: legenda curta (até 150 caracteres), no tom da série, com uma pergunta que puxe comentário ou marcação ("toda galeria tem uma Kátia"). Sem link e sem citar o Garimpo.
-- shortsTitle: até 70 caracteres. shortsDescription: 1-2 frases.
-- hashtags: 4 a 6, sem #garimpo, nichadas (humor, comércio, lojista, pequenos negócios).
+- tiktok/reels: legenda curta (até 150 caracteres), no tom da série, que descreva a situação de um jeito que o espectador pense numa pessoa real ("toda galeria tem uma Kátia"). Pode terminar numa pergunta aberta e genuína, variando a fórmula de episódio para episódio. Nunca peça para marcar alguém, comentar uma palavra, curtir, salvar ou compartilhar: as plataformas rebaixam esse tipo de isca. Inclua uma palavra que o dono de pequeno negócio digitaria na busca (fiado, condomínio, MEI, edital, lojista, cliente, salão). Sem link e sem citar o Garimpo. As legendas do TikTok e do Reels são diferentes entre si.
+- shortsTitle: até 70 caracteres, começando pela situação com a palavra de busca, não pelo nome do episódio. shortsDescription: 1-2 frases.
+- hashtags: 3 a 5, sem #garimpo, nichadas (humor, comércio, lojista, pequenos negócios).
 - slug: kebab-case curto, sem acentos.`;
 
 const user = idea
