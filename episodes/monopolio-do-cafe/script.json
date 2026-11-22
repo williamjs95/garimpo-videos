@@ -118,7 +118,7 @@
       "fxProp": "",
       "fxTarget": "",
       "emotion": "seca, sem piscar",
-      "text": "Cento e vinte.",
+      "text": "Cento e vinte reais.",
       "som": ""
     },
     {
@@ -160,7 +160,7 @@
       "fxProp": "",
       "fxTarget": "",
       "emotion": "seca, constatando o óbvio",
-      "text": "Chá é quente.",
+      "text": "Chá também é quente.",
       "som": ""
     },
     {
@@ -201,8 +201,8 @@
       "fx": "queda",
       "fxProp": "saca-de-cafe",
       "fxTarget": "katia",
-      "emotion": "debochada, com gosto",
-      "text": "Com que dinheiro, menina? Virou tudo café.",
+      "emotion": "debochada, seca",
+      "text": "Que dinheiro, menina? Gastou tudo em café.",
       "som": "scratch"
     },
     {

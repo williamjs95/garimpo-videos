@@ -6,12 +6,7 @@
   "mentionsGarimpo": false,
   "props": [],
   "cenario": [],
-  "posicoes": [
-    "lici",
-    "ze",
-    "katia",
-    "norberto"
-  ],
+  "posicoes": ["lici", "ze", "katia", "norberto"],
   "lines": [
     {
       "character": "lici",
@@ -266,11 +261,6 @@
     "reels": "O cliente só ia dar uma olhadinha. A galeria inteira entrou em guerra 😅 Você é esse cliente ou o lojista?",
     "shortsTitle": "Cliente que só vai dar uma olhadinha na galeria 😅",
     "shortsDescription": "Um cliente, quatro lojistas, uma olhadinha gourmet e um cadastro de visitante.",
-    "hashtags": [
-      "humor",
-      "lojista",
-      "cliente",
-      "pequenosnegocios"
-    ]
+    "hashtags": ["humor", "lojista", "cliente", "pequenosnegocios"]
   }
 }

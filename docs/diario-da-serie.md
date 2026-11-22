@@ -4,6 +4,18 @@ Este arquivo é carregado por `scripts/write.ts` em todo roteiro, junto com o gu
 cada episódio fez com cada personagem, para que o desenvolvimento seja pensado no longo prazo.
 **Atualize depois de produzir cada episódio.** As regras estão em "Desenvolvimento no longo prazo" do guia.
 
+## Regravação geral (22/11/2026)
+
+A pedido, os 11 episódios foram refeitos com tudo o que existia até o episódio 11: cores novas da Lici, boca
+em português, física nova (antecipação, peso, andar), volume das plataformas e checagem de dicção. Nos
+episódios 1 a 6, as gravações aprovadas foram mantidas e só as falas confusas foram reescritas e regravadas.
+Mudanças de texto: ep. 1 "eu vou vender café", "Isso aí tem ouro… sô!", "E o biscoito vai em anexo?",
+"Isso tava escrito no papel?" e o comentário da Lici no meio cortado; ep. 2 "Chá também é quente",
+"Cento e vinte reais", "Que dinheiro, menina? Gastou tudo em café"; ep. 3 "Só falta a assinatura na ata";
+ep. 4 "Aceita uma flor, Kátia?", "Ela sonhou comigo, é?"; ep. 5 "Me empresta dois reais, Lici?",
+"Com os juros, são quatrocentos", "Empresto. É do Norberto"; ep. 6 "Tá quitado", "Fica registrado";
+ep. 8 "E delega pra quem?". As versões anteriores estão em `out/_anterior/`.
+
 ## O que cada episódio fez
 
 | Ep. | Título | Tema | Par central | Quem age e se dá mal | O que acrescentou | Bordões | Final | Gancho final (de quem) |

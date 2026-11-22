@@ -64,7 +64,7 @@
       "fxProp": "",
       "fxTarget": "",
       "emotion": "empolgado, chegando correndo",
-      "text": "Essa semana eu vendo café!",
+      "text": "Essa semana eu vou vender café!",
       "som": ""
     },
     {
@@ -119,8 +119,8 @@
       "fx": "",
       "fxProp": "",
       "fxTarget": "",
-      "emotion": "matutando, devagar, tendo a ideia",
-      "text": "E se eu anexar o biscoito?",
+      "emotion": "curioso, tendo a ideia",
+      "text": "E o biscoito vai em anexo?",
       "som": ""
     },
     {
@@ -138,20 +138,6 @@
       "som": ""
     },
     {
-      "character": "lici",
-      "location": "galeria",
-      "pose": "explicando",
-      "camera": "normal",
-      "move": "",
-      "plateia": "",
-      "fx": "",
-      "fxProp": "",
-      "fxTarget": "",
-      "emotion": "debochada, com gosto",
-      "text": "Ele foi o único que leu o papel.",
-      "som": ""
-    },
-    {
       "character": "ze",
       "location": "galeria",
       "pose": "animado",
@@ -161,8 +147,8 @@
       "fx": "brilho",
       "fxProp": "",
       "fxTarget": "",
-      "emotion": "eufórico, gritando o bordão",
-      "text": "Isso aí tem ouro, sô!",
+      "emotion": "eufórico, feliz da vida",
+      "text": "Isso aí tem ouro… sô!",
       "som": ""
     },
     {
@@ -190,7 +176,7 @@
       "fxProp": "",
       "fxTarget": "",
       "emotion": "baixinho, apavorado",
-      "text": "Tinha isso no papel?",
+      "text": "Isso tava escrito no papel?",
       "som": ""
     },
     {

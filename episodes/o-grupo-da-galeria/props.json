@@ -1541,10 +1541,10 @@
         "meio",
         "meio",
         "meio",
+        "meio",
+        "meio",
         "dentes",
         "dentes",
-        "dentes",
-        "bico",
         "bico",
         "bico",
         "bico",
@@ -1613,11 +1613,11 @@
         {
           "text": "Mandei",
           "startMs": 1000,
-          "endMs": 1160
+          "endMs": 1180
         },
         {
           "text": "um",
-          "startMs": 1160,
+          "startMs": 1180,
           "endMs": 1300
         },
         {
