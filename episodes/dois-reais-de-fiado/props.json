@@ -1,0 +1,941 @@
+{
+  "slug": "dois-reais-de-fiado",
+  "number": 5,
+  "order": [
+    "ze",
+    "katia",
+    "lici",
+    "norberto"
+  ],
+  "hook": "Ele deve dois reais pra ela",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. O Zé tá devendo dois reais pra Kátia.",
+      "emotion": "falando rápido, deliciada com a fofoca, sem pausas",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/lici-477a78666e.mp3",
+      "durationMs": 3570,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 380
+        },
+        {
+          "text": "senta.",
+          "startMs": 900,
+          "endMs": 1040
+        },
+        {
+          "text": "O",
+          "startMs": 1460,
+          "endMs": 1660
+        },
+        {
+          "text": "Zé",
+          "startMs": 1660,
+          "endMs": 1920
+        },
+        {
+          "text": "tá",
+          "startMs": 1920,
+          "endMs": 2020
+        },
+        {
+          "text": "devendo",
+          "startMs": 2020,
+          "endMs": 2260
+        },
+        {
+          "text": "dois",
+          "startMs": 2260,
+          "endMs": 2620
+        },
+        {
+          "text": "reais",
+          "startMs": 2620,
+          "endMs": 2840
+        },
+        {
+          "text": "pra",
+          "startMs": 2840,
+          "endMs": 3100
+        },
+        {
+          "text": "Kátia.",
+          "startMs": 3100,
+          "endMs": 3420
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Com juros, quatrocentos.",
+      "emotion": "fria, superior, saboreando",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/katia-d4a3189369.mp3",
+      "durationMs": 2090,
+      "words": [
+        {
+          "text": "Com",
+          "startMs": 0,
+          "endMs": 280
+        },
+        {
+          "text": "juros,",
+          "startMs": 280,
+          "endMs": 760
+        },
+        {
+          "text": "quatrocentos.",
+          "startMs": 1200,
+          "endMs": 1940
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Devedor precisa de certidão negativa.",
+      "emotion": "solene, ditando regra",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/norberto-93c138cc3a.mp3",
+      "durationMs": 3010,
+      "words": [
+        {
+          "text": "Devedor",
+          "startMs": 0,
+          "endMs": 840
+        },
+        {
+          "text": "precisa",
+          "startMs": 840,
+          "endMs": 1420
+        },
+        {
+          "text": "de",
+          "startMs": 1420,
+          "endMs": 1740
+        },
+        {
+          "text": "certidão",
+          "startMs": 1740,
+          "endMs": 2280
+        },
+        {
+          "text": "negativa.",
+          "startMs": 2280,
+          "endMs": 2860
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vendo empréstimo!",
+      "emotion": "empolgado, chegando correndo",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/ze-b8c39383cd.mp3",
+      "durationMs": 1910,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "semana",
+          "startMs": 320,
+          "endMs": 740
+        },
+        {
+          "text": "eu",
+          "startMs": 740,
+          "endMs": 980
+        },
+        {
+          "text": "vendo",
+          "startMs": 980,
+          "endMs": 1200
+        },
+        {
+          "text": "empréstimo!",
+          "startMs": 1200,
+          "endMs": 1760
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Dois reais é o lucro da semana.",
+      "emotion": "baixinho, sem graça, confessando",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/ze-67e2841695.mp3",
+      "durationMs": 2230,
+      "words": [
+        {
+          "text": "Dois",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "reais",
+          "startMs": 460,
+          "endMs": 900
+        },
+        {
+          "text": "é",
+          "startMs": 900,
+          "endMs": 1180
+        },
+        {
+          "text": "o",
+          "startMs": 1180,
+          "endMs": 1460
+        },
+        {
+          "text": "lucro",
+          "startMs": 1460,
+          "endMs": 1560
+        },
+        {
+          "text": "da",
+          "startMs": 1560,
+          "endMs": 1840
+        },
+        {
+          "text": "semana.",
+          "startMs": 1840,
+          "endMs": 2080
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Lici, me empresta dois reais?",
+      "emotion": "pedindo com jeitinho, esperançoso",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/ze-d7fea6e832.mp3",
+      "durationMs": 2090,
+      "words": [
+        {
+          "text": "Lici,",
+          "startMs": 0,
+          "endMs": 280
+        },
+        {
+          "text": "me",
+          "startMs": 760,
+          "endMs": 1020
+        },
+        {
+          "text": "empresta",
+          "startMs": 1020,
+          "endMs": 1360
+        },
+        {
+          "text": "dois",
+          "startMs": 1360,
+          "endMs": 1640
+        },
+        {
+          "text": "reais?",
+          "startMs": 1640,
+          "endMs": 1940
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Empresto. Peguei do Norberto.",
+      "emotion": "generosa e, no fim, displicente",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "arremesso",
+      "fxProp": "moeda",
+      "fxTarget": "ze",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 1080,
+      "audio": "episodes/dois-reais-de-fiado/lici-78b850d18c.mp3",
+      "durationMs": 1570,
+      "words": [
+        {
+          "text": "Empresto.",
+          "startMs": 60,
+          "endMs": 531
+        },
+        {
+          "text": "Peguei",
+          "startMs": 531,
+          "endMs": 845
+        },
+        {
+          "text": "do",
+          "startMs": 845,
+          "endMs": 949
+        },
+        {
+          "text": "Norberto.",
+          "startMs": 949,
+          "endMs": 1420
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Era da Kátia! Taxa de condomínio.",
+      "emotion": "indignado, se entregando sem querer",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/norberto-a48e96bdbe.mp3",
+      "durationMs": 3600,
+      "words": [
+        {
+          "text": "Era",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "da",
+          "startMs": 480,
+          "endMs": 860
+        },
+        {
+          "text": "Kátia!",
+          "startMs": 860,
+          "endMs": 1440
+        },
+        {
+          "text": "Taxa",
+          "startMs": 2040,
+          "endMs": 2540
+        },
+        {
+          "text": "de",
+          "startMs": 2540,
+          "endMs": 2760
+        },
+        {
+          "text": "condomínio.",
+          "startMs": 2760,
+          "endMs": 3460
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "",
+      "emotion": "",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "tique",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "",
+      "durationMs": 1210,
+      "words": []
+    },
+    {
+      "character": "ze",
+      "text": "A dívida deu a volta!",
+      "emotion": "eufórico, descobrindo",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "arremesso",
+      "fxProp": "moeda",
+      "fxTarget": "katia",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/ze-ad1b143cc1.mp3",
+      "durationMs": 2170,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "dívida",
+          "startMs": 480,
+          "endMs": 1000
+        },
+        {
+          "text": "deu",
+          "startMs": 1000,
+          "endMs": 1380
+        },
+        {
+          "text": "a",
+          "startMs": 1380,
+          "endMs": 1780
+        },
+        {
+          "text": "volta!",
+          "startMs": 1780,
+          "endMs": 2020
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Encontro de contas: quitado!",
+      "emotion": "triunfante, como quem bate um carimbo",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "QUITADO",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/norberto-084c2968d6.mp3",
+      "durationMs": 2230,
+      "words": [
+        {
+          "text": "Encontro",
+          "startMs": 0,
+          "endMs": 440
+        },
+        {
+          "text": "de",
+          "startMs": 440,
+          "endMs": 640
+        },
+        {
+          "text": "contas:",
+          "startMs": 640,
+          "endMs": 1200
+        },
+        {
+          "text": "quitado!",
+          "startMs": 1720,
+          "endMs": 2080
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "E os quatrocentos de juros?",
+      "emotion": "fria, seca, sem piscar",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/katia-07e4f4a568.mp3",
+      "durationMs": 1410,
+      "words": [
+        {
+          "text": "E",
+          "startMs": 0,
+          "endMs": 80
+        },
+        {
+          "text": "os",
+          "startMs": 80,
+          "endMs": 260
+        },
+        {
+          "text": "quatrocentos",
+          "startMs": 260,
+          "endMs": 840
+        },
+        {
+          "text": "de",
+          "startMs": 840,
+          "endMs": 1040
+        },
+        {
+          "text": "juros?",
+          "startMs": 1040,
+          "endMs": 1260
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Isso aí… não tem ouro, sô.",
+      "emotion": "murcho, baixinho, derrotado",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "queda",
+      "fxProp": "boleto",
+      "fxTarget": "ze",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/dois-reais-de-fiado/ze-bbf9900718.mp3",
+      "durationMs": 2190,
+      "words": [
+        {
+          "text": "Isso",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "aí…",
+          "startMs": 300,
+          "endMs": 1240
+        },
+        {
+          "text": "não",
+          "startMs": 1240,
+          "endMs": 1360
+        },
+        {
+          "text": "tem",
+          "startMs": 1360,
+          "endMs": 1620
+        },
+        {
+          "text": "ouro,",
+          "startMs": 1620,
+          "endMs": 1900
+        },
+        {
+          "text": "sô.",
+          "startMs": 2040,
+          "endMs": 2040
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… a prefeitura quer duzentos buquês. E o Zé tá de nome sujo.",
+      "emotion": "falando rápido, escandalizada, sem pausas",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 720,
+      "audio": "episodes/dois-reais-de-fiado/lici-4f2c0432b8.mp3",
+      "durationMs": 3850,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 60,
+          "endMs": 500
+        },
+        {
+          "text": "a",
+          "startMs": 500,
+          "endMs": 520
+        },
+        {
+          "text": "prefeitura",
+          "startMs": 520,
+          "endMs": 880
+        },
+        {
+          "text": "quer",
+          "startMs": 880,
+          "endMs": 1040
+        },
+        {
+          "text": "duzentos",
+          "startMs": 1040,
+          "endMs": 1660
+        },
+        {
+          "text": "buquês.",
+          "startMs": 1660,
+          "endMs": 2020
+        },
+        {
+          "text": "E",
+          "startMs": 2260,
+          "endMs": 2320
+        },
+        {
+          "text": "o",
+          "startMs": 2320,
+          "endMs": 2560
+        },
+        {
+          "text": "Zé",
+          "startMs": 2560,
+          "endMs": 2780
+        },
+        {
+          "text": "tá",
+          "startMs": 2780,
+          "endMs": 2920
+        },
+        {
+          "text": "de",
+          "startMs": 2920,
+          "endMs": 3020
+        },
+        {
+          "text": "nome",
+          "startMs": 3020,
+          "endMs": 3240
+        },
+        {
+          "text": "sujo.",
+          "startMs": 3240,
+          "endMs": 3700
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "moeda": "props/moeda.png",
+    "boleto": "props/boleto.png",
+    "caixa-registradora": "props/caixa-registradora.png"
+  },
+  "scenery": [
+    {
+      "prop": "caixa-registradora",
+      "beside": "katia",
+      "side": 1,
+      "height": 640
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

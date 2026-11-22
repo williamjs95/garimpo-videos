@@ -116,7 +116,13 @@ export const Stage: React.FC<{
 
   const shot = (l: Line): Camera => {
     // Two-shot: both characters in frame, for a line aimed at someone.
-    const partner = l.camera === "dupla" ? l.com || l.fxTarget : "";
+    // A throw is framed the same way, so the object is seen leaving and landing.
+    const partner =
+      l.fx === "arremesso"
+        ? l.fxTarget
+        : l.camera === "dupla"
+          ? l.com || l.fxTarget
+          : "";
     if (partner) {
       return {
         x: (xOf(l.character) + xOf(partner)) / 2,
@@ -348,6 +354,11 @@ export const Stage: React.FC<{
               stride={walk.stride}
               toward={Math.sign(speakerX - xOf(id))}
               reacting={!speaker && !stuck[id] && line.plateia !== ""}
+              catching={
+                line.fx === "arremesso" && id === line.fxTarget
+                  ? local - TOSS_AT - TOSS_FRAMES
+                  : -1
+              }
               emphasis={speaker ? emphasis : 0}
               local={local}
               phase={present.indexOf(id) * 23}
@@ -369,6 +380,16 @@ export const Stage: React.FC<{
             x={speakerX}
             y={levelOf(cast, line.character, 0.9)}
             local={local}
+          />
+        ) : null}
+
+        {line.fx === "arremesso" && props[line.fxProp] ? (
+          <Toss
+            src={props[line.fxProp] as string}
+            from={speakerX}
+            to={xOf(line.fxTarget)}
+            y={levelOf(cast, line.character, 0.5)}
+            since={local - TOSS_AT}
           />
         ) : null}
 
@@ -476,6 +497,8 @@ const Character: React.FC<{
   toward: number;
   /** Listener was given a reaction pose for this line. */
   reacting: boolean;
+  /** Frames since this character caught a thrown prop; negative before. */
+  catching: number;
   /** 0 to 1 pulse on each spoken word. */
   emphasis: number;
 }> = ({
@@ -491,6 +514,7 @@ const Character: React.FC<{
   stride,
   toward,
   reacting,
+  catching,
   emphasis,
 }) => {
   const frame = useCurrentFrame();
@@ -511,12 +535,16 @@ const Character: React.FC<{
   const hop = reacting
     ? Math.sin(Math.min(1, Math.max(0, (local - 2) / 9)) * Math.PI) * 34
     : 0;
+  // A little jump on the catch.
+  const grab =
+    catching >= 0 ? Math.sin(Math.min(1, catching / 8) * Math.PI) * 40 : 0;
   const walking = stride > 0;
   const step = walking ? Math.abs(Math.sin(stride * 0.75)) * 24 : 0;
   const bob =
     (talking ? -Math.abs(Math.sin(local * 0.9)) * 8 : 0) -
     emphasis * 7 -
     hop -
+    grab -
     step;
   const tilt =
     (walking ? Math.sin(stride * 0.75) * 4 + toward * 7 : 0) +
@@ -653,6 +681,39 @@ const Mark: React.FC<{
     >
       {glyph}
     </div>
+  );
+};
+
+/** Frame of the line a thrown prop leaves the hand, and how long it flies. */
+export const TOSS_AT = 10;
+export const TOSS_FRAMES = 16;
+
+/** A prop thrown in a spinning arc from one character to another, who catches it. */
+const Toss: React.FC<{
+  src: string;
+  from: number;
+  to: number;
+  y: number;
+  since: number;
+}> = ({ src, from, to, y, since }) => {
+  if (since < 0 || since > TOSS_FRAMES + 5) return null;
+  const t = Math.min(1, since / TOSS_FRAMES);
+  const size = 190;
+  // After the catch it shrinks into the hand.
+  const caught = Math.max(0, since - TOSS_FRAMES) / 5;
+  return (
+    <Img
+      src={staticFile(src)}
+      style={{
+        position: "absolute",
+        left: lerp(from, to, t) - size / 2,
+        top: y - Math.sin(t * Math.PI) * 520 - size / 2,
+        width: size,
+        height: size,
+        objectFit: "contain",
+        transform: `rotate(${since * 34}deg) scale(${1 - caught})`,
+      }}
+    />
   );
 };
 

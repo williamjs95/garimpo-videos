@@ -1,6 +1,7 @@
 import { Audio } from "@remotion/media";
 import { ding, recordScratch, whip, whoosh } from "@remotion/sfx";
 import { interpolate, Sequence, staticFile } from "remotion";
+import { TOSS_AT, TOSS_FRAMES } from "./Stage";
 import type { TimedLine } from "./timing";
 import { DROP_FALL_FRAMES, DROP_HANG_FRAMES, JINGLE, type Line } from "./types";
 
@@ -50,6 +51,14 @@ const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
       cues.push({ at: start, src: sfx("sobe"), volume: 0.3 });
       cues.push({ at: drop, src: sfx("desce"), volume: 0.35 });
       cues.push({ at: drop + DROP_FALL_FRAMES, src: thud, volume: 0.9 });
+    }
+    if (l.fx === "arremesso") {
+      cues.push({ at: t.from + TOSS_AT, src: whoosh, volume: 0.3 });
+      cues.push({
+        at: t.from + TOSS_AT + TOSS_FRAMES,
+        src: ding,
+        volume: 0.4,
+      });
     }
     if (l.fx === "coracoes")
       cues.push({ at: t.from, src: sfx("harpa"), volume: 0.35 });

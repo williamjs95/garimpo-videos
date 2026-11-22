@@ -75,7 +75,14 @@ export type ScriptLine = {
   /** Who shares the frame in a "dupla" shot. */
   com?: string;
   /** Visual gag: "brilho" lights up the speaker, "queda" drops fxProp on fxTarget after the line. */
-  fx: "" | "brilho" | "queda" | "brilho+queda" | "coracoes" | "briga";
+  fx:
+    | ""
+    | "brilho"
+    | "queda"
+    | "brilho+queda"
+    | "coracoes"
+    | "briga"
+    | "arremesso";
   fxProp: string;
   fxTarget: string;
   /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. */

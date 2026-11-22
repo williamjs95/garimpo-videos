@@ -150,7 +150,15 @@ const schema = {
           com: { type: "string", enum: ["", ...ids] },
           fx: {
             type: "string",
-            enum: ["", "brilho", "queda", "brilho+queda", "coracoes", "briga"],
+            enum: [
+              "",
+              "brilho",
+              "queda",
+              "brilho+queda",
+              "coracoes",
+              "briga",
+              "arremesso",
+            ],
           },
           fxProp: { type: "string" },
           fxTarget: { type: "string", enum: ["", ...ids] },

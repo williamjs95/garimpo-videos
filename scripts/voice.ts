@@ -55,7 +55,10 @@ for (const l of script.lines) {
       `Pose desconhecida "${l.pose}". Use: ${poseIds.join(", ")}`,
     );
   }
-  if (l.fx.includes("queda") && !propIds.includes(l.fxProp)) {
+  if (
+    (l.fx.includes("queda") || l.fx === "arremesso") &&
+    !propIds.includes(l.fxProp)
+  ) {
     throw new Error(`Objeto "${l.fxProp}" não está em "props" do roteiro.`);
   }
 }
