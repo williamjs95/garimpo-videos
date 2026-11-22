@@ -1,0 +1,26 @@
+{
+  "explicando": {
+    "x0": 0.2294921875,
+    "y0": 0.13736979166666666,
+    "size": 0.4931640625,
+    "shapes": [
+      "dentes",
+      "meio",
+      "redonda",
+      "bico",
+      "fv"
+    ]
+  },
+  "animado": {
+    "x0": 0.32421875,
+    "y0": 0.17447916666666666,
+    "size": 0.3671875,
+    "shapes": [
+      "dentes",
+      "redonda",
+      "bico",
+      "meio",
+      "fv"
+    ]
+  }
+}

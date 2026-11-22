@@ -1,0 +1,26 @@
+{
+  "neutro": {
+    "x0": 0.34765625,
+    "y0": 0.17447916666666666,
+    "size": 0.3671875,
+    "shapes": [
+      "dentes",
+      "meio",
+      "redonda",
+      "bico",
+      "fv"
+    ]
+  },
+  "explicando": {
+    "x0": 0.30859375,
+    "y0": 0.1953125,
+    "size": 0.3671875,
+    "shapes": [
+      "dentes",
+      "meio",
+      "redonda",
+      "bico",
+      "fv"
+    ]
+  }
+}

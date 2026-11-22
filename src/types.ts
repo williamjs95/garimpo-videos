@@ -44,6 +44,8 @@ export type Line = {
    * end are closed.
    */
   mouth?: number[];
+  /** Mouth shape for each video frame (fechada, dentes, meio, aberta, redonda, bico, fv). */
+  visemes?: string[];
   /** Playback speed of this line when it differs from the episode's (a line that is unclear sped up). */
   rate?: number;
   /** Silence trimmed from the start of the audio file. */
@@ -71,6 +73,14 @@ export type CastMember = {
   blink: Mouth | null;
   /** Where the soles are in the drawing, as a fraction of its height. */
   feet?: number;
+  /**
+   * Mouth-shape patches per pose: a square crop (x0, y0 and size as fractions
+   * of the drawing's width/height/width) with one image per shape.
+   */
+  bocas?: Record<
+    string,
+    { x0: number; y0: number; size: number; shapes: string[] }
+  >;
 };
 
 /** An object standing on the floor next to a character for the whole scene. */

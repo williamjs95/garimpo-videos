@@ -30,5 +30,9 @@ A pesquisa que o embasa está em `reports/Comédia e drama em esquetes curtos.md
   `cast.json` corrige pele (e o cabelo da Lici) em todo desenho novo; `npm run cores` aplica nos
   existentes. Cada desenho é corrigido uma vez só (lista em `public/cast/<id>/cores.json`). Para mudar as
   cores, restaure os desenhos originais pelo git e apague o `cores.json` antes.
+- Bocas: `npm run bocas` desenha os formatos de boca do português (dentes, meio, redonda, bico, f/v) nas
+  duas poses que mais falam de cada personagem, recortando só a região da boca e recusando edições que
+  mexem fora dela. A boca aberta continua sendo o desenho `-fala`. A lista das poses fica em
+  `scripts/bocas.ts`.
 - Evite descrições que lembrem personagens famosos (um eletricista de bigode, macacão e boné foi
   bloqueado pelo filtro de imagens).

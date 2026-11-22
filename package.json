@@ -43,7 +43,8 @@
     "upgrade": "remotion upgrade",
     "sfx": "node scripts/sfx.ts",
     "diccao": "node scripts/diccao.ts",
-    "cores": "node scripts/cores.ts"
+    "cores": "node scripts/cores.ts",
+    "bocas": "node scripts/bocas.ts"
   },
   "allowScripts": {
     "esbuild": false

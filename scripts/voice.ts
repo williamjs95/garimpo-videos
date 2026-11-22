@@ -19,6 +19,7 @@ import {
   type Word,
 } from "../src/types.ts";
 import { findFeet } from "./lib/feet.ts";
+import { shapeTrack } from "./lib/visemes.ts";
 import {
   envelope,
   tightenPauses,
@@ -217,10 +218,11 @@ for (const [i, l] of script.lines.entries()) {
     tela: l.tela ?? "",
     estado: l.estado ?? [],
     ...(rate ? { rate } : {}),
-    mouth: mouthTrack(
-      envelope(leveled, offsetMs, rate ?? SPEECH_RATE),
-      alignToScript(l.text, words),
+    ...speechMouth(
+      leveled,
+      offsetMs,
       rate ?? SPEECH_RATE,
+      alignToScript(l.text, words),
     ),
     offsetMs,
     audio: `episodes/${slug}/${file.replace(/\.mp3$/, ".nivel.mp3")}`,
@@ -231,6 +233,17 @@ for (const [i, l] of script.lines.entries()) {
     ),
     words: alignToScript(l.text, words),
   });
+}
+
+/** Loudness-driven opening and Portuguese mouth shapes, frame by frame. */
+function speechMouth(
+  file: string,
+  offsetMs: number,
+  rate: number,
+  words: Word[],
+): { mouth: number[]; visemes: string[] } {
+  const mouth = mouthTrack(envelope(file, offsetMs, rate), words, rate);
+  return { mouth, visemes: shapeTrack(mouth, words, rate) };
 }
 
 /** Words only, lowercase and without accents, to compare what was said with the script. */
@@ -346,6 +359,13 @@ const props: EpisodeProps = {
       join(PUBLIC, "cast", c.id, "mouths.json"),
     ),
     blink: readJson<Mouth | null>(join(PUBLIC, "cast", c.id, "blink.json")),
+    ...(existsSync(join(PUBLIC, "cast", c.id, "bocas.json"))
+      ? {
+          bocas: readJson<NonNullable<EpisodeProps["cast"][number]["bocas"]>>(
+            join(PUBLIC, "cast", c.id, "bocas.json"),
+          ),
+        }
+      : {}),
     feet: findFeet(join(PUBLIC, "cast", c.id, "neutro.png")),
   })),
   backgrounds: Object.fromEntries(

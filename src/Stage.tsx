@@ -496,6 +496,11 @@ export const Stage: React.FC<{
                   ? (line.mouth[Math.floor(local)] ?? 0)
                   : undefined
               }
+              viseme={
+                speaker && line.visemes
+                  ? (line.visemes[Math.floor(local)] ?? "fechada")
+                  : undefined
+              }
               squash={
                 (struck
                   ? weight.squash *
@@ -647,6 +652,8 @@ const Character: React.FC<{
   catching: number;
   /** 0 closed, 1 half open, 2 open, from the voice; undefined uses the old flap. */
   mouthLevel?: number;
+  /** Mouth shape this frame, when the pose has drawn shapes. */
+  viseme?: string;
   /** Degrees the walk tilts the body (into the motion, then settling). */
   lean: number;
   /** 0 to 1: how far the character has stepped toward the camera. */
@@ -672,6 +679,7 @@ const Character: React.FC<{
   reacting,
   catching,
   mouthLevel,
+  viseme,
   lean,
   approach,
   from,
@@ -756,7 +764,11 @@ const Character: React.FC<{
   // Half open shows only the middle of the open mouth.
   const level =
     mouthLevel ?? (talking && Math.floor(local / 2.5) % 2 === 0 ? 2 : 0);
-  const mouthOpen = level > 0;
+  // With drawn shapes for this pose, the shape decides: closed is the pose
+  // itself, wide open is the "-fala" drawing, the rest are patches.
+  const shapes = member.bocas?.[drawn];
+  const patch = viseme && shapes?.shapes.includes(viseme) ? viseme : undefined;
+  const mouthOpen = shapes && viseme ? viseme === "aberta" : level > 0;
   const shown = poses.includes(drawn) ? drawn : "neutro";
   // Soles on the floor line, with a shadow that shrinks as the body lifts.
   const sink = (1 - (member.feet ?? 1)) * CHAR_H * member.scale;
@@ -822,6 +834,23 @@ const Character: React.FC<{
                   }}
                 />
               ) : null}
+              {p === shown && shapes
+                ? shapes.shapes.map((shape) => (
+                    <Img
+                      key={shape}
+                      src={staticFile(`${member.dir}/bocas/${p}-${shape}.png`)}
+                      style={{
+                        position: "absolute",
+                        left: `${shapes.x0 * 100}%`,
+                        top: `${shapes.y0 * 100}%`,
+                        width: `${shapes.size * 100}%`,
+                        // The patch is square: its height in drawing heights.
+                        height: `${shapes.size * (1024 / 1536) * 100}%`,
+                        opacity: shape === patch ? 1 : 0,
+                      }}
+                    />
+                  ))
+                : null}
               {p === "neutro" && member.blink ? (
                 <Img
                   src={staticFile(`${member.dir}/neutro-pisca.png`)}
