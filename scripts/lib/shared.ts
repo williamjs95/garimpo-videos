@@ -71,9 +71,11 @@ export type ScriptLine = {
   /** Drawing used while this line plays; a key of cast.poses. */
   pose: string;
   /** "close" pushes in on the speaker's face. */
-  camera: "normal" | "close";
+  camera: "normal" | "close" | "dupla";
+  /** Who shares the frame in a "dupla" shot. */
+  com?: string;
   /** Visual gag: "brilho" lights up the speaker, "queda" drops fxProp on fxTarget after the line. */
-  fx: "" | "brilho" | "queda" | "brilho+queda";
+  fx: "" | "brilho" | "queda" | "brilho+queda" | "coracoes" | "briga";
   fxProp: string;
   fxTarget: string;
   /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. */

@@ -114,14 +114,25 @@ export const Stage: React.FC<{
   const xOf = (id: string): number =>
     slotX(present.length, Math.max(0, present.indexOf(id)));
 
-  const shot = (l: Line): Camera =>
-    l.camera === "close"
+  const shot = (l: Line): Camera => {
+    // Two-shot: both characters in frame, for a line aimed at someone.
+    const partner = l.camera === "dupla" ? l.com || l.fxTarget : "";
+    if (partner) {
+      return {
+        x: (xOf(l.character) + xOf(partner)) / 2,
+        y: 1000,
+        z: 1.02,
+      };
+    }
+    return l.camera === "close"
       ? {
           x: xOf(l.character),
           y: levelOf(cast, l.character, 0.74),
           z: 1.5,
         }
       : { x: xOf(l.character), y: 1040, z: 1.12 };
+  };
+
   const dropShot = (l: Line): Camera => ({
     x: lerp(xOf(l.character), xOf(l.fxTarget), 0.7),
     y: 1000,
@@ -167,7 +178,7 @@ export const Stage: React.FC<{
   for (let i = index - 1; i >= 0; i--) {
     const l = lines[i];
     if (!l || l.location !== line.location) break;
-    if (l.fx.includes("queda")) aftermath.push(l);
+    if (l.fx.includes("queda") || l.fx === "briga") aftermath.push(l);
   }
   const stillShocked = (id: string): boolean =>
     aftermath.some((l) => l.fxTarget === id);
@@ -192,7 +203,11 @@ export const Stage: React.FC<{
     if (struck || stillShocked(id) || hanging) return "chocado";
     return line.plateia || "neutro";
   };
-  const shake = hit ? 24 * Math.exp(-sinceImpact / 5) : 0;
+  const shake = hit
+    ? 24 * Math.exp(-sinceImpact / 5)
+    : line.fx === "briga"
+      ? 9
+      : 0;
 
   const tx =
     Math.min(
@@ -347,6 +362,22 @@ export const Stage: React.FC<{
 
         {line.fx.includes("brilho") ? (
           <Sparkles x={speakerX} y={glowY} local={local} />
+        ) : null}
+
+        {line.fx === "coracoes" ? (
+          <Hearts
+            x={speakerX}
+            y={levelOf(cast, line.character, 0.9)}
+            local={local}
+          />
+        ) : null}
+
+        {line.fx === "briga" ? (
+          <Brawl
+            x={(speakerX + xOf(line.fxTarget)) / 2}
+            local={local}
+            total={time.durationInFrames}
+          />
         ) : null}
 
         {present.map((id) => {
@@ -621,6 +652,123 @@ const Mark: React.FC<{
       }}
     >
       {glyph}
+    </div>
+  );
+};
+
+/** Hearts drifting up around someone smitten. */
+const Hearts: React.FC<{ x: number; y: number; local: number }> = ({
+  x,
+  y,
+  local,
+}) => (
+  <>
+    {Array.from({ length: 6 }, (_, i) => {
+      const t = ((local * 1.1 + i * 9) % 54) / 54;
+      const side = i % 2 === 0 ? -1 : 1;
+      return (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            left: x + side * (150 + (i % 3) * 55) + Math.sin(t * 6 + i) * 22,
+            top: y + 120 - t * 420,
+            fontSize: 96,
+            lineHeight: 1,
+            color: HEART,
+            WebkitTextStroke: `9px ${colors.ink}`,
+            paintOrder: "stroke fill",
+            opacity: Math.min(1, t * 6) * Math.min(1, (1 - t) * 3),
+            transform: `scale(${0.6 + t * 0.6}) rotate(${side * 14}deg)`,
+          }}
+        >
+          ♥
+        </div>
+      );
+    })}
+  </>
+);
+const HEART = "#e5484d";
+
+/**
+ * Cartoon scuffle: a churning dust cloud hides the two fighters, with stars
+ * flying out. Nobody is shown getting hurt.
+ */
+const Brawl: React.FC<{ x: number; local: number; total: number }> = ({
+  x,
+  local,
+  total,
+}) => {
+  const { fps } = useVideoConfig();
+  const grow = spring({ frame: local, fps, config: { damping: 11 } });
+  const fade = interpolate(local, [total - 7, total], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const cy = FLOOR - 560;
+  return (
+    <div style={{ opacity: fade }}>
+      {Array.from({ length: 11 }, (_, i) => {
+        const angle = (i / 11) * Math.PI * 2 + local * 0.35;
+        const r = 210 + Math.sin(local * 0.9 + i * 2.1) * 60;
+        const size = 420 + Math.sin(local * 0.7 + i) * 70;
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: x + Math.cos(angle) * r * 1.75 - size / 2,
+              top: cy + Math.sin(angle) * r - size / 2,
+              width: size,
+              height: size,
+              borderRadius: "50%",
+              backgroundColor: colors.card,
+              border: `12px solid ${colors.ink}`,
+              transform: `scale(${grow})`,
+            }}
+          />
+        );
+      })}
+      {/* The filling, so no outline shows through the middle. */}
+      <div
+        style={{
+          position: "absolute",
+          left: x - 500,
+          top: cy - 340,
+          width: 1000,
+          height: 680,
+          borderRadius: "50%",
+          backgroundColor: colors.card,
+          transform: `scale(${grow})`,
+        }}
+      />
+      {["✦", "!", "✦", "#", "!", "✦"].map((glyph, i) => {
+        const t = ((local + i * 5) % 16) / 16;
+        const angle = i * 1.05 + Math.floor((local + i * 5) / 16) * 0.8;
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: x + Math.cos(angle) * (200 + t * 420) - 60,
+              top: cy + Math.sin(angle) * (160 + t * 330) - 60,
+              width: 120,
+              fontFamily: displayFont,
+              fontWeight: 800,
+              fontSize: 110,
+              lineHeight: "120px",
+              textAlign: "center",
+              color: i % 2 ? HEART : colors.goldBright,
+              WebkitTextStroke: `9px ${colors.ink}`,
+              paintOrder: "stroke fill",
+              opacity: 1 - t,
+              transform: `rotate(${local * 9 + i * 40}deg)`,
+            }}
+          >
+            {glyph}
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -1,0 +1,925 @@
+{
+  "slug": "o-nome-do-ze",
+  "number": 4,
+  "order": [
+    "ze",
+    "katia",
+    "lici",
+    "norberto"
+  ],
+  "hook": "Ela falou o nome dele dormindo",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. A Kátia falou o nome do Zé dormindo.",
+      "emotion": "falando rápido, deliciada com a fofoca, sem pausas",
+      "location": "loja-ze",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/lici-f9e7d59fed.mp3",
+      "durationMs": 3770,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 720
+        },
+        {
+          "text": "senta.",
+          "startMs": 1160,
+          "endMs": 1340
+        },
+        {
+          "text": "A",
+          "startMs": 1700,
+          "endMs": 1860
+        },
+        {
+          "text": "Kátia",
+          "startMs": 1860,
+          "endMs": 2100
+        },
+        {
+          "text": "falou",
+          "startMs": 2100,
+          "endMs": 2340
+        },
+        {
+          "text": "o",
+          "startMs": 2340,
+          "endMs": 2660
+        },
+        {
+          "text": "nome",
+          "startMs": 2660,
+          "endMs": 2660
+        },
+        {
+          "text": "do",
+          "startMs": 2660,
+          "endMs": 2840
+        },
+        {
+          "text": "Zé",
+          "startMs": 2840,
+          "endMs": 3020
+        },
+        {
+          "text": "dormindo.",
+          "startMs": 3020,
+          "endMs": 3620
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vendo flores!",
+      "emotion": "empolgado, chegando correndo",
+      "location": "loja-ze",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/ze-2b23e9b98c.mp3",
+      "durationMs": 1870,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "semana",
+          "startMs": 320,
+          "endMs": 720
+        },
+        {
+          "text": "eu",
+          "startMs": 720,
+          "endMs": 1060
+        },
+        {
+          "text": "vendo",
+          "startMs": 1060,
+          "endMs": 1080
+        },
+        {
+          "text": "flores!",
+          "startMs": 1080,
+          "endMs": 1720
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Namoro na galeria exige proposta em envelope lacrado.",
+      "emotion": "solene, ditando regra",
+      "location": "loja-ze",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/norberto-90cf3032a4.mp3",
+      "durationMs": 3610,
+      "words": [
+        {
+          "text": "Namoro",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "na",
+          "startMs": 460,
+          "endMs": 620
+        },
+        {
+          "text": "galeria",
+          "startMs": 620,
+          "endMs": 1040
+        },
+        {
+          "text": "exige",
+          "startMs": 1040,
+          "endMs": 1560
+        },
+        {
+          "text": "proposta",
+          "startMs": 1560,
+          "endMs": 2220
+        },
+        {
+          "text": "em",
+          "startMs": 2220,
+          "endMs": 2420
+        },
+        {
+          "text": "envelope",
+          "startMs": 2420,
+          "endMs": 2840
+        },
+        {
+          "text": "lacrado.",
+          "startMs": 2840,
+          "endMs": 3460
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Eu não falo dormindo!",
+      "emotion": "furiosa, chegando pisando duro",
+      "location": "loja-ze",
+      "pose": "bravo",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/katia-2c7ba729fe.mp3",
+      "durationMs": 1370,
+      "words": [
+        {
+          "text": "Eu",
+          "startMs": 0,
+          "endMs": 160
+        },
+        {
+          "text": "não",
+          "startMs": 160,
+          "endMs": 360
+        },
+        {
+          "text": "falo",
+          "startMs": 360,
+          "endMs": 740
+        },
+        {
+          "text": "dormindo!",
+          "startMs": 740,
+          "endMs": 1220
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Ela sonhou comigo?",
+      "emotion": "baixinho, derretido, sem acreditar",
+      "location": "loja-ze",
+      "pose": "pensando",
+      "camera": "close",
+      "com": "",
+      "fx": "coracoes",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/ze-b31126f139.mp3",
+      "durationMs": 1390,
+      "words": [
+        {
+          "text": "Ela",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "sonhou",
+          "startMs": 300,
+          "endMs": 760
+        },
+        {
+          "text": "comigo?",
+          "startMs": 760,
+          "endMs": 1240
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Kátia, aceita uma flor? Dois reais.",
+      "emotion": "galante e, no fim, vendedor",
+      "location": "loja-ze",
+      "pose": "explicando",
+      "camera": "dupla",
+      "com": "katia",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/ze-c76bcdfc9f.mp3",
+      "durationMs": 2390,
+      "words": [
+        {
+          "text": "Kátia,",
+          "startMs": 0,
+          "endMs": 440
+        },
+        {
+          "text": "aceita",
+          "startMs": 980,
+          "endMs": 1020
+        },
+        {
+          "text": "uma",
+          "startMs": 1020,
+          "endMs": 1200
+        },
+        {
+          "text": "flor?",
+          "startMs": 1200,
+          "endMs": 1420
+        },
+        {
+          "text": "Dois",
+          "startMs": 1880,
+          "endMs": 2000
+        },
+        {
+          "text": "reais.",
+          "startMs": 2000,
+          "endMs": 2240
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Proposta recebida!",
+      "emotion": "triunfante, como quem bate um carimbo",
+      "location": "loja-ze",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/norberto-c82f14da66.mp3",
+      "durationMs": 1470,
+      "words": [
+        {
+          "text": "Proposta",
+          "startMs": 0,
+          "endMs": 620
+        },
+        {
+          "text": "recebida!",
+          "startMs": 620,
+          "endMs": 1320
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "",
+      "emotion": "",
+      "location": "loja-ze",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "tique",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "",
+      "durationMs": 1210,
+      "words": []
+    },
+    {
+      "character": "katia",
+      "text": "Eu disse: Zé, eu vou te esmagar.",
+      "emotion": "fria, pausada, ameaçadora",
+      "location": "loja-ze",
+      "pose": "explicando",
+      "camera": "dupla",
+      "com": "ze",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/katia-deb3273b66.mp3",
+      "durationMs": 2710,
+      "words": [
+        {
+          "text": "Eu",
+          "startMs": 0,
+          "endMs": 220
+        },
+        {
+          "text": "disse:",
+          "startMs": 220,
+          "endMs": 520
+        },
+        {
+          "text": "Zé,",
+          "startMs": 520,
+          "endMs": 1160
+        },
+        {
+          "text": "eu",
+          "startMs": 1680,
+          "endMs": 1840
+        },
+        {
+          "text": "vou",
+          "startMs": 1840,
+          "endMs": 2020
+        },
+        {
+          "text": "te",
+          "startMs": 2020,
+          "endMs": 2240
+        },
+        {
+          "text": "esmagar.",
+          "startMs": 2240,
+          "endMs": 2560
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Ai, que romântico!",
+      "emotion": "suspirando, encantada, como fã de novela",
+      "location": "loja-ze",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/lici-b5379d6b98.mp3",
+      "durationMs": 2790,
+      "words": [
+        {
+          "text": "Ai,",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "que",
+          "startMs": 1000,
+          "endMs": 1240
+        },
+        {
+          "text": "romântico!",
+          "startMs": 1240,
+          "endMs": 2640
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Proposta desclassificada.",
+      "emotion": "burocrático, seco, sem emoção",
+      "location": "loja-ze",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/norberto-222136d166.mp3",
+      "durationMs": 1970,
+      "words": [
+        {
+          "text": "Proposta",
+          "startMs": 0,
+          "endMs": 640
+        },
+        {
+          "text": "desclassificada.",
+          "startMs": 640,
+          "endMs": 1820
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Mas sonhou comigo.",
+      "emotion": "baixinho, sorrindo, feliz mesmo assim",
+      "location": "loja-ze",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "coracoes",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/ze-7b39cbca01.mp3",
+      "durationMs": 1570,
+      "words": [
+        {
+          "text": "Mas",
+          "startMs": 0,
+          "endMs": 420
+        },
+        {
+          "text": "sonhou",
+          "startMs": 420,
+          "endMs": 1000
+        },
+        {
+          "text": "comigo.",
+          "startMs": 1000,
+          "endMs": 1420
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "",
+      "emotion": "",
+      "location": "loja-ze",
+      "pose": "bravo",
+      "camera": "dupla",
+      "com": "lici",
+      "fx": "briga",
+      "fxProp": "",
+      "fxTarget": "lici",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "",
+      "durationMs": 1430.0000000000002,
+      "words": []
+    },
+    {
+      "character": "katia",
+      "text": "Senta você, menina. Que lá vem processo.",
+      "emotion": "fria, superior, saboreando a ameaça",
+      "location": "loja-ze",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/katia-73092d6c90.mp3",
+      "durationMs": 2650,
+      "words": [
+        {
+          "text": "Senta",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "você,",
+          "startMs": 320,
+          "endMs": 680
+        },
+        {
+          "text": "menina.",
+          "startMs": 860,
+          "endMs": 1160
+        },
+        {
+          "text": "Que",
+          "startMs": 1740,
+          "endMs": 1860
+        },
+        {
+          "text": "lá",
+          "startMs": 1860,
+          "endMs": 1960
+        },
+        {
+          "text": "vem",
+          "startMs": 1960,
+          "endMs": 2080
+        },
+        {
+          "text": "processo.",
+          "startMs": 2080,
+          "endMs": 2500
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… a flor era fiado. E a floricultura é da Kátia.",
+      "emotion": "falando rápido, tonta e escandalizada, sem pausas",
+      "location": "loja-ze",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-nome-do-ze/lici-c78ba4fd51.mp3",
+      "durationMs": 3850,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 0,
+          "endMs": 820
+        },
+        {
+          "text": "a",
+          "startMs": 820,
+          "endMs": 1060
+        },
+        {
+          "text": "flor",
+          "startMs": 1060,
+          "endMs": 1220
+        },
+        {
+          "text": "era",
+          "startMs": 1220,
+          "endMs": 1500
+        },
+        {
+          "text": "fiado.",
+          "startMs": 1500,
+          "endMs": 1960
+        },
+        {
+          "text": "E",
+          "startMs": 2200,
+          "endMs": 2320
+        },
+        {
+          "text": "a",
+          "startMs": 2320,
+          "endMs": 2440
+        },
+        {
+          "text": "floricultura",
+          "startMs": 2440,
+          "endMs": 2960
+        },
+        {
+          "text": "é",
+          "startMs": 2960,
+          "endMs": 3180
+        },
+        {
+          "text": "da",
+          "startMs": 3180,
+          "endMs": 3320
+        },
+        {
+          "text": "Kátia.",
+          "startMs": 3320,
+          "endMs": 3700
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "balde-de-flores": "props/balde-de-flores.png"
+  },
+  "scenery": [
+    {
+      "prop": "balde-de-flores",
+      "beside": "katia",
+      "side": 1,
+      "height": 620
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

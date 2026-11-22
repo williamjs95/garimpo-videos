@@ -51,6 +51,10 @@ const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
       cues.push({ at: drop, src: sfx("desce"), volume: 0.35 });
       cues.push({ at: drop + DROP_FALL_FRAMES, src: thud, volume: 0.9 });
     }
+    if (l.fx === "coracoes")
+      cues.push({ at: t.from, src: sfx("harpa"), volume: 0.35 });
+    if (l.fx === "briga")
+      cues.push({ at: t.from, src: sfx("briga"), volume: 0.7 });
     if (l.placa) cues.push({ at: t.from + 4, src: sfx("pop"), volume: 0.6 });
     const extra = named(l.som);
     if (extra) cues.push({ at: t.from, src: extra, volume: 0.45 });

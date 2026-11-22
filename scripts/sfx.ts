@@ -265,6 +265,30 @@ const pop = render(0.16, (t) => {
   return Math.sin(2 * Math.PI * freq * t) * Math.exp(-t * 28) * 0.9;
 });
 
+/** Harp-like run up a chord, for someone falling in love. */
+const harp = new Array<number>(Math.floor(1.2 * RATE)).fill(0);
+[72, 76, 79, 84, 88, 91].forEach((n, i) => {
+  play(harp, bell, n, i * 0.07, 0.3, false, 0.8);
+});
+
+/** Scuffle: a flurry of bonks and slaps of different pitch. */
+const scuffle = new Array<number>(Math.floor(1.4 * RATE)).fill(0);
+for (let i = 0; i < 13; i++) {
+  const start = Math.floor((i * 0.095 + Math.abs(noise()) * 0.03) * RATE);
+  const pitch = 110 + Math.abs(noise()) * 260;
+  for (let n = 0; n < 0.12 * RATE; n++) {
+    const t = n / RATE;
+    const index = start + n;
+    if (index >= scuffle.length) break;
+    scuffle[index] =
+      (scuffle[index] ?? 0) +
+      Math.sin(2 * Math.PI * pitch * Math.exp(-t * 12) * t) *
+        Math.exp(-t * 30) *
+        0.6 +
+      noise() * Math.exp(-t * 80) * 0.35;
+  }
+}
+
 const music = join(PUBLIC, "music");
 mkdirSync(music, { recursive: true });
 writeFileSync(join(music, "trilha.wav"), wav(normalize(theme)));
@@ -282,4 +306,6 @@ writeFileSync(join(dir, "desce.wav"), wav(fall));
 writeFileSync(join(dir, "ronco.wav"), wav(normalize(snore)));
 writeFileSync(join(dir, "tique.wav"), wav(ticks));
 writeFileSync(join(dir, "pop.wav"), wav(pop));
+writeFileSync(join(dir, "harpa.wav"), wav(normalize(harp)));
+writeFileSync(join(dir, "briga.wav"), wav(normalize(scuffle)));
 log("Efeitos gerados em public/sfx e música em public/music");

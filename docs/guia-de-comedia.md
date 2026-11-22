@@ -84,11 +84,11 @@ Cada fala do roteiro traz a direção de quem fala e de quem escuta. Personagem 
 varie a pose de fala para fala e dê reação a quem escuta nos momentos fortes.
 
 - `pose`: neutro, animado, bravo, chocado, explicando, pensando ou dormindo (dormindo nunca fala). Evite repetir a mesma pose do personagem em falas seguidas.
-- `camera`: "normal" ou "close" (close para falas curtas e secas, como o "Amadores." da Kátia, e para a reação de quem acabou de se dar mal).
+- `camera`: "normal", "close" ou "dupla". Close para falas curtas e secas, como o "Amadores." da Kátia, e para a reação de quem acabou de se dar mal. Dupla enquadra quem fala e quem está em `com`, para falas dirigidas a alguém (os dois precisam estar lado a lado em `posicoes`).
 - `move`: "entra" faz o personagem chegar andando no começo da fala; "sai" faz ele ir embora depois dela. Quem ainda não entrou não aparece. Nem todo mundo precisa estar em cena desde o começo.
 - `plateia`: a pose de todos que estão escutando durante a fala (por exemplo, "chocado" quando alguém solta um absurdo). Vazio deixa todos em neutro.
 - `som`: efeito no começo da fala. "scratch" (arranhão de disco) para a notícia que estraga a festa; "ding" para uma boa ideia; "whoosh" para uma virada; "ronco" e "tique" (relógio) para batidas mudas. Use em no máximo três falas.
-- `fx`: "" na maioria; "brilho" quando o Zé tem uma ideia; "queda" quando um objeto cai em alguém depois da fala; "brilho+queda" para os dois.
+- `fx`: "" na maioria; "brilho" quando o Zé tem uma ideia; "queda" quando um objeto cai em alguém depois da fala; "brilho+queda" para os dois; "coracoes" quando alguém se derrete; "briga" numa batida muda, para a nuvem de poeira que esconde quem fala e o `fxTarget` (ninguém aparece apanhando, e o alvo sai tonto).
 - `fxProp` e `fxTarget`: o objeto que cai (declarado em `props`) e em quem cai.
 - `cenario` (no roteiro, fora das falas): objetos que ficam em cena o episódio inteiro ao lado de um personagem, como a torre de sacas da Kátia. Use para a piada visual já estar no primeiro quadro. O objeto balança quando algo cai em quem está junto dele.
 
