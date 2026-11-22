@@ -289,6 +289,42 @@ for (let i = 0; i < 13; i++) {
   }
 }
 
+/** Steady rain, seamless when looped: filtered noise with soft patter. */
+let wet = 0;
+let wetLow = 0;
+const rainLen = Math.floor(4 * RATE);
+const rainRaw = Array.from({ length: rainLen }, () => {
+  const white = noise();
+  wet += (white - wet) * 0.35;
+  wetLow += (wet - wetLow) * 0.05;
+  const patter = Math.abs(noise()) > 0.9985 ? noise() * 0.8 : 0;
+  return (wet - wetLow) * 0.9 + patter;
+});
+// Crossfade the tail into the head so the loop has no click.
+const FADE = Math.floor(0.3 * RATE);
+const rain = rainRaw
+  .slice(0, rainLen - FADE)
+  .map((v, i) =>
+    i < FADE
+      ? v * (i / FADE) + (rainRaw[rainLen - FADE + i] ?? 0) * (1 - i / FADE)
+      : v,
+  );
+
+/** Thunder: a crack, then a long low rumble. */
+let rumble = 0;
+let rumble2 = 0;
+const thunder = render(2.2, (t) => {
+  rumble += (noise() - rumble) * 0.02;
+  rumble2 += (rumble - rumble2) * 0.05;
+  const crack = noise() * Math.exp(-t * 25) * 0.6;
+  const roll =
+    rumble2 *
+    9 *
+    Math.exp(-t * 1.6) *
+    (1 + 0.5 * Math.sin(2 * Math.PI * 3 * t));
+  return crack + roll;
+});
+
 const music = join(PUBLIC, "music");
 mkdirSync(music, { recursive: true });
 writeFileSync(join(music, "trilha.wav"), wav(normalize(theme)));
@@ -308,4 +344,6 @@ writeFileSync(join(dir, "tique.wav"), wav(ticks));
 writeFileSync(join(dir, "pop.wav"), wav(pop));
 writeFileSync(join(dir, "harpa.wav"), wav(normalize(harp)));
 writeFileSync(join(dir, "briga.wav"), wav(normalize(scuffle)));
+writeFileSync(join(dir, "chuva.wav"), wav(normalize(rain)));
+writeFileSync(join(dir, "trovao.wav"), wav(normalize(thunder)));
 log("Efeitos gerados em public/sfx e música em public/music");

@@ -32,6 +32,7 @@ ep. 8 "E delega pra quem?". As versões anteriores estão em `out/_anterior/`.
 | 9 | Só uma olhadinha | Dia a dia (cliente) | Os quatro contra um cliente (POV) | Todos: disputam o cliente até ele ir embora | Primeiro episódio em POV (o espectador é o cliente); Zé e Kátia disputam juntos, sem romance; Norberto transforma a venda em licitação | Zé: "Mas ele olhou" (afeto depois da derrota); Kátia direto; ninguém diz o bordão da Lici inteiro | Sem objeto: o cliente some e sobra a briga | Norberto: toda fofoca agora precisa constar em ata |
 | 10 | A ata da fofoca | Dia a dia (condomínio) | Lici e Norberto | Lici: vira escrivã oficial da fofoca e o primeiro item é sobre ela | Lici e Norberto como aliados que viram adversários; Kátia faz o segundo gesto e nega ("Ficou bonito. Não registra isso."); o cabelo novo da Lici entra na história | Abertura do Norberto, não da Lici; "Menina…" sem "senta" | Placa "VINHO" e olhar parado da Lici | Norberto: próxima reunião, leitura da ata em voz alta |
 | 11 | O grupo da galeria | Dia a dia (WhatsApp) | Norberto e Kátia | Norberto: proíbe áudio no grupo, manda um áudio e é removido pela própria regra | Kátia toma o poder pelo regimento do grupo; Lici sem áudio não consegue contar a novela | Norberto cortado ("tem que ser formalizada"); Kátia sem "Amadores." | Tela do celular conta a virada (Norberto saiu) | Kátia: nova administração, regra um, só áudio |
+| 12 | O desconto no Pix | Dia a dia (cliente do Pix) | Lici e Zé | Zé: segue os conselhos de novela da Lici, baixa até pagar a entrega e perde a venda para a chuva | Lici como conselheira sentimental que trata venda como paquera ("Faz doce!", "Deixa ele sofrer"); Kátia boa no que faz: nunca dá desconto e ganha quando chove; Norberto só uma fala | Kátia: "Amadores." depois de vencer sem fazer nada; "Menina…" sem "senta" | Chuva: o tempo vira a história (efeito novo) | Lici: o cliente perguntou se a Kátia é solteira |
 ## Pares
 
 | Par | Episódios em que contracenaram de verdade | O que ainda não foi usado |
@@ -39,7 +40,7 @@ ep. 8 "E delega pra quem?". As versões anteriores estão em `out/_anterior/`.
 | Zé e Kátia | 2, 4, 5, 7 (como aliados) | Kátia precisando do Zé; Zé ganhando sem perceber |
 | Zé e Norberto | 1, 3, 6 | O Zé como único aliado das regras do Norberto |
 | Lici e Kátia | 2, 4 | A fofoca como arma que a Kátia tenta comprar |
-| Lici e Zé | 5 | Lici como conselheira sentimental que piora tudo |
+| Lici e Zé | 5, 12 (conselheira de novela que piora tudo) | Zé ensinando a Lici a vender |
 | Lici e Norberto | 7 (ele corrige a data dela), 10 | A fofoca contra a ata: quem é o registro oficial da galeria? |
 | Norberto e Kátia | 8, 11 | Dois que só jogam por cima: a regra contra o ganhar a qualquer custo |
 
@@ -64,6 +65,7 @@ ep. 8 "E delega pra quem?". As versões anteriores estão em `out/_anterior/`.
 - A Kátia administra o grupo da galeria e só aceita áudio; o Norberto está fora (do episódio 11).
 - A Lici pintou o cabelo de vinho (episódio 10): é a cor dela daqui em diante.
 - A festa da Lici é em março; a galeria fez em novembro (do episódio 7).
+- Um cliente perguntou se a Kátia é solteira (do episódio 12); o Zé ainda vende guarda-chuva.
 - A Kátia sonhou com o Zé; ele ficou feliz mesmo sabendo que era para ser esmagado (do episódio 4).
 - O Norberto se elegeu síndico vitalício numa ata que ninguém assinou (do episódio 3).
 

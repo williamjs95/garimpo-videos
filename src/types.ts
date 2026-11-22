@@ -23,7 +23,8 @@ export type Line = {
     | "brilho+queda"
     | "coracoes"
     | "briga"
-    | "arremesso";
+    | "arremesso"
+    | "chuva";
   fxProp: string;
   fxTarget: string;
   /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. "frente": steps toward the camera while speaking. */

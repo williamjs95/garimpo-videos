@@ -78,6 +78,8 @@ const cuesFor = (
       cues.push({ at: t.from, src: sfx("harpa"), volume: 0.35 });
     if (l.fx === "briga")
       cues.push({ at: t.from, src: sfx("briga"), volume: 0.7 });
+    if (l.fx === "chuva")
+      cues.push({ at: t.from, src: sfx("trovao"), volume: 0.8 });
     if (l.tela) cues.push({ at: t.from + 5, src: sfx("pop"), volume: 0.5 });
     if (l.placa) cues.push({ at: t.from + 4, src: sfx("pop"), volume: 0.6 });
     const extra = named(l.som);
@@ -85,6 +87,32 @@ const cuesFor = (
   }
   return cues;
 };
+
+/** Frame the rain starts on, if it rains in this episode. */
+const rainAt = (lines: Line[], timed: TimedLine[]): number | undefined =>
+  timed.find((t) => lines[t.index]?.fx === "chuva")?.from;
+
+/** Rain loop: from the thunder until the closing card takes over. */
+const RainSound: React.FC<{ from: number; cardFrom: number }> = ({
+  from,
+  cardFrom,
+}) => (
+  <Sequence from={from} layout="none">
+    <Audio
+      src={sfx("chuva")}
+      loop
+      volume={(f) =>
+        0.35 *
+        interpolate(
+          f,
+          [0, 10, cardFrom - from - 4, cardFrom - from + 10],
+          [0, 1, 1, 0],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+        )
+      }
+    />
+  </Sequence>
+);
 
 /** Quiet enough to sit under the voices. */
 const MUSIC_VOLUME = 0.08;
@@ -96,26 +124,32 @@ export const Sound: React.FC<{
   /** Frame the closing card starts on: the music hands over to the jingle. */
   cardFrom: number;
   weights: Record<string, Weight>;
-}> = ({ lines, timed, music, cardFrom, weights }) => (
-  <>
-    <Audio
-      src={staticFile(music)}
-      loop
-      volume={(f) =>
-        MUSIC_VOLUME *
-        interpolate(f, [0, 12, cardFrom - 6, cardFrom + 8], [0, 1, 1, 0], {
-          extrapolateLeft: "clamp",
-          extrapolateRight: "clamp",
-        })
-      }
-    />
-    <Sequence from={cardFrom} layout="none">
-      <Audio src={staticFile(JINGLE)} volume={0.6} />
-    </Sequence>
-    {cuesFor(lines, timed, weights).map((c, i) => (
-      <Sequence key={i} from={c.at} layout="none">
-        <Audio src={c.src} volume={c.volume} />
+}> = ({ lines, timed, music, cardFrom, weights }) => {
+  const rain = rainAt(lines, timed);
+  return (
+    <>
+      {rain !== undefined ? (
+        <RainSound from={rain} cardFrom={cardFrom} />
+      ) : null}
+      <Audio
+        src={staticFile(music)}
+        loop
+        volume={(f) =>
+          MUSIC_VOLUME *
+          interpolate(f, [0, 12, cardFrom - 6, cardFrom + 8], [0, 1, 1, 0], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })
+        }
+      />
+      <Sequence from={cardFrom} layout="none">
+        <Audio src={staticFile(JINGLE)} volume={0.6} />
       </Sequence>
-    ))}
-  </>
-);
+      {cuesFor(lines, timed, weights).map((c, i) => (
+        <Sequence key={i} from={c.at} layout="none">
+          <Audio src={c.src} volume={c.volume} />
+        </Sequence>
+      ))}
+    </>
+  );
+};

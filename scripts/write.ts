@@ -180,6 +180,7 @@ const schema = {
               "coracoes",
               "briga",
               "arremesso",
+              "chuva",
             ],
           },
           fxProp: { type: "string" },

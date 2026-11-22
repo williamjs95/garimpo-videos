@@ -404,6 +404,14 @@ export const Stage: React.FC<{
     (a, b) => Number(a === line.character) - Number(b === line.character),
   );
 
+  // Rain: once it starts in a scene it keeps falling until the scene ends.
+  let rainFrom: number | undefined;
+  for (let i = index; i >= 0; i--) {
+    const l = lines[i];
+    if (!l || l.location !== line.location) break;
+    if (l.fx === "chuva") rainFrom = timed[i]?.from;
+  }
+
   return (
     <AbsoluteFill style={{ backgroundColor: colors.background }}>
       <div
@@ -611,6 +619,60 @@ export const Stage: React.FC<{
           />
         ) : null}
       </div>
+      {rainFrom !== undefined ? <Rain since={frame - rainFrom} /> : null}
+    </AbsoluteFill>
+  );
+};
+
+/** Frames the rain takes to build up after the thunder. */
+const RAIN_BUILD = 14;
+const DROPS = 150;
+
+/**
+ * Cartoon rain over the whole frame: the sky darkens, a lightning flash
+ * opens it, and slanted streaks fall in layers (far ones thinner and slower).
+ */
+const Rain: React.FC<{ since: number }> = ({ since }) => {
+  if (since < 0) return null;
+  const build = Math.min(1, since / RAIN_BUILD);
+  const flash = interpolate(since, [0, 2, 4, 6, 9], [0, 0.75, 0.15, 0.5, 0], {
+    extrapolateRight: "clamp",
+  });
+  // Deterministic scatter: the same drops on every render.
+  const rand = (n: number): number => {
+    const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  const drops = Array.from({ length: Math.round(DROPS * build) }, (_, i) => {
+    const depth = rand(i * 3 + 1);
+    const speed = 55 + 45 * depth;
+    const len = 50 + 70 * depth;
+    const cycle = VIEW_H + len + 200;
+    const y = ((rand(i * 3 + 2) * cycle + since * speed) % cycle) - len - 100;
+    const x = rand(i * 3) * (VIEW_W + 300) - 150 + y * -0.18;
+    return { x, y, len, depth };
+  });
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <AbsoluteFill
+        style={{ backgroundColor: "rgb(24, 36, 64)", opacity: 0.26 * build }}
+      />
+      <svg width={VIEW_W} height={VIEW_H} style={{ position: "absolute" }}>
+        {drops.map((d, i) => (
+          <line
+            key={i}
+            x1={d.x}
+            y1={d.y}
+            x2={d.x - d.len * 0.18}
+            y2={d.y + d.len}
+            stroke="rgb(225, 238, 255)"
+            strokeOpacity={0.35 + 0.4 * d.depth}
+            strokeWidth={2 + 3 * d.depth}
+            strokeLinecap="round"
+          />
+        ))}
+      </svg>
+      <AbsoluteFill style={{ backgroundColor: "white", opacity: flash }} />
     </AbsoluteFill>
   );
 };
