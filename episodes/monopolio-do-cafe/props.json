@@ -942,5 +942,6 @@
     }
   ],
   "music": "music/trilha.wav",
-  "speechRate": 1.1
+  "speechRate": 1.1,
+  "number": 2
 }

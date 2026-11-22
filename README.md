@@ -37,6 +37,8 @@ Para mudar uma fala: edite `script.json`, apague o mp3 daquela fala em `public/e
 
 Abra `episodes/<slug>/post.md`, suba `out/<slug>.mp4` no app de cada rede e cole a legenda correspondente. No TikTok, escolha um som em alta com volume baixo para ganhar alcance.
 
+Os episódios são numerados: o vídeo sai em `out/ep03-<slug>.mp4` e os quadros de conferência em `out/ep03-<slug>/`.
+
 ## Onde mexer
 
 - Premissa, elenco, temas e regras de roteiro: `docs/guia-de-comedia.md` (o `write` carrega esse arquivo)

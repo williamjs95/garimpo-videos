@@ -20,6 +20,8 @@ export const Episode: React.FC<EpisodeProps> = ({
   backgrounds,
   props,
   scenery = [],
+  order = [],
+  number,
   music = DEFAULT_MUSIC,
   speechRate = 1,
 }) => {
@@ -44,6 +46,7 @@ export const Episode: React.FC<EpisodeProps> = ({
         backgrounds={backgrounds}
         props={props}
         scenery={scenery}
+        order={order}
         speechRate={speechRate}
       />
 
@@ -54,7 +57,7 @@ export const Episode: React.FC<EpisodeProps> = ({
         speaker={cast.find((c) => c.id === line.character)}
       />
 
-      <Hook text={hook} />
+      <Hook text={hook} number={number} />
 
       <EndCard from={cardFrom} />
 
@@ -62,7 +65,7 @@ export const Episode: React.FC<EpisodeProps> = ({
 
       {timed.map((t) => {
         const l = lines[t.index];
-        return l ? (
+        return l?.audio ? (
           <Sequence
             key={t.index}
             from={t.from}

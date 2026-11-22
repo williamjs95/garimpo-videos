@@ -198,6 +198,73 @@ const normalize = (track: number[]): number[] => {
   return track.map((v) => (v / peak) * 0.85);
 };
 
+// ---------------------------------------------------------------------------
+// Musical sound effects, in the cartoon tradition of scoring the action.
+
+/** Plucked string, for footsteps: three rising notes. */
+const pluck: Voice = (f, t) =>
+  (Math.sin(2 * Math.PI * f * t) +
+    Math.sin(2 * Math.PI * f * 2 * t) * 0.4 * Math.exp(-t * 30)) *
+  Math.exp(-t * 16) *
+  Math.min(1, t * 600);
+const pizz = [60, 64, 67].map((note) => {
+  const track = new Array<number>(Math.floor(0.3 * RATE)).fill(0);
+  play(track, pluck, note, 0, 0.8, false, 0.3);
+  return track;
+});
+
+/** Whistle sliding between two pitches. */
+const slide = (seconds: number, from: number, to: number): number[] => {
+  let angle = 0;
+  return render(seconds, (t) => {
+    const freq = from * (to / from) ** (t / seconds);
+    angle += (2 * Math.PI * freq * (1 + 0.015 * Math.sin(t * 45))) / RATE;
+    return (
+      Math.sin(angle) *
+      Math.min(1, t * 50) *
+      Math.min(1, (seconds - t) * 20) *
+      0.5
+    );
+  });
+};
+/** Rising while the prop hangs in the air, falling as it drops. */
+const rise = slide(0.4, 500, 1100);
+const fall = slide(0.28, 1300, 350);
+
+/** One snore: a rattling breath in, a whistling breath out. */
+let breath = 0;
+const snore = render(1.1, (t) => {
+  breath += (noise() - breath) * 0.08;
+  const inhale =
+    breath *
+    (0.6 + 0.4 * Math.sign(Math.sin(2 * Math.PI * 38 * t))) *
+    Math.sin(Math.PI * Math.min(1, t / 0.55)) *
+    5;
+  const out = Math.max(0, t - 0.6);
+  const exhale =
+    t > 0.6
+      ? Math.sin(2 * Math.PI * (900 - out * 500) * t) *
+        Math.sin(Math.PI * Math.min(1, out / 0.45)) *
+        0.18
+      : 0;
+  return inhale + exhale;
+});
+
+/** Three clock ticks, a third of a second apart. */
+const ticks = render(1.1, (t) => {
+  const since = t % 0.36;
+  const high = Math.floor(t / 0.36) % 2 === 0 ? 2100 : 1700;
+  return t < 1.08
+    ? Math.sin(2 * Math.PI * high * since) * Math.exp(-since * 90) * 0.8
+    : 0;
+});
+
+/** Cork pop, for a sign shooting up. */
+const pop = render(0.16, (t) => {
+  const freq = 320 + 900 * Math.exp(-t * 40);
+  return Math.sin(2 * Math.PI * freq * t) * Math.exp(-t * 28) * 0.9;
+});
+
 const music = join(PUBLIC, "music");
 mkdirSync(music, { recursive: true });
 writeFileSync(join(music, "trilha.wav"), wav(normalize(theme)));
@@ -207,4 +274,12 @@ const dir = join(PUBLIC, "sfx");
 mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, "thud.wav"), wav(thud));
 writeFileSync(join(dir, "step.wav"), wav(step));
+pizz.forEach((track, i) => {
+  writeFileSync(join(dir, `pizz${i + 1}.wav`), wav(normalize(track)));
+});
+writeFileSync(join(dir, "sobe.wav"), wav(rise));
+writeFileSync(join(dir, "desce.wav"), wav(fall));
+writeFileSync(join(dir, "ronco.wav"), wav(normalize(snore)));
+writeFileSync(join(dir, "tique.wav"), wav(ticks));
+writeFileSync(join(dir, "pop.wav"), wav(pop));
 log("Efeitos gerados em public/sfx e música em public/music");

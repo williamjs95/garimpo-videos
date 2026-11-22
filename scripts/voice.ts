@@ -26,6 +26,7 @@ import {
   loadCast,
   log,
   MODELS,
+  MUTE_POSES,
   openai,
   PUBLIC,
   readJson,
@@ -46,6 +47,9 @@ mkdirSync(audioDir, { recursive: true });
 const poseIds = Object.keys(cast.poses);
 const propIds = (script.props ?? []).map((p) => p.id);
 for (const l of script.lines) {
+  if (l.text.trim() && MUTE_POSES.includes(l.pose)) {
+    throw new Error(`A pose "${l.pose}" não fala. Use outra nesta fala.`);
+  }
   if (!poseIds.includes(l.pose)) {
     throw new Error(
       `Pose desconhecida "${l.pose}". Use: ${poseIds.join(", ")}`,
@@ -69,7 +73,9 @@ const missingArt = [
   ...cast.characters.flatMap((c) =>
     poseIds.flatMap((p) => [
       join(PUBLIC, "cast", c.id, `${p}.png`),
-      join(PUBLIC, "cast", c.id, `${p}-fala.png`),
+      ...(MUTE_POSES.includes(p)
+        ? []
+        : [join(PUBLIC, "cast", c.id, `${p}-fala.png`)]),
     ]),
   ),
   ...cast.characters.map((c) => join(PUBLIC, "cast", c.id, "mouths.json")),
@@ -89,6 +95,32 @@ const lines: Line[] = [];
 for (const [i, l] of script.lines.entries()) {
   const character = cast.characters.find((c) => c.id === l.character);
   if (!character) throw new Error(`Personagem desconhecido: ${l.character}`);
+
+  // A silent beat: a stare, a snore, a sign held up. Nothing to record.
+  if (!l.text.trim()) {
+    lines.push({
+      character: character.id,
+      text: "",
+      emotion: "",
+      location: l.location,
+      pose: l.pose,
+      camera: l.camera,
+      fx: l.fx,
+      fxProp: l.fxProp,
+      fxTarget: l.fxTarget,
+      move: l.move ?? "",
+      plateia: l.plateia ?? "",
+      som: l.som ?? "",
+      placa: l.placa ?? "",
+      estado: l.estado ?? [],
+      offsetMs: 0,
+      audio: "",
+      // Line lengths are divided by the speech rate at render; a pause is not speech.
+      durationMs: (l.pausaMs || 1000) * SPEECH_RATE,
+      words: [],
+    });
+    continue;
+  }
 
   const file = voiceFile(character, l);
   const path = join(audioDir, file);
@@ -131,6 +163,8 @@ for (const [i, l] of script.lines.entries()) {
     move: l.move ?? "",
     plateia: l.plateia ?? "",
     som: l.som ?? "",
+    placa: l.placa ?? "",
+    estado: l.estado ?? [],
     offsetMs,
     audio: `episodes/${slug}/${file}`,
     // Cut trailing silence: end shortly after the last spoken word.
@@ -223,6 +257,8 @@ function alignToScript(text: string, words: Word[]): Word[] {
 
 const props: EpisodeProps = {
   slug,
+  number: script.number,
+  order: script.posicoes ?? [],
   hook: script.hook,
   lines,
   cast: cast.characters.map((c) => ({

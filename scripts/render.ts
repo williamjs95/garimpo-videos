@@ -12,6 +12,7 @@ import {
   type EpisodeScript,
   episodeDir,
   log,
+  outName,
   readJson,
   requireSlug,
   ROOT,
@@ -23,6 +24,9 @@ const propsPath = join(dir, "props.json");
 const props = readJson<EpisodeProps>(propsPath);
 const script = readJson<EpisodeScript>(join(dir, "script.json"));
 const frames = totalFrames(props.lines, props.speechRate);
+const name = outName(script);
+const episode = script.number ? `Episódio ${script.number}: ` : "";
+const ep = script.number ? `Ep. ${script.number} · ` : "";
 
 const remotion = (args: string[]): void => {
   execFileSync("npx", ["remotion", ...args, `--props=${propsPath}`], {
@@ -32,7 +36,7 @@ const remotion = (args: string[]): void => {
 };
 
 log("Renderizando quadros de conferência…");
-for (const [name, frame] of [
+for (const [still, frame] of [
   ["1-gancho", 10],
   ["2-meio", Math.floor(frames / 2)],
   ["3-final", frames - 1],
@@ -40,7 +44,7 @@ for (const [name, frame] of [
   remotion([
     "still",
     "Episode",
-    join("out", slug, `${name}.png`),
+    join("out", name, `${still}.png`),
     `--frame=${frame}`,
   ]);
 }
@@ -49,7 +53,7 @@ log("Renderizando vídeo 1080x1920…");
 remotion([
   "render",
   "Episode",
-  join("out", `${slug}.mp4`),
+  join("out", `${name}.mp4`),
   "--codec=h264",
   "--crf=20",
 ]);
@@ -59,22 +63,22 @@ const tags = script.post.hashtags
   .join(" ");
 writeFileSync(
   join(dir, "post.md"),
-  `# ${script.title}
+  `# ${episode}${script.title}
 
-Vídeo: out/${slug}.mp4
+Vídeo: out/${name}.mp4
 
 ## TikTok
-${script.post.tiktok}
+${ep}${script.post.tiktok}
 
 ${tags}
 
 ## Instagram Reels
-${script.post.reels}
+${ep}${script.post.reels}
 
 ${tags}
 
 ## YouTube Shorts
-Título: ${script.post.shortsTitle}
+Título: ${script.post.shortsTitle}${script.number ? ` | Ep. ${script.number}` : ""}
 
 ${script.post.shortsDescription}
 
@@ -82,6 +86,6 @@ ${tags} #shorts
 `,
 );
 
-log(`Pronto: out/${slug}.mp4`);
+log(`Pronto: out/${name}.mp4`);
 console.log(`Legendas dos posts: episodes/${slug}/post.md`);
-console.log(`Conferência: out/${slug}/1-gancho.png, 2-meio.png, 3-final.png`);
+console.log(`Conferência: out/${name}/1-gancho.png, 2-meio.png, 3-final.png`);

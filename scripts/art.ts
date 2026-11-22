@@ -24,6 +24,7 @@ import {
   loadCast,
   log,
   MODELS,
+  MUTE_POSES,
   openai,
   PUBLIC,
   readJson,
@@ -165,6 +166,7 @@ const drawCharacter = async (id: string): Promise<void> => {
 
   await pool(
     Object.keys(cast.poses)
+      .filter((p) => !MUTE_POSES.includes(p))
       .filter((p) => !existsSync(join(dir, `${p}-fala.png`)))
       .map((p) => async () => {
         log(`${c.name}: boca aberta (${p})`);

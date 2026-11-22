@@ -2,15 +2,20 @@ import { Audio } from "@remotion/media";
 import { ding, recordScratch, whip, whoosh } from "@remotion/sfx";
 import { interpolate, Sequence, staticFile } from "remotion";
 import type { TimedLine } from "./timing";
-import { DROP_FALL_FRAMES, JINGLE, type Line } from "./types";
+import { DROP_FALL_FRAMES, DROP_HANG_FRAMES, JINGLE, type Line } from "./types";
 
 type Cue = { at: number; src: string; volume: number };
 
-const named: Record<string, string> = {
-  scratch: recordScratch,
-  ding,
-  whoosh,
-};
+const sfx = (name: string): string => staticFile(`sfx/${name}.wav`);
+
+const named = (som: string): string | undefined =>
+  ({
+    scratch: recordScratch,
+    ding,
+    whoosh,
+    ronco: sfx("ronco"),
+    tique: sfx("tique"),
+  })[som];
 
 /** Sound effects, derived from what happens on screen so scripts stay simple. */
 const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
@@ -23,23 +28,31 @@ const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
     if (l.camera === "close")
       cues.push({ at: t.from, src: whip, volume: 0.18 });
     if (l.move === "entra") {
-      for (const n of [0, 5, 10]) {
+      // Each step lands on a plucked note, climbing as they arrive.
+      [0, 5, 10].forEach((n, i) => {
         cues.push({ at: t.from + n, src: step, volume: 0.6 });
-      }
+        cues.push({ at: t.from + n, src: sfx(`pizz${i + 1}`), volume: 0.3 });
+      });
     }
     if (l.move === "sai") {
-      for (const n of [0, 5, 10]) {
-        cues.push({ at: t.from + t.speechFrames + n, src: step, volume: 0.6 });
-      }
+      [0, 5, 10].forEach((n, i) => {
+        const at = t.from + t.speechFrames + n;
+        cues.push({ at, src: step, volume: 0.6 });
+        cues.push({ at, src: sfx(`pizz${3 - i}`), volume: 0.3 });
+      });
     }
     if (l.fx.includes("brilho"))
       cues.push({ at: t.from, src: ding, volume: 0.5 });
     if (l.fx.includes("queda")) {
       const start = t.from + t.speechFrames + 2;
-      cues.push({ at: start, src: whoosh, volume: 0.35 });
-      cues.push({ at: start + DROP_FALL_FRAMES, src: thud, volume: 0.9 });
+      // A whistle climbs while the prop hangs, then dives with it.
+      const drop = start + DROP_HANG_FRAMES;
+      cues.push({ at: start, src: sfx("sobe"), volume: 0.3 });
+      cues.push({ at: drop, src: sfx("desce"), volume: 0.35 });
+      cues.push({ at: drop + DROP_FALL_FRAMES, src: thud, volume: 0.9 });
     }
-    const extra = named[l.som];
+    if (l.placa) cues.push({ at: t.from + 4, src: sfx("pop"), volume: 0.6 });
+    const extra = named(l.som);
     if (extra) cues.push({ at: t.from, src: extra, volume: 0.45 });
   }
   return cues;

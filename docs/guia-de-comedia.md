@@ -55,7 +55,7 @@ Cada episódio tem gancho, início, meio, fim, gancho final e o fecho da série,
 | **Gancho final** | 2 a 3s antes do fecho | Uma fala só, que abre uma porta para o próximo episódio: uma reação ou novidade. Nunca segura a resolução deste. |
 | **Fecho** | últimos 2,8s | Fixo e igual em todos os vídeos (íris, bateia, site e vinheta). Não se escreve no roteiro: a animação acrescenta sozinha. |
 
-Formato: 12 a 15 falas, 75 a 100 palavras, 30 a 40 segundos já contando o fecho (as falas somam até uns 37s). O episódio é completo para quem nunca viu
+Formato: 12 a 15 falas, 65 a 100 palavras (menos palavras quando há batidas mudas), 30 a 40 segundos já contando o fecho (as falas somam até uns 37s). O episódio é completo para quem nunca viu
 a série e para quem não voltar: o gancho final é um bônus, não uma "Parte 2".
 
 ## Os dez princípios
@@ -83,14 +83,22 @@ a série e para quem não voltar: o gancho final é um bônus, não uma "Parte 2
 Cada fala do roteiro traz a direção de quem fala e de quem escuta. Personagem parado é personagem morto:
 varie a pose de fala para fala e dê reação a quem escuta nos momentos fortes.
 
-- `pose`: neutro, animado, bravo, chocado, explicando ou pensando. Evite repetir a mesma pose do personagem em falas seguidas.
+- `pose`: neutro, animado, bravo, chocado, explicando, pensando ou dormindo (dormindo nunca fala). Evite repetir a mesma pose do personagem em falas seguidas.
 - `camera`: "normal" ou "close" (close para falas curtas e secas, como o "Amadores." da Kátia, e para a reação de quem acabou de se dar mal).
 - `move`: "entra" faz o personagem chegar andando no começo da fala; "sai" faz ele ir embora depois dela. Quem ainda não entrou não aparece. Nem todo mundo precisa estar em cena desde o começo.
 - `plateia`: a pose de todos que estão escutando durante a fala (por exemplo, "chocado" quando alguém solta um absurdo). Vazio deixa todos em neutro.
-- `som`: efeito no começo da fala. "scratch" (arranhão de disco) para a notícia que estraga a festa; "ding" para uma boa ideia; "whoosh" para uma virada. Use em no máximo duas falas.
+- `som`: efeito no começo da fala. "scratch" (arranhão de disco) para a notícia que estraga a festa; "ding" para uma boa ideia; "whoosh" para uma virada; "ronco" e "tique" (relógio) para batidas mudas. Use em no máximo três falas.
 - `fx`: "" na maioria; "brilho" quando o Zé tem uma ideia; "queda" quando um objeto cai em alguém depois da fala; "brilho+queda" para os dois.
 - `fxProp` e `fxTarget`: o objeto que cai (declarado em `props`) e em quem cai.
 - `cenario` (no roteiro, fora das falas): objetos que ficam em cena o episódio inteiro ao lado de um personagem, como a torre de sacas da Kátia. Use para a piada visual já estar no primeiro quadro. O objeto balança quando algo cai em quem está junto dele.
+
+- **Batida muda:** uma fala com `text` vazio e `pausaMs` (800 a 1500). É a pausa cômica: o olhar parado para a câmera depois do absurdo, o ronco, a placa. No máximo três por episódio, cada uma com um motivo.
+- `placa`: numa batida muda, o texto da placa que o personagem levanta em vez de falar. Funciona sem som. Use a câmera "normal".
+- `estado`: pose que passa a valer daquela fala em diante para alguém, como `{quem: "katia", pose: "dormindo"}`. Quem dorme não reage à plateia.
+- `posicoes` (no roteiro, fora das falas): ordem dos personagens da esquerda para a direita, para a piada visual caber no primeiro quadro.
+- `number`: todo episódio tem número, que aparece no cartão de título, no nome do arquivo e nos textos de postagem.
+
+Convenções de desenho animado clássico já embutidas na animação: o objeto da queda para um instante no ar antes de cair, e todos olham para cima; quem entra correndo estica e amassa ao parar; passos, pausa no ar e queda são pontuados por notas musicais; o cartão de título e o fecho usam a mesma bateia e a mesma letra.
 
 A animação acrescenta sozinha: "!" sobre quem escuta em `plateia` "chocado" e "?" em "pensando"; estrelas girando na cabeça de quem levou a queda; sombra no chão; a trilha de fundo e o fecho.
 Passos, o som da queda, o brilho e o zoom do close já têm efeito sonoro automático.
@@ -105,6 +113,7 @@ Use no máximo uma queda por episódio, guardada para o fim.
 - [ ] Ninguém explica a piada nem sabe que é engraçado.
 - [ ] Tem gancho, início, meio e fim; o meio escala a situação.
 - [ ] O fim resolve a história num bordão, com gatilho diferente do episódio anterior.
+- [ ] Há pelo menos uma piada que funciona sem som (placa, batida muda, objeto em cena).
 - [ ] O gancho final é uma fala só e não segura a resolução.
 - [ ] Nenhuma fala cita o site: o endereço aparece só no fecho fixo.
 - [ ] Há pelo menos uma melhoria de roteiro e uma gráfica em relação ao episódio anterior.

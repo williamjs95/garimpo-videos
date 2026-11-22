@@ -81,8 +81,17 @@ export type ScriptLine = {
   /** Pose of everyone who is listening during this line. Empty means neutro. */
   plateia?: string;
   /** Sound effect at the start of the line. */
-  som?: "" | "scratch" | "ding" | "whoosh";
+  som?: "" | "scratch" | "ding" | "whoosh" | "ronco" | "tique";
+  /** Text on a sign the character holds up instead of speaking. */
+  placa?: string;
+  /** Length of a silent beat (a line with empty `text`), in milliseconds. */
+  pausaMs?: number;
+  /** Poses that stick from this line on, e.g. someone falls asleep. Empty pose clears it. */
+  estado?: { quem: string; pose: string }[];
 };
+
+/** Poses nobody speaks in, so they need no mouth-open twin. */
+export const MUTE_POSES = ["dormindo"];
 
 export type ScriptProp = { id: string; description: string };
 
@@ -98,6 +107,8 @@ export type ScriptScenery = {
 };
 
 export type EpisodeScript = {
+  /** Position in the series, starting at 1. Shown on the title card and in file names. */
+  number?: number;
   slug: string;
   title: string;
   hook: string;
@@ -105,6 +116,8 @@ export type EpisodeScript = {
   /** Objects used by "queda" gags and by `cenario`, drawn once by npm run art. */
   props?: ScriptProp[];
   cenario?: ScriptScenery[];
+  /** Left-to-right order of the characters on stage. Default: order of appearance. */
+  posicoes?: string[];
   lines: ScriptLine[];
   post: {
     tiktok: string;
@@ -122,6 +135,12 @@ export const writeJson = (path: string, data: unknown): void => {
   mkdirSync(dirname(path), { recursive: true });
   writeFileSync(path, `${JSON.stringify(data, null, 2)}\n`);
 };
+
+/** "ep03-slug": the name of an episode's video and stills. */
+export const outName = (script: EpisodeScript): string =>
+  script.number
+    ? `ep${String(script.number).padStart(2, "0")}-${script.slug}`
+    : script.slug;
 
 export const episodeDir = (slug: string): string => join(EPISODES, slug);
 

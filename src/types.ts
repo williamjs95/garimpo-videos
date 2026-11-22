@@ -22,7 +22,11 @@ export type Line = {
   /** Pose of everyone who is listening during this line. Empty means neutro. */
   plateia: string;
   /** Sound effect at the start of the line. */
-  som: "" | "scratch" | "ding" | "whoosh";
+  som: "" | "scratch" | "ding" | "whoosh" | "ronco" | "tique";
+  /** Text on a sign the character holds up. Lines with no `text` are silent beats. */
+  placa?: string;
+  /** Poses that stick from this line on (someone falls asleep), until changed. */
+  estado?: { quem: string; pose: string }[];
   /** Silence trimmed from the start of the audio file. */
   offsetMs: number;
   /** Path relative to public/, used with staticFile(). */
@@ -62,6 +66,10 @@ export type Scenery = {
 
 export type EpisodeProps = {
   slug: string;
+  /** Episode number in the series, shown on the title card. */
+  number?: number;
+  /** Left-to-right order of the characters on stage. Default: order of appearance. */
+  order?: string[];
   hook: string;
   lines: Line[];
   cast: CastMember[];
@@ -88,6 +96,8 @@ export const SITE = "garimpoeditais.com.br";
 export const DEFAULT_MUSIC = "music/trilha.wav";
 export const JINGLE = "music/vinheta.wav";
 /** Extra time after a line for a "queda" gag to play out. */
-export const DROP_MS = 1100;
+export const DROP_MS = 1500;
+/** Frames a dropped prop hangs in the air first, while everyone looks up. */
+export const DROP_HANG_FRAMES = 13;
 /** Frames a dropped prop takes to reach the target's head. */
 export const DROP_FALL_FRAMES = 8;

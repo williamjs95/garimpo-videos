@@ -27,6 +27,8 @@ export const Captions: React.FC<{
   const { fps } = useVideoConfig();
   const ms = ((frame - lineFrom) / fps) * 1000 * speechRate;
 
+  // A silent beat has nothing to caption.
+  if (!line.text) return null;
   const words =
     line.words.length > 0
       ? line.words
@@ -103,8 +105,14 @@ export const Captions: React.FC<{
   );
 };
 
-/** On-screen hook from frame 0 (many people watch muted), then it tucks away. */
-export const Hook: React.FC<{ text: string }> = ({ text }) => {
+/**
+ * Title card on screen from frame 0 (many people watch muted), then it tucks
+ * away. Same pan rings and lettering as the closing card, so the two match.
+ */
+export const Hook: React.FC<{ text: string; number?: number }> = ({
+  text,
+  number,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const out = spring({
@@ -114,23 +122,58 @@ export const Hook: React.FC<{ text: string }> = ({ text }) => {
   });
   if (out >= 0.999) return null;
   return (
-    <AbsoluteFill style={{ alignItems: "center", paddingTop: 170 }}>
+    <AbsoluteFill
+      style={{
+        alignItems: "center",
+        paddingTop: 150,
+        transform: `translateY(${-out * 620}px)`,
+      }}
+    >
       <div
         style={{
-          maxWidth: 880,
-          fontFamily: displayFont,
-          fontSize: 88,
-          lineHeight: 1.05,
+          position: "relative",
+          maxWidth: 900,
+          padding: "30px 48px 36px",
+          borderRadius: 36,
+          border: `10px solid ${colors.ink}`,
+          boxShadow: `0 14px 0 ${colors.ink}`,
+          background: `repeating-radial-gradient(circle at 50% 120%, ${colors.goldBright} 0 40px, ${colors.gold} 40px 80px)`,
+          transform: "rotate(-1.5deg)",
           textAlign: "center",
-          color: colors.card,
-          backgroundColor: colors.terra,
-          padding: "22px 36px",
-          borderRadius: 28,
-          boxShadow: `0 10px 0 ${colors.ink}`,
-          transform: `translateY(${-out * 500}px) rotate(-1.5deg)`,
         }}
       >
-        {text}
+        {number ? (
+          <div
+            style={{
+              position: "absolute",
+              top: -44,
+              left: 36,
+              fontFamily: displayFont,
+              fontSize: 40,
+              color: colors.card,
+              backgroundColor: colors.terra,
+              padding: "6px 24px",
+              borderRadius: 999,
+              border: `6px solid ${colors.ink}`,
+              transform: "rotate(-3deg)",
+            }}
+          >
+            Episódio {number}
+          </div>
+        ) : null}
+        <div
+          style={{
+            fontFamily: scriptFont,
+            fontSize: 84,
+            lineHeight: 1.18,
+            color: colors.card,
+            WebkitTextStroke: `14px ${colors.ink}`,
+            paintOrder: "stroke fill",
+            textShadow: `0 8px 0 ${colors.ink}`,
+          }}
+        >
+          {text}
+        </div>
       </div>
     </AbsoluteFill>
   );

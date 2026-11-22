@@ -12,6 +12,7 @@ import type { TimedLine } from "./timing";
 import {
   type CastMember,
   DROP_FALL_FRAMES as FALL,
+  DROP_HANG_FRAMES as HANG,
   type Line,
   type Mouth,
   type Scenery,
@@ -43,7 +44,11 @@ const mix = (a: Camera, b: Camera, t: number): Camera => ({
 });
 
 /** Everyone who speaks or gets hit in a location, in order of appearance. */
-export const presentIn = (lines: Line[], location: string): string[] => {
+export const presentIn = (
+  lines: Line[],
+  location: string,
+  order: string[] = [],
+): string[] => {
   const ids: string[] = [];
   for (const l of lines) {
     if (l.location !== location) continue;
@@ -51,7 +56,10 @@ export const presentIn = (lines: Line[], location: string): string[] => {
       if (id && !ids.includes(id)) ids.push(id);
     }
   }
-  return ids;
+  // Anyone the episode placed by hand goes first, in that order.
+  const rank = (id: string): number =>
+    order.includes(id) ? order.indexOf(id) : order.length + ids.indexOf(id);
+  return [...ids].sort((a, b) => rank(a) - rank(b));
 };
 
 const heightOf = (cast: CastMember[], id: string): number =>
@@ -81,6 +89,7 @@ export const Stage: React.FC<{
   backgrounds: Record<string, string>;
   props: Record<string, string>;
   scenery: Scenery[];
+  order: string[];
   speechRate: number;
 }> = ({
   lines,
@@ -90,6 +99,7 @@ export const Stage: React.FC<{
   backgrounds,
   props,
   scenery,
+  order: placed,
   speechRate,
 }) => {
   const frame = useCurrentFrame();
@@ -100,7 +110,7 @@ export const Stage: React.FC<{
 
   const local = frame - time.from;
   const ms = (local / fps) * 1000 * speechRate;
-  const present = presentIn(lines, line.location);
+  const present = presentIn(lines, line.location, placed);
   const xOf = (id: string): number =>
     slotX(present.length, Math.max(0, present.indexOf(id)));
 
@@ -138,8 +148,10 @@ export const Stage: React.FC<{
   cam.z *= 1 + 0.025 * Math.min(1, local / time.durationInFrames);
 
   const dropStart = time.speechFrames + 2;
-  const sinceImpact = local - dropStart - FALL;
+  const sinceImpact = local - dropStart - HANG - FALL;
   const dropping = line.fx.includes("queda") && local >= dropStart;
+  // The prop hangs overhead for a beat before it falls: time to look up.
+  const hanging = dropping && sinceImpact < 0;
   if (dropping) {
     const move = spring({
       frame: local - dropStart,
@@ -159,6 +171,27 @@ export const Stage: React.FC<{
   }
   const stillShocked = (id: string): boolean =>
     aftermath.some((l) => l.fxTarget === id);
+  // Poses that stick: whoever fell asleep stays asleep, whatever is said.
+  const stuck: Record<string, string> = {};
+  lines.forEach((l, i) => {
+    if (i > index || l.location !== line.location) return;
+    for (const s of l.estado ?? []) {
+      // The speaker's own change waits until they finish the line.
+      if (i === index && s.quem === l.character && local < time.speechFrames)
+        continue;
+      if (s.pose) stuck[s.quem] = s.pose;
+      else delete stuck[s.quem];
+    }
+  });
+  const poseOf = (id: string): string => {
+    const struck = hit && id === line.fxTarget;
+    if (id === line.character) {
+      return local >= time.speechFrames && stuck[id] ? stuck[id] : line.pose;
+    }
+    if (stuck[id]) return stuck[id];
+    if (struck || stillShocked(id) || hanging) return "chocado";
+    return line.plateia || "neutro";
+  };
   const shake = hit ? 24 * Math.exp(-sinceImpact / 5) : 0;
 
   const tx =
@@ -180,7 +213,7 @@ export const Stage: React.FC<{
    */
   const walkOf = (
     id: string,
-  ): { dx: number; gone: boolean; stride: number } => {
+  ): { dx: number; gone: boolean; stride: number; landed?: number } => {
     const side = xOf(id) < WORLD_W / 2 ? -1 : 1;
     const own = lines
       .map((l, i) => ({ l, i }))
@@ -197,6 +230,8 @@ export const Stage: React.FC<{
             dx: (1 - eased) * side * WALK_FROM,
             gone: false,
             stride: t < 1 ? local : 0,
+            // Skids to a stop: a squash that springs back.
+            landed: t < 1 ? 0 : Math.exp(-(local - WALK) / 4) * 0.45,
           };
         }
       } else if (l.move === "sai") {
@@ -293,23 +328,19 @@ export const Stage: React.FC<{
               key={id}
               member={member}
               poses={posesOf(lines, id)}
-              pose={
-                speaker
-                  ? line.pose
-                  : struck || stillShocked(id)
-                    ? "chocado"
-                    : line.plateia || "neutro"
-              }
+              pose={poseOf(id)}
               x={xOf(id) + walk.dx}
               stride={walk.stride}
               toward={Math.sign(speakerX - xOf(id))}
-              reacting={!speaker && line.plateia !== ""}
+              reacting={!speaker && !stuck[id] && line.plateia !== ""}
               emphasis={speaker ? emphasis : 0}
               local={local}
               phase={present.indexOf(id) * 23}
               speaker={speaker}
               talking={speaker && isSpeaking(line, ms)}
-              squash={struck ? Math.exp(-sinceImpact / 4) : 0}
+              squash={
+                (struck ? Math.exp(-sinceImpact / 4) : 0) + (walk.landed ?? 0)
+              }
             />
           );
         })}
@@ -321,10 +352,18 @@ export const Stage: React.FC<{
         {present.map((id) => {
           if (walkOf(id).gone) return null;
           const top = levelOf(cast, id, 0.97);
+          if (poseOf(id) === "dormindo") {
+            return <Snore key={id} x={xOf(id)} y={top} phase={xOf(id)} />;
+          }
           if ((hit && id === line.fxTarget) || stillShocked(id)) {
             return <Dizzy key={id} x={xOf(id)} y={top} local={local} />;
           }
-          const glyph = id === line.character ? undefined : MARKS[line.plateia];
+          const glyph =
+            id === line.character
+              ? undefined
+              : hanging
+                ? "!"
+                : MARKS[line.plateia];
           return glyph ? (
             <Mark
               key={id}
@@ -337,6 +376,15 @@ export const Stage: React.FC<{
           ) : null;
         })}
 
+        {line.placa ? (
+          <Sign
+            text={line.placa}
+            x={speakerX + 175}
+            y={levelOf(cast, line.character, 0.62)}
+            local={local}
+          />
+        ) : null}
+
         {aftermath.map((l) =>
           props[l.fxProp] ? (
             <Drop
@@ -345,6 +393,7 @@ export const Stage: React.FC<{
               x={xOf(l.fxTarget)}
               headTop={levelOf(cast, l.fxTarget, 0.96)}
               since={999}
+              local={0}
             />
           ) : null,
         )}
@@ -355,6 +404,7 @@ export const Stage: React.FC<{
             x={xOf(line.fxTarget)}
             headTop={levelOf(cast, line.fxTarget, 0.96)}
             since={local - dropStart}
+            local={local}
           />
         ) : null}
       </div>
@@ -372,7 +422,9 @@ const posesOf = (lines: Line[], id: string): string[] => {
   for (const l of lines) {
     if (l.character === id) poses.add(l.pose);
     else if (l.plateia) poses.add(l.plateia);
-    if (l.fx.includes("queda") && l.fxTarget === id) poses.add("chocado");
+    if (l.fx.includes("queda")) poses.add("chocado");
+    for (const s of l.estado ?? [])
+      if (s.quem === id && s.pose) poses.add(s.pose);
   }
   return [...poses];
 };
@@ -436,12 +488,17 @@ const Character: React.FC<{
     hop -
     step;
   const tilt =
-    (walking ? Math.sin(stride * 0.75) * 4 : 0) +
+    (walking ? Math.sin(stride * 0.75) * 4 + toward * 7 : 0) +
     (talking ? Math.sin(local * 0.33) * 1.6 : 0) +
     toward * 2.4 * attention;
+  // Running stretches the body tall and thin; an impact squashes it flat.
+  const stretch = walking ? 0.07 : 0;
   const scaleY =
-    (0.94 + 0.06 * pop + breath + 0.02 * emphasis) * (1 - 0.2 * squash);
-  const scaleX = (1 - breath - 0.01 * emphasis) * (1 + 0.14 * squash);
+    (0.94 + 0.06 * pop + breath + 0.02 * emphasis) *
+    (1 - 0.2 * squash) *
+    (1 + stretch);
+  const scaleX =
+    (1 - breath - 0.01 * emphasis) * (1 + 0.14 * squash) * (1 - stretch);
 
   // Blink every three seconds or so, each character on their own beat.
   const blinking =
@@ -568,6 +625,104 @@ const Mark: React.FC<{
   );
 };
 
+/** Floating Zs over someone asleep. */
+const Snore: React.FC<{ x: number; y: number; phase: number }> = ({
+  x,
+  y,
+  phase,
+}) => {
+  const frame = useCurrentFrame();
+  return (
+    <>
+      {[0, 1, 2].map((i) => {
+        // Each Z drifts up and away, growing, then starts over.
+        const t = ((frame + phase + i * 15) % 45) / 45;
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: x + 90 + t * 150,
+              top: y - 40 - t * 260,
+              fontFamily: displayFont,
+              fontWeight: 800,
+              fontSize: 70 + t * 80,
+              lineHeight: 1,
+              color: colors.card,
+              WebkitTextStroke: `12px ${colors.ink}`,
+              paintOrder: "stroke fill",
+              opacity: Math.min(1, t * 5) * Math.min(1, (1 - t) * 3),
+              transform: `rotate(${-12 + t * 20}deg)`,
+            }}
+          >
+            Z
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+/** A hand-painted sign on a stick, held up instead of speaking. */
+const Sign: React.FC<{ text: string; x: number; y: number; local: number }> = ({
+  text,
+  x,
+  y,
+  local,
+}) => {
+  const { fps } = useVideoConfig();
+  const up = spring({
+    frame: local - 4,
+    fps,
+    config: { damping: 9, stiffness: 150 },
+  });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x - 300,
+        top: y - 260,
+        width: 600,
+        height: 1200,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        transformOrigin: "50% 100%",
+        transform: `translateY(${(1 - up) * 900}px) rotate(${4 + Math.sin(local / 6) * 1.5}deg)`,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: displayFont,
+          fontWeight: 800,
+          fontSize: 76,
+          lineHeight: 1.1,
+          color: colors.ink,
+          backgroundColor: colors.card,
+          padding: "30px 36px",
+          border: `12px solid ${colors.ink}`,
+          borderRadius: 18,
+          boxShadow: `0 12px 0 ${colors.ink}`,
+          textAlign: "center",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {text}
+      </div>
+      <div
+        style={{
+          width: 34,
+          flex: 1,
+          marginTop: -6,
+          backgroundColor: colors.terra,
+          border: `10px solid ${colors.ink}`,
+          borderTop: "none",
+        }}
+      />
+    </div>
+  );
+};
+
 /** Stars circling the head of whoever just got hit. */
 const Dizzy: React.FC<{ x: number; y: number; local: number }> = ({
   x,
@@ -679,12 +834,19 @@ const Drop: React.FC<{
   x: number;
   headTop: number;
   since: number;
-}> = ({ src, x, headTop, since }) => {
+  local: number;
+}> = ({ src, x, headTop, since, local }) => {
   const rest = headTop - PROP * 0.55;
-  const after = since - FALL;
+  const hover = rest - 430;
+  const after = since - HANG - FALL;
   let left = x;
-  let top = lerp(-PROP - 200, rest, Math.min(1, since / FALL) ** 2);
-  let rotate = -12;
+  // Drops in, hangs wobbling, then falls the rest of the way.
+  const enter = 1 - (1 - Math.min(1, since / 5)) ** 3;
+  let top =
+    since < HANG
+      ? lerp(-PROP - 200, hover, enter) + Math.sin(local * 1.3) * 7
+      : lerp(hover, rest, Math.min(1, (since - HANG) / FALL) ** 2);
+  let rotate = since < HANG ? -12 + Math.sin(local * 0.9) * 5 : -12;
   if (after > 0) {
     left = x + Math.min(300, after * 11);
     top = Math.min(FLOOR - PROP * 0.8, rest - 20 * after + 1.3 * after * after);

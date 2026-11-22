@@ -51,6 +51,9 @@ SAÍDA
 - "pose", "camera", "move", "plateia", "som", "fx", "fxProp" e "fxTarget" seguem a seção "Direção de cena" do guia. Quando não se aplicam, use "".
 - "props": lista dos objetos usados em "queda" e em "cenario", com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
 - "cenario": objetos que ficam em cena o episódio inteiro ao lado de um personagem (ex.: uma torre de caixas junto da Kátia). Cada item tem "prop" (id declarado em "props"), "junto" (personagem), "lado" ("esquerda" ou "direita") e "altura" em pixels (um personagem tem uns 1000). Lista vazia se não houver.
+- "posicoes": ordem dos personagens em cena, da esquerda para a direita. Lista vazia usa a ordem em que aparecem.
+- Batida muda (olhar para a câmera, ronco, placa levantada): fala com "text" e "emotion" vazios e "pausaMs" entre 800 e 1500. "placa" é o texto da placa que o personagem levanta, ou "". Nas falas normais, "pausaMs" é 0 e "placa" é "".
+- "estado": lista de {quem, pose} que passa a valer daquela fala em diante (ex.: alguém dorme: pose "dormindo"). Pose "" desfaz. Lista vazia na maioria das falas. A pose "dormindo" nunca fala.
 - Não escreva chamada para o site nem despedida: todo episódio já termina com o fecho fixo da série (íris e endereço na tela), depois do gancho final.
 - "mentionsGarimpo": true só se alguma fala citar o Garimpo ou vender para o governo.
 
@@ -74,6 +77,7 @@ const schema = {
     "mentionsGarimpo",
     "props",
     "cenario",
+    "posicoes",
     "lines",
     "post",
   ],
@@ -108,6 +112,7 @@ const schema = {
         },
       },
     },
+    posicoes: { type: "array", items: { type: "string", enum: ids } },
     lines: {
       type: "array",
       items: {
@@ -126,6 +131,9 @@ const schema = {
           "move",
           "plateia",
           "som",
+          "placa",
+          "pausaMs",
+          "estado",
         ],
         properties: {
           character: { type: "string", enum: ids },
@@ -143,7 +151,24 @@ const schema = {
           fxTarget: { type: "string", enum: ["", ...ids] },
           move: { type: "string", enum: ["", "entra", "sai"] },
           plateia: { type: "string", enum: ["", ...poses] },
-          som: { type: "string", enum: ["", "scratch", "ding", "whoosh"] },
+          som: {
+            type: "string",
+            enum: ["", "scratch", "ding", "whoosh", "ronco", "tique"],
+          },
+          placa: { type: "string" },
+          pausaMs: { type: "number" },
+          estado: {
+            type: "array",
+            items: {
+              type: "object",
+              additionalProperties: false,
+              required: ["quem", "pose"],
+              properties: {
+                quem: { type: "string", enum: ids },
+                pose: { type: "string", enum: ["", ...poses] },
+              },
+            },
+          },
         },
       },
     },
@@ -191,6 +216,8 @@ let slug = script.slug
   .replace(/^-|-$/g, "");
 if (existsSync(episodeDir(slug))) slug = `${slug}-${Date.now().toString(36)}`;
 script.slug = slug;
+// Episodes are numbered in the order they are written.
+script.number = Math.max(0, ...previous.map((p) => p.number ?? 0)) + 1;
 
 writeJson(join(episodeDir(slug), "script.json"), script);
 

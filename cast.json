@@ -6,7 +6,8 @@
     "bravo": "annoyed, deep frown, eyebrows down, lips pressed, hands on hips",
     "chocado": "shocked, eyes very wide, eyebrows raised high, lips pressed tight, both hands up near the face",
     "explicando": "explaining with total confidence, slight closed-mouth smile, one hand raised with the index finger pointing up",
-    "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, one hand on the chin"
+    "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, one hand on the chin",
+    "dormindo": "fast asleep while standing up, both eyes closed, head tilted to one side, peaceful face, mouth slightly open, shoulders dropped and arms hanging loose"
   },
   "characters": [
     {
@@ -35,7 +36,8 @@
         "bravo": "annoyed, deep frown, eyebrows down, lips pressed, one hand on his hip, the other hand still holding the round golden pan against his chest",
         "chocado": "shocked, eyes very wide, eyebrows raised high, lips pressed tight, clutching the round golden pan against his chest with both hands",
         "explicando": "explaining with total confidence, slight closed-mouth smile, one hand raised with the index finger pointing up, the other hand holding the round golden pan against his chest",
-        "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, scratching his head under the hat with one hand, the other hand holding the round golden pan against his chest"
+        "pensando": "thinking hard, eyes looking up to one side, mouth closed and twisted, scratching his head under the hat with one hand, the other hand holding the round golden pan against his chest",
+        "dormindo": "fast asleep while standing up, both eyes closed, head tilted to one side, peaceful face, mouth slightly open, hugging the round golden pan against his chest like a pillow"
       }
     },
     {
