@@ -68,7 +68,7 @@ SAÍDA
 - "hook" é o texto na tela no primeiro frame: 4 a 7 palavras, sem emoji, no tom de fofoca (ex.: "A liquidação da loja da frente").
 - "emotion" de cada fala é a indicação de atuação (ex.: "cochichando, deliciada", "fria, seca"). Nunca peça pressa nem grito ("falando rápido", "sem pausas", "gritando"): siga a seção "Dicção" do guia.
 - "pose", "camera", "move", "plateia", "som", "fx", "fxProp" e "fxTarget" seguem a seção "Direção de cena" do guia. Quando não se aplicam, use "".
-- "props": lista dos objetos usados em "queda" e em "cenario", com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
+- "props": lista dos objetos usados em "queda" e em "cenario", com "peso" ("leve" para papel e pena, "medio" para a maioria, "pesado" para livro grosso, saca, cofre), com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
 - "cenario": objetos que ficam em cena o episódio inteiro ao lado de um personagem (ex.: uma torre de caixas junto da Kátia). Cada item tem "prop" (id declarado em "props"), "junto" (personagem), "lado" ("esquerda" ou "direita") e "altura" em pixels (um personagem tem uns 1000). Lista vazia se não houver.
 - "posicoes": ordem dos personagens em cena, da esquerda para a direita. Lista vazia usa a ordem em que aparecem.
 - Batida muda (olhar para a câmera, ronco, placa levantada): fala com "text" e "emotion" vazios e "pausaMs" entre 800 e 1500. "placa" é o texto da placa que o personagem levanta, ou "". Nas falas normais, "pausaMs" é 0 e "placa" é "".
@@ -125,10 +125,11 @@ const schema = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["id", "description"],
+        required: ["id", "description", "peso"],
         properties: {
           id: { type: "string" },
           description: { type: "string" },
+          peso: { type: "string", enum: ["leve", "medio", "pesado"] },
         },
       },
     },

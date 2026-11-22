@@ -18,7 +18,15 @@ import {
   type Word,
 } from "../src/types.ts";
 import { findFeet } from "./lib/feet.ts";
-import { hear, LIMIT, levelVoice, missed } from "./lib/diction.ts";
+import {
+  hear,
+  LIMIT,
+  listen,
+  levelVoice,
+  longestPause,
+  MAX_PAUSE,
+  missed,
+} from "./lib/diction.ts";
 import { tmpdir } from "node:os";
 import {
   type Character,
@@ -262,11 +270,17 @@ async function speak(character: Character, line: ScriptLine): Promise<Buffer> {
       const data = Buffer.from(audio.data, "base64");
       const take = join(tmpdir(), `take-${process.pid}-${attempt}.mp3`);
       writeFileSync(take, data);
-      const miss = missed(line.text, await hear(take, SPEECH_RATE, names));
-      if (!best || miss < best.miss) best = { data, miss };
-      if (miss <= LIMIT) return data;
+      const heard = await listen(take, SPEECH_RATE, names);
+      const miss = missed(line.text, heard.text);
+      const pause = Math.max(longestPause(take) / SPEECH_RATE, heard.gap);
+      // A long pause in the middle counts against the take like a lost word.
+      const score = miss + (pause > MAX_PAUSE ? 0.3 : 0);
+      if (!best || score < best.miss) best = { data, miss: score };
+      if (miss <= LIMIT && pause <= MAX_PAUSE) return data;
       log(
-        `Fala pouco clara (${Math.round(miss * 100)}% perdido), gravando de novo…`,
+        miss > LIMIT
+          ? `Fala pouco clara (${Math.round(miss * 100)}% perdido), gravando de novo…`
+          : `Pausa de ${pause.toFixed(1)}s no meio da fala, gravando de novo…`,
       );
     } else {
       log("A voz fugiu do roteiro, gravando de novo…");
@@ -323,6 +337,9 @@ const props: EpisodeProps = {
     Object.keys(cast.locations).map((l) => [l, `bg/${l}.png`]),
   ),
   props: Object.fromEntries(propIds.map((p) => [p, `props/${p}.png`])),
+  weights: Object.fromEntries(
+    (script.props ?? []).map((p) => [p.id, p.peso ?? "medio"]),
+  ),
   scenery: (script.cenario ?? []).map((s) => ({
     prop: s.prop,
     beside: s.junto,

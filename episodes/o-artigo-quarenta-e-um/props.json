@@ -1,0 +1,889 @@
+{
+  "slug": "o-artigo-quarenta-e-um",
+  "number": 8,
+  "order": [
+    "lici",
+    "ze",
+    "norberto",
+    "katia"
+  ],
+  "hook": "Ela leu o regimento inteiro",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. O Norberto vai ter que dar uma festa.",
+      "emotion": "deliciada com a fofoca, escandalizada",
+      "location": "administracao",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/lici-e02fbda116.nivel.mp3",
+      "durationMs": 4870,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 860
+        },
+        {
+          "text": "senta.",
+          "startMs": 1520,
+          "endMs": 1680
+        },
+        {
+          "text": "O",
+          "startMs": 2020,
+          "endMs": 2160
+        },
+        {
+          "text": "Norberto",
+          "startMs": 2160,
+          "endMs": 2720
+        },
+        {
+          "text": "vai",
+          "startMs": 2720,
+          "endMs": 3020
+        },
+        {
+          "text": "ter",
+          "startMs": 3020,
+          "endMs": 3560
+        },
+        {
+          "text": "que",
+          "startMs": 3560,
+          "endMs": 3660
+        },
+        {
+          "text": "dar",
+          "startMs": 3660,
+          "endMs": 3940
+        },
+        {
+          "text": "uma",
+          "startMs": 3940,
+          "endMs": 4320
+        },
+        {
+          "text": "festa.",
+          "startMs": 4320,
+          "endMs": 4720
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Festa não consta no orçamento.",
+      "emotion": "indignado, firme, ditando regra",
+      "location": "administracao",
+      "pose": "bravo",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/norberto-212d7673e6.nivel.mp3",
+      "durationMs": 2770,
+      "words": [
+        {
+          "text": "Festa",
+          "startMs": 0,
+          "endMs": 620
+        },
+        {
+          "text": "não",
+          "startMs": 620,
+          "endMs": 1260
+        },
+        {
+          "text": "consta",
+          "startMs": 1260,
+          "endMs": 1820
+        },
+        {
+          "text": "no",
+          "startMs": 1820,
+          "endMs": 1980
+        },
+        {
+          "text": "orçamento.",
+          "startMs": 1980,
+          "endMs": 2620
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Artigo nove: quem tira o alvará organiza.",
+      "emotion": "fria, pausada, saboreando cada palavra",
+      "location": "administracao",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/katia-873a0bb9d4.nivel.mp3",
+      "durationMs": 4430,
+      "words": [
+        {
+          "text": "Artigo",
+          "startMs": 0,
+          "endMs": 820
+        },
+        {
+          "text": "nove:",
+          "startMs": 820,
+          "endMs": 1380
+        },
+        {
+          "text": "quem",
+          "startMs": 1960,
+          "endMs": 2220
+        },
+        {
+          "text": "tira",
+          "startMs": 2220,
+          "endMs": 2560
+        },
+        {
+          "text": "o",
+          "startMs": 2560,
+          "endMs": 2840
+        },
+        {
+          "text": "alvará",
+          "startMs": 2840,
+          "endMs": 3220
+        },
+        {
+          "text": "organiza.",
+          "startMs": 3220,
+          "endMs": 4280
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "E o alvará tá no meu nome.",
+      "emotion": "baixinho, percebendo a armadilha",
+      "location": "administracao",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/norberto-c1aca04f52.nivel.mp3",
+      "durationMs": 3210,
+      "words": [
+        {
+          "text": "E",
+          "startMs": 0,
+          "endMs": 1060
+        },
+        {
+          "text": "o",
+          "startMs": 1060,
+          "endMs": 1460
+        },
+        {
+          "text": "alvará",
+          "startMs": 1460,
+          "endMs": 1920
+        },
+        {
+          "text": "tá",
+          "startMs": 1920,
+          "endMs": 2340
+        },
+        {
+          "text": "no",
+          "startMs": 2340,
+          "endMs": 2520
+        },
+        {
+          "text": "meu",
+          "startMs": 2520,
+          "endMs": 2800
+        },
+        {
+          "text": "nome.",
+          "startMs": 2800,
+          "endMs": 3060
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vou vender salgadinho!",
+      "emotion": "empolgado, chegando, tendo a ideia",
+      "location": "administracao",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/ze-77bd4d48ac.nivel.mp3",
+      "durationMs": 2530,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 420
+        },
+        {
+          "text": "semana",
+          "startMs": 420,
+          "endMs": 920
+        },
+        {
+          "text": "eu",
+          "startMs": 920,
+          "endMs": 1200
+        },
+        {
+          "text": "vou",
+          "startMs": 1200,
+          "endMs": 1240
+        },
+        {
+          "text": "vender",
+          "startMs": 1240,
+          "endMs": 1500
+        },
+        {
+          "text": "salgadinho!",
+          "startMs": 1500,
+          "endMs": 2380
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Artigo quarenta: o síndico pode delegar.",
+      "emotion": "recuperando a pose, esperto, triunfante",
+      "location": "administracao",
+      "pose": "pensando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/norberto-208242a628.nivel.mp3",
+      "durationMs": 3870,
+      "words": [
+        {
+          "text": "Artigo",
+          "startMs": 0,
+          "endMs": 700
+        },
+        {
+          "text": "quarenta:",
+          "startMs": 700,
+          "endMs": 1420
+        },
+        {
+          "text": "o",
+          "startMs": 1840,
+          "endMs": 2080
+        },
+        {
+          "text": "síndico",
+          "startMs": 2080,
+          "endMs": 2520
+        },
+        {
+          "text": "pode",
+          "startMs": 2520,
+          "endMs": 3160
+        },
+        {
+          "text": "delegar.",
+          "startMs": 3160,
+          "endMs": 3720
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Delegar pra quem?",
+      "emotion": "desconfiada, seca",
+      "location": "administracao",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "rate": 1,
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/katia-7199c7d64b.nivel.mp3",
+      "durationMs": 1150,
+      "words": [
+        {
+          "text": "Delegar",
+          "startMs": 0,
+          "endMs": 560
+        },
+        {
+          "text": "pra",
+          "startMs": 560,
+          "endMs": 800
+        },
+        {
+          "text": "quem?",
+          "startMs": 800,
+          "endMs": 1000
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Pra quem leu o regimento inteiro.",
+      "emotion": "vitorioso, apontando para ela",
+      "location": "administracao",
+      "pose": "animado",
+      "camera": "dupla",
+      "com": "katia",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/norberto-ffa3c4dc2a.nivel.mp3",
+      "durationMs": 2710,
+      "words": [
+        {
+          "text": "Pra",
+          "startMs": 0,
+          "endMs": 200
+        },
+        {
+          "text": "quem",
+          "startMs": 200,
+          "endMs": 700
+        },
+        {
+          "text": "leu",
+          "startMs": 700,
+          "endMs": 1120
+        },
+        {
+          "text": "o",
+          "startMs": 1120,
+          "endMs": 1400
+        },
+        {
+          "text": "regimento",
+          "startMs": 1400,
+          "endMs": 2000
+        },
+        {
+          "text": "inteiro.",
+          "startMs": 2000,
+          "endMs": 2560
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Artigo quarenta e um: quem delega, paga.",
+      "emotion": "fria, lenta, vitoriosa",
+      "location": "administracao",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "Artigo 41|Quem delega, paga",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/katia-4ce347707a.nivel.mp3",
+      "durationMs": 3310,
+      "words": [
+        {
+          "text": "Artigo",
+          "startMs": 0,
+          "endMs": 500
+        },
+        {
+          "text": "quarenta",
+          "startMs": 500,
+          "endMs": 1100
+        },
+        {
+          "text": "e",
+          "startMs": 1100,
+          "endMs": 1100
+        },
+        {
+          "text": "um:",
+          "startMs": 1100,
+          "endMs": 1380
+        },
+        {
+          "text": "quem",
+          "startMs": 2020,
+          "endMs": 2020
+        },
+        {
+          "text": "delega,",
+          "startMs": 2020,
+          "endMs": 2620
+        },
+        {
+          "text": "paga.",
+          "startMs": 3160,
+          "endMs": 3160
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Tem isso no regimento?",
+      "emotion": "baixinho, apavorado",
+      "location": "administracao",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/norberto-200cc2db0c.nivel.mp3",
+      "durationMs": 2010,
+      "words": [
+        {
+          "text": "Tem",
+          "startMs": 0,
+          "endMs": 420
+        },
+        {
+          "text": "isso",
+          "startMs": 420,
+          "endMs": 900
+        },
+        {
+          "text": "no",
+          "startMs": 900,
+          "endMs": 1160
+        },
+        {
+          "text": "regimento?",
+          "startMs": 1160,
+          "endMs": 1860
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Página catorze.",
+      "emotion": "seca, sem piscar",
+      "location": "administracao",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "queda",
+      "fxProp": "regimento",
+      "fxTarget": "norberto",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-artigo-quarenta-e-um/katia-3d92a3716c.nivel.mp3",
+      "durationMs": 1270,
+      "words": [
+        {
+          "text": "Página",
+          "startMs": 0,
+          "endMs": 420
+        },
+        {
+          "text": "catorze.",
+          "startMs": 420,
+          "endMs": 1120
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… chegou um cliente que só vai dar uma olhadinha.",
+      "emotion": "escandalizada, cochichando",
+      "location": "administracao",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 980,
+      "audio": "episodes/o-artigo-quarenta-e-um/lici-cb61cd9573.nivel.mp3",
+      "durationMs": 3410,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 60,
+          "endMs": 540
+        },
+        {
+          "text": "chegou",
+          "startMs": 540,
+          "endMs": 580
+        },
+        {
+          "text": "um",
+          "startMs": 580,
+          "endMs": 820
+        },
+        {
+          "text": "cliente",
+          "startMs": 820,
+          "endMs": 1420
+        },
+        {
+          "text": "que",
+          "startMs": 1420,
+          "endMs": 1560
+        },
+        {
+          "text": "só",
+          "startMs": 1560,
+          "endMs": 1780
+        },
+        {
+          "text": "vai",
+          "startMs": 1780,
+          "endMs": 2020
+        },
+        {
+          "text": "dar",
+          "startMs": 2020,
+          "endMs": 2200
+        },
+        {
+          "text": "uma",
+          "startMs": 2200,
+          "endMs": 2460
+        },
+        {
+          "text": "olhadinha.",
+          "startMs": 2460,
+          "endMs": 3260
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "regimento": "props/regimento.png",
+    "papelada": "props/papelada.png"
+  },
+  "weights": {
+    "regimento": "pesado",
+    "papelada": "leve"
+  },
+  "scenery": [
+    {
+      "prop": "papelada",
+      "beside": "norberto",
+      "side": -1,
+      "height": 480
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

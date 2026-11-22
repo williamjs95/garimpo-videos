@@ -16,6 +16,7 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 | 6 | O edital dos buquês | Menção direta | Zé e Norberto | Zé: tem nota, documento e prazo, e larga tudo porque a semana virou | Norberto tem ciúme de quem lê melhor que ele e sofre quando o formulário perfeito é abandonado; Kátia perdoa a dívida e disfarça ("eu quero concorrência"); Lici é interrompida e fica por último | Kátia direto, vitoriosa | Zé sai de cena; Kátia fica com o edital | Norberto: consta em ata que a Lici foi a última a saber |
 
 | 7 | A festa da Lici | Dia a dia | Lici e o resto da galeria | Lici: a última a saber da própria festa, que ainda era no mês errado | Lici em jogo pela primeira vez (quer saber, se dá mal, é amada); Zé e Kátia como aliados que se atrapalham; Kátia competente (tirou o alvará no nome do Norberto) | Lici: aberta e ninguém senta, fechada invertida ("senta… que eu já sabia"); Kátia contra o próprio aliado | Sem queda: virada pela prancheta e gancho em plano de dois | Kátia: já tirou o alvará, no nome do Norberto |
+| 8 | O artigo quarenta e um | Dia a dia (condomínio) | Norberto e Kátia (estreia do par) | Norberto: tenta escapar da festa pelo regimento e perde pelo artigo seguinte | Norberto rebaixado pela própria regra; Kátia leu o regimento inteiro e usa a "página catorze" contra ele | Página catorze dita pela Kátia; Norberto vereditos | Regimento pesado cai no Norberto e fica na cabeça | Lici: chegou um cliente que só vai dar uma olhadinha |
 ## Pares
 
 | Par | Episódios em que contracenaram de verdade | O que ainda não foi usado |
@@ -25,7 +26,7 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 | Lici e Kátia | 2, 4 | A fofoca como arma que a Kátia tenta comprar |
 | Lici e Zé | 5 | Lici como conselheira sentimental que piora tudo |
 | Lici e Norberto | 7 (ele corrige a data dela) | A fofoca contra a ata: quem é o registro oficial da galeria? |
-| Norberto e Kátia | nenhum | Dois que só jogam por cima: a regra contra o ganhar a qualquer custo |
+| Norberto e Kátia | 8 | Dois que só jogam por cima: a regra contra o ganhar a qualquer custo |
 
 ## Situação de cada personagem
 
@@ -35,15 +36,16 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 - **Zé Garimpo:** o mais completo. Bordão usado direto (1), estendido (3) e negado (5), ausente no 6; a
   negação deve continuar rara. Já vendeu café, flores e empréstimo, e saiu do 6 para vender guarda-chuva.
   Chegou perto do grande negócio uma vez (6) e largou por conta própria.
-- **Seu Norberto:** foi derrubado no 3 e teve o coração partido no 6 ("o formulário estava perfeito").
-  Deu o primeiro gancho final que não foi da Lici. Ainda precisa ser rebaixado fora da própria regra.
+- **Seu Norberto:** foi derrubado no 3, teve o coração partido no 6 e perdeu para o próprio regimento no 8
+  (a Kátia leu tudo). Ainda não foi rebaixado fora do mundo das regras.
 - **Kátia:** fez o primeiro gesto no 6 (perdoou a dívida e negou o motivo) e ficou com o edital que o Zé
   largou. "Amadores." voltou no 6. Ainda não foi mostrada sendo boa no que faz.
 
 ## Fios abertos
 
 - A Kátia ficou com o edital dos duzentos buquês (do episódio 6). O Zé agora vende guarda-chuva.
-- A Kátia tirou o alvará da festa no nome do Norberto (do episódio 7): abre o Norberto contra a Kátia.
+- O Norberto tem que pagar a festa da Lici em março (do episódio 8, artigo 41).
+- Chegou um cliente que "só vai dar uma olhadinha" (do episódio 8): abre o episódio 9.
 - A festa da Lici é em março; a galeria fez em novembro (do episódio 7).
 - A Kátia sonhou com o Zé; ele ficou feliz mesmo sabendo que era para ser esmagado (do episódio 4).
 - O Norberto se elegeu síndico vitalício numa ata que ninguém assinou (do episódio 3).
@@ -52,6 +54,5 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 | Ep. | Ideia | O que desenvolve |
 |---|---|---|
-| 8 | Norberto contra Kátia: ela descobre uma brecha no regimento | Par inédito; Norberto rebaixado; Kátia competente |
 | 9 | Um cliente de fora ("só vou dar uma olhadinha") atravessa a galeria inteira | Tema dos 80%; alguém de fora; gancho final de outro personagem |
 | 10 | Lici contra Norberto: a fofoca contra a ata | Par inédito; gesto de afeto da Kátia |

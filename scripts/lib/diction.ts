@@ -99,18 +99,21 @@ export const missed = (script: string, heard: string): number => {
 
 export const LIMIT = 0.25;
 
-/** Plays `file` at `rate` and writes down what a listener would hear. */
-export const hear = async (
+/**
+ * Plays `file` at `rate` and writes down what a listener would hear, plus the
+ * longest gap between two words as heard (a held breath counts as a gap).
+ */
+export const listen = async (
   file: string,
   rate: number,
   names: string[],
-): Promise<string> => {
+): Promise<{ text: string; gap: number }> => {
   const out = join(scratch, `${counter++}.mp3`);
   ffmpeg([
     "-loglevel",
     "error",
     "-i",
-    file,
+    resolve(file),
     "-filter:a",
     `atempo=${rate}`,
     out,
@@ -121,9 +124,60 @@ export const hear = async (
     language: "pt",
     // Names only, never the line: a viewer knows the cast, not the script.
     prompt: names.join(", "),
+    response_format: "verbose_json",
+    timestamp_granularities: ["word"],
   });
-  return tr.text;
+  const words = tr.words ?? [];
+  const gap = words
+    .slice(1)
+    .reduce((m, w, i) => Math.max(m, w.start - (words[i]?.end ?? w.start)), 0);
+  return { text: tr.text, gap };
 };
+
+/** What a listener would hear, as text. */
+export const hear = async (
+  file: string,
+  rate: number,
+  names: string[],
+): Promise<string> => (await listen(file, rate, names)).text;
+
+/** Longest silence in the middle of a take, in seconds (leading and trailing silence ignored). */
+export const longestPause = (file: string): number => {
+  const log = execFileSync(
+    "/bin/sh",
+    [
+      "-c",
+      `"$1" -hide_banner -nostats -i "$2" -af silencedetect=noise=-35dB:d=0.3 -f null - 2>&1`,
+      "sh",
+      FFMPEG,
+      resolve(file),
+    ],
+    { cwd: dirname(FFMPEG), encoding: "utf8" },
+  );
+  const duration = Number(
+    /Duration: (\d+):(\d+):([\d.]+)/
+      .exec(log)
+      ?.slice(1)
+      .reduce((s, v, i) => s + Number(v) * [3600, 60, 1][i]!, 0) ?? 0,
+  );
+  const starts = [...log.matchAll(/silence_start: (-?[\d.]+)/g)].map((m) =>
+    Number(m[1]),
+  );
+  const ends = [...log.matchAll(/silence_end: ([\d.]+)/g)].map((m) =>
+    Number(m[1]),
+  );
+  let longest = 0;
+  starts.forEach((start, i) => {
+    const end = ends[i] ?? duration;
+    // Silence touching the start or the end of the file is trimmed anyway.
+    if (start <= 0.05 || end >= duration - 0.05) return;
+    longest = Math.max(longest, end - start);
+  });
+  return longest;
+};
+
+/** A pause longer than this inside a line drags the scene. */
+export const MAX_PAUSE = 0.7;
 
 export type Loudness = { lufs: number; peak: number };
 

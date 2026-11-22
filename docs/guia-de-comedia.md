@@ -163,7 +163,7 @@ varie a pose de fala para fala e dê reação a quem escuta nos momentos fortes.
 - `plateia`: a pose de todos que estão escutando durante a fala (por exemplo, "chocado" quando alguém solta um absurdo). Vazio deixa todos em neutro.
 - `som`: efeito no começo da fala. "scratch" (arranhão de disco) para a notícia que estraga a festa; "ding" para uma boa ideia; "whoosh" para uma virada; "ronco" e "tique" (relógio) para batidas mudas. Use em no máximo três falas.
 - `fx`: "" na maioria; "brilho" quando o Zé tem uma ideia; "queda" quando um objeto cai em alguém depois da fala; "brilho+queda" para os dois; "coracoes" quando alguém se derrete; "arremesso" quando quem fala joga o `fxProp` para o `fxTarget`, que pega no ar (a câmera abre para mostrar os dois); "briga" numa batida muda, para a nuvem de poeira que esconde quem fala e o `fxTarget` (ninguém aparece apanhando, e o alvo sai tonto).
-- `fxProp` e `fxTarget`: o objeto que cai (declarado em `props`) e em quem cai.
+- `fxProp` e `fxTarget`: o objeto que cai (declarado em `props`) e em quem cai. Em `props`, `peso` muda a queda: "leve" desce balançando e pousa sem tremor, "medio" é a queda padrão, "pesado" despenca, congela a cena um instante no impacto e fica na cabeça da vítima.
 - `cenario` (no roteiro, fora das falas): objetos que ficam em cena o episódio inteiro ao lado de um personagem, como a torre de sacas da Kátia. Use para a piada visual já estar no primeiro quadro. O objeto balança quando algo cai em quem está junto dele.
 
 - **Batida muda:** uma fala com `text` vazio e `pausaMs` (800 a 1500). É a pausa cômica: o olhar parado para a câmera depois do absurdo, o ronco, a placa. No máximo três por episódio, cada uma com um motivo.

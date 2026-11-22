@@ -11,11 +11,14 @@ import { colors, displayFont } from "./theme";
 import type { TimedLine } from "./timing";
 import {
   type CastMember,
-  DROP_FALL_FRAMES as FALL,
+  DROP_FALL_FRAMES,
   DROP_HANG_FRAMES as HANG,
   type Line,
   type Mouth,
   type Scenery,
+  type Weight,
+  WEIGHTS,
+  weightOf,
 } from "./types";
 
 // The stage is a wide world the 9:16 camera travels over. Characters keep
@@ -90,6 +93,7 @@ export const Stage: React.FC<{
   props: Record<string, string>;
   scenery: Scenery[];
   order: string[];
+  weights: Record<string, Weight>;
   speechRate: number;
 }> = ({
   lines,
@@ -100,6 +104,7 @@ export const Stage: React.FC<{
   props,
   scenery,
   order: placed,
+  weights,
   speechRate,
 }) => {
   const frame = useCurrentFrame();
@@ -165,7 +170,10 @@ export const Stage: React.FC<{
   cam.z *= 1 + 0.025 * Math.min(1, local / time.durationInFrames);
 
   const dropStart = time.speechFrames + 2;
-  const sinceImpact = local - dropStart - HANG - FALL;
+  const weight = weightOf(weights, line.fxProp);
+  const sinceImpact = local - dropStart - HANG - weight.fall;
+  // On impact everything freezes for a beat; reactions start after it.
+  const afterHold = Math.max(0, sinceImpact - weight.hold);
   const dropping = line.fx.includes("queda") && local >= dropStart;
   // The prop hangs overhead for a beat before it falls: time to look up.
   const hanging = dropping && sinceImpact < 0;
@@ -206,7 +214,7 @@ export const Stage: React.FC<{
       return local >= time.speechFrames && stuck[id] ? stuck[id] : line.pose;
     }
     if (stuck[id]) return stuck[id];
-    if (struck || stillShocked(id) || hanging) return "chocado";
+    if (struck || stillShocked(id) || noticed(id)) return "chocado";
     return line.plateia || "neutro";
   };
   // The pose each character held when line i ended: where a take starts from.
@@ -240,8 +248,23 @@ export const Stage: React.FC<{
   const changeAt = (id: string): number =>
     id === line.character ? 0 : 2 + listeners.indexOf(id) * 3;
 
+  // While the prop hangs, the others notice one by one; whoever is under it
+  // notices last, just before it falls.
+  const noticeAt = (id: string): number =>
+    dropStart +
+    (id === line.fxTarget
+      ? HANG - 4
+      : 2 + Math.max(0, listeners.indexOf(id)) * 2);
+  function noticed(id: string): boolean {
+    return hanging && local >= noticeAt(id);
+  }
+  const calm = (id: string): string =>
+    stuck[id] ?? (stillShocked(id) ? "chocado" : line.plateia || "neutro");
+
   const shake = hit
-    ? 24 * Math.exp(-sinceImpact / 5)
+    ? sinceImpact < weight.hold
+      ? weight.shake
+      : weight.shake * Math.exp(-afterHold / 5)
     : line.fx === "briga"
       ? 9
       : 0;
@@ -381,8 +404,12 @@ export const Stage: React.FC<{
               member={member}
               poses={posesOf(lines, id)}
               pose={poseOf(id)}
-              from={struck || hanging ? poseOf(id) : fromPose(id)}
-              changeAt={changeAt(id)}
+              from={
+                dropping && !speaker && !stuck[id] ? calm(id) : fromPose(id)
+              }
+              changeAt={
+                dropping && !speaker && !stuck[id] ? noticeAt(id) : changeAt(id)
+              }
               x={xOf(id) + walk.dx}
               stride={walk.stride}
               toward={Math.sign(speakerX - xOf(id))}
@@ -398,7 +425,10 @@ export const Stage: React.FC<{
               speaker={speaker}
               talking={speaker && isSpeaking(line, ms)}
               squash={
-                (struck ? Math.exp(-sinceImpact / 4) : 0) + (walk.landed ?? 0)
+                (struck
+                  ? weight.squash *
+                    (sinceImpact < weight.hold ? 1 : Math.exp(-afterHold / 4))
+                  : 0) + (walk.landed ?? 0)
               }
             />
           );
@@ -446,7 +476,7 @@ export const Stage: React.FC<{
           const glyph =
             id === line.character
               ? undefined
-              : hanging
+              : noticed(id)
                 ? "!"
                 : MARKS[line.plateia];
           return glyph ? (
@@ -488,6 +518,7 @@ export const Stage: React.FC<{
               headTop={levelOf(cast, l.fxTarget, 0.96)}
               since={999}
               local={0}
+              weight={weightOf(weights, l.fxProp)}
             />
           ) : null,
         )}
@@ -499,6 +530,7 @@ export const Stage: React.FC<{
             headTop={levelOf(cast, line.fxTarget, 0.96)}
             since={local - dropStart}
             local={local}
+            weight={weight}
           />
         ) : null}
       </div>
@@ -1200,22 +1232,35 @@ const Drop: React.FC<{
   headTop: number;
   since: number;
   local: number;
-}> = ({ src, x, headTop, since, local }) => {
+  weight: (typeof WEIGHTS)[Weight];
+}> = ({ src, x, headTop, since, local, weight }) => {
   const rest = headTop - PROP * 0.55;
   const hover = rest - 430;
-  const after = since - HANG - FALL;
+  const fall = weight.fall;
+  const after = since - HANG - fall;
+  // Light things drift down swaying; heavy ones drop straight.
+  const light = fall > DROP_FALL_FRAMES;
   let left = x;
   // Drops in, hangs wobbling, then falls the rest of the way.
   const enter = 1 - (1 - Math.min(1, since / 5)) ** 3;
+  const t = Math.min(1, (since - HANG) / fall);
   let top =
     since < HANG
       ? lerp(-PROP - 200, hover, enter) + Math.sin(local * 1.3) * 7
-      : lerp(hover, rest, Math.min(1, (since - HANG) / FALL) ** 2);
+      : lerp(hover, rest, light ? t : t ** 2);
   let rotate = since < HANG ? -12 + Math.sin(local * 0.9) * 5 : -12;
-  if (after > 0) {
-    left = x + Math.min(300, after * 11);
-    top = Math.min(FLOOR - PROP * 0.8, rest - 20 * after + 1.3 * after * after);
-    rotate = -12 + Math.min(100, after * 9);
+  if (since >= HANG && after < 0 && light) {
+    left = x + Math.sin(since * 0.45) * 60 * (1 - t);
+    rotate = -12 + Math.sin(since * 0.45) * 25 * (1 - t);
+  }
+  // Rests on the head during the impact freeze, then bounces off.
+  const off = after - weight.hold;
+  if (after >= 0 && off <= 0) top = rest;
+  if (off > 0) {
+    const b = weight.bounce;
+    left = x + Math.min(300 * b + 40, off * 11 * b);
+    top = Math.min(FLOOR - PROP * 0.8, rest - 20 * b * off + 1.3 * off * off);
+    rotate = -12 + Math.min(100 * b + 10, off * 9 * b);
   }
   return (
     <>

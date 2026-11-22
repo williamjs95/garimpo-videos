@@ -21,6 +21,7 @@ export const Episode: React.FC<EpisodeProps> = ({
   props,
   scenery = [],
   order = [],
+  weights = {},
   number,
   music = DEFAULT_MUSIC,
   speechRate = 1,
@@ -47,6 +48,7 @@ export const Episode: React.FC<EpisodeProps> = ({
         props={props}
         scenery={scenery}
         order={order}
+        weights={weights}
         speechRate={speechRate}
       />
 
@@ -61,7 +63,13 @@ export const Episode: React.FC<EpisodeProps> = ({
 
       <EndCard from={cardFrom} />
 
-      <Sound lines={lines} timed={timed} music={music} cardFrom={cardFrom} />
+      <Sound
+        lines={lines}
+        timed={timed}
+        music={music}
+        cardFrom={cardFrom}
+        weights={weights}
+      />
 
       {timed.map((t) => {
         const l = lines[t.index];

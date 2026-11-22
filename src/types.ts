@@ -91,6 +91,8 @@ export type EpisodeProps = {
   /** prop id -> path relative to public/ */
   props: Record<string, string>;
   scenery?: Scenery[];
+  /** prop id -> how heavy it is. Missing means "medio". */
+  weights?: Record<string, Weight>;
   /** Background music, relative to public/. Loops under the whole episode. */
   music?: string;
   /** Audio playback speed (pitch preserved). Timings in `lines` are at 1x. */
@@ -114,3 +116,30 @@ export const DROP_MS = 1500;
 export const DROP_HANG_FRAMES = 13;
 /** Frames a dropped prop takes to reach the target's head. */
 export const DROP_FALL_FRAMES = 8;
+
+/** How heavy a prop is: it changes how it falls, lands and shakes the scene. */
+export type Weight = "leve" | "medio" | "pesado";
+
+export const WEIGHTS: Record<
+  Weight,
+  {
+    /** Frames from the hang to the head: heavy drops fast, light floats down. */
+    fall: number;
+    /** Frames everything freezes on impact before reacting. */
+    hold: number;
+    shake: number;
+    /** How much the target is flattened (1 is the medium hit). */
+    squash: number;
+    /** How far the prop bounces off afterwards (1 is the medium bounce). */
+    bounce: number;
+  }
+> = {
+  leve: { fall: 16, hold: 0, shake: 4, squash: 0.35, bounce: 0.35 },
+  medio: { fall: DROP_FALL_FRAMES, hold: 2, shake: 24, squash: 1, bounce: 1 },
+  pesado: { fall: 6, hold: 4, shake: 38, squash: 1.35, bounce: 0.25 },
+};
+
+export const weightOf = (
+  weights: Record<string, Weight> | undefined,
+  prop: string,
+) => WEIGHTS[weights?.[prop] ?? "medio"];

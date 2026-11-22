@@ -104,7 +104,12 @@ export type ScriptLine = {
 /** Poses nobody speaks in, so they need no mouth-open twin. */
 export const MUTE_POSES = ["dormindo"];
 
-export type ScriptProp = { id: string; description: string };
+export type ScriptProp = {
+  id: string;
+  description: string;
+  /** How heavy it is when it falls: "leve", "medio" (default) or "pesado". */
+  peso?: "leve" | "medio" | "pesado";
+};
 
 /** An object that stands on the floor beside a character all episode long. */
 export type ScriptScenery = {

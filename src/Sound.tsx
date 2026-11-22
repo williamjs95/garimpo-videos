@@ -3,7 +3,13 @@ import { ding, recordScratch, whip, whoosh } from "@remotion/sfx";
 import { interpolate, Sequence, staticFile } from "remotion";
 import { TOSS_AT, TOSS_FRAMES } from "./Stage";
 import type { TimedLine } from "./timing";
-import { DROP_FALL_FRAMES, DROP_HANG_FRAMES, JINGLE, type Line } from "./types";
+import {
+  DROP_HANG_FRAMES,
+  JINGLE,
+  type Line,
+  type Weight,
+  weightOf,
+} from "./types";
 
 type Cue = { at: number; src: string; volume: number };
 
@@ -19,7 +25,11 @@ const named = (som: string): string | undefined =>
   })[som];
 
 /** Sound effects, derived from what happens on screen so scripts stay simple. */
-const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
+const cuesFor = (
+  lines: Line[],
+  timed: TimedLine[],
+  weights: Record<string, Weight>,
+): Cue[] => {
   const thud = staticFile("sfx/thud.wav");
   const step = staticFile("sfx/step.wav");
   const cues: Cue[] = [{ at: 0, src: whoosh, volume: 0.3 }];
@@ -50,7 +60,11 @@ const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
       const drop = start + DROP_HANG_FRAMES;
       cues.push({ at: start, src: sfx("sobe"), volume: 0.3 });
       cues.push({ at: drop, src: sfx("desce"), volume: 0.35 });
-      cues.push({ at: drop + DROP_FALL_FRAMES, src: thud, volume: 0.9 });
+      // Heavy lands with a full thud; light with a soft pop.
+      const w = weightOf(weights, l.fxProp);
+      const landing = w.fall > 10 ? sfx("pop") : thud;
+      const loud = w.shake > 30 ? 1 : w.fall > 10 ? 0.4 : 0.9;
+      cues.push({ at: drop + w.fall, src: landing, volume: loud });
     }
     if (l.fx === "arremesso") {
       cues.push({ at: t.from + TOSS_AT, src: whoosh, volume: 0.3 });
@@ -81,7 +95,8 @@ export const Sound: React.FC<{
   music: string;
   /** Frame the closing card starts on: the music hands over to the jingle. */
   cardFrom: number;
-}> = ({ lines, timed, music, cardFrom }) => (
+  weights: Record<string, Weight>;
+}> = ({ lines, timed, music, cardFrom, weights }) => (
   <>
     <Audio
       src={staticFile(music)}
@@ -97,7 +112,7 @@ export const Sound: React.FC<{
     <Sequence from={cardFrom} layout="none">
       <Audio src={staticFile(JINGLE)} volume={0.6} />
     </Sequence>
-    {cuesFor(lines, timed).map((c, i) => (
+    {cuesFor(lines, timed, weights).map((c, i) => (
       <Sequence key={i} from={c.at} layout="none">
         <Audio src={c.src} volume={c.volume} />
       </Sequence>
