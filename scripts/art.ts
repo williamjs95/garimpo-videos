@@ -56,10 +56,14 @@ const withModerationRetry = async <T>(
   }
 };
 
+/** Files drawn in this run. Older drawings were already color-matched. */
+const drawn = new Set<string>();
+
 const save = (out: string, b64: string | undefined): void => {
   if (!b64) throw new Error(`Imagem vazia para ${out}`);
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, Buffer.from(b64, "base64"));
+  drawn.add(out);
 };
 
 const generate = async (
@@ -250,11 +254,12 @@ for (const c of cast.characters) {
   for (const p of Object.keys(cast.poses)) {
     for (const file of [`${p}.png`, `${p}-fala.png`]) {
       const path = join(dir, file);
-      if (path !== base && existsSync(path)) matchColors(path, base);
+      // Matching twice drifts the colors a little, so only new drawings get it.
+      if (path !== base && drawn.has(path)) matchColors(path, base);
     }
   }
   const blink = join(dir, "neutro-pisca.png");
-  if (existsSync(blink)) matchColors(blink, base);
+  if (drawn.has(blink)) matchColors(blink, base);
   const pairs = Object.keys(cast.poses)
     .map((p) => ({
       pose: p,
@@ -264,14 +269,33 @@ for (const c of cast.characters) {
     .filter((p) => existsSync(p.closed) && existsSync(p.open));
   // First pass finds where this character's mouth usually is; the second
   // searches only around that height, so eyes and hands are never picked.
-  const heights = pairs
-    .map((p) => findMouth(p.closed, p.open)?.y)
-    .filter((y) => y !== undefined)
-    .sort((x, y) => x - y);
-  const typical = heights[Math.floor(heights.length / 2)] ?? 0.3;
+  const first = pairs
+    .map((p) => findMouth(p.closed, p.open))
+    .filter((m) => m !== undefined);
+  const median = (values: number[], fallback: number): number =>
+    values.sort((x, y) => x - y)[Math.floor(values.length / 2)] ?? fallback;
+  const typical = median(
+    first.map((m) => m.y),
+    0.3,
+  );
+  const middle = median(
+    first.map((m) => m.x),
+    0.5,
+  );
   const mouths: Record<string, Mouth> = {};
   for (const p of pairs) {
-    const mouth = findMouth(p.closed, p.open, [typical - 0.07, typical + 0.07]);
+    let mouth = findMouth(p.closed, p.open, [typical - 0.07, typical + 0.07]);
+    // A find far from where this character's mouth usually is was an eye or
+    // a hand that also moved: look again, only around the usual spot.
+    if (mouth && Math.abs(mouth.x - middle) > 0.06) {
+      mouth = findMouth(
+        p.closed,
+        p.open,
+        [typical - 0.05, typical + 0.05],
+        false,
+        [middle - 0.08, middle + 0.08],
+      );
+    }
     if (mouth) mouths[p.pose] = mouth;
     else
       log(`${c.name} (${p.pose}): boca não localizada, fala só com movimento`);

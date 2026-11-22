@@ -46,6 +46,18 @@ export type CastMember = {
   mouths: Record<string, Mouth>;
   /** Eye region of the neutro drawing, for blinking. */
   blink: Mouth | null;
+  /** Where the soles are in the drawing, as a fraction of its height. */
+  feet?: number;
+};
+
+/** An object standing on the floor next to a character for the whole scene. */
+export type Scenery = {
+  prop: string;
+  beside: string;
+  /** -1 puts it on the character's left, 1 on the right. */
+  side: -1 | 1;
+  /** Height in world pixels (a character is about 1000). */
+  height: number;
 };
 
 export type EpisodeProps = {
@@ -57,10 +69,9 @@ export type EpisodeProps = {
   backgrounds: Record<string, string>;
   /** prop id -> path relative to public/ */
   props: Record<string, string>;
-  /** Shows the site handle at the end. */
-  showHandle: boolean;
-  /** End-card call to action, e.g. "Parte 2 →". Empty string hides it. */
-  outro?: string;
+  scenery?: Scenery[];
+  /** Background music, relative to public/. Loops under the whole episode. */
+  music?: string;
   /** Audio playback speed (pitch preserved). Timings in `lines` are at 1x. */
   speechRate?: number;
 };
@@ -68,10 +79,14 @@ export type EpisodeProps = {
 export const FPS = 30;
 /** Pause between lines, in milliseconds. */
 export const GAP_MS = 180;
-/** Extra hold at the end so the last line breathes before the loop. */
-export const TAIL_MS = 1200;
-/** How long the end card (site handle + outro) stays on screen. */
-export const END_CARD_MS = 1800;
+/**
+ * Length of the closing every episode ends on: the iris shuts on the last
+ * speaker, then the site address writes itself. Matches public/music/vinheta.wav.
+ */
+export const END_CARD_MS = 2800;
+export const SITE = "garimpoeditais.com.br";
+export const DEFAULT_MUSIC = "music/trilha.wav";
+export const JINGLE = "music/vinheta.wav";
 /** Extra time after a line for a "queda" gag to play out. */
 export const DROP_MS = 1100;
 /** Frames a dropped prop takes to reach the target's head. */

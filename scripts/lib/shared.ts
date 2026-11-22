@@ -86,15 +86,25 @@ export type ScriptLine = {
 
 export type ScriptProp = { id: string; description: string };
 
+/** An object that stands on the floor beside a character all episode long. */
+export type ScriptScenery = {
+  /** Id of an entry in `props`. */
+  prop: string;
+  /** Character it stands next to. */
+  junto: string;
+  lado?: "esquerda" | "direita";
+  /** Height in pixels; a character is about 1000. */
+  altura?: number;
+};
+
 export type EpisodeScript = {
   slug: string;
   title: string;
   hook: string;
   mentionsGarimpo: boolean;
-  /** End-card call to action, e.g. "Parte 2 →". Empty string for none. */
-  outro?: string;
-  /** Objects used by "queda" gags, drawn once by npm run art. */
+  /** Objects used by "queda" gags and by `cenario`, drawn once by npm run art. */
   props?: ScriptProp[];
+  cenario?: ScriptScenery[];
   lines: ScriptLine[];
   post: {
     tiktok: string;

@@ -6,12 +6,12 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { Captions, Handle, Hook } from "./Overlay";
+import { Captions, EndCard, Hook } from "./Overlay";
 import { Sound } from "./Sound";
 import { Stage } from "./Stage";
 import { colors } from "./theme";
-import { layoutLines, type TimedLine } from "./timing";
-import type { EpisodeProps } from "./types";
+import { END_CARD_FRAMES, layoutLines, type TimedLine } from "./timing";
+import { DEFAULT_MUSIC, type EpisodeProps } from "./types";
 
 export const Episode: React.FC<EpisodeProps> = ({
   hook,
@@ -19,14 +19,16 @@ export const Episode: React.FC<EpisodeProps> = ({
   cast,
   backgrounds,
   props,
-  showHandle,
-  outro,
+  scenery = [],
+  music = DEFAULT_MUSIC,
   speechRate = 1,
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
   const timed = layoutLines(lines, speechRate);
-  const current = currentLine(timed, frame);
+  const cardFrom = durationInFrames - END_CARD_FRAMES;
+  // The last line holds on screen while the iris closes over it.
+  const current = currentLine(timed, Math.min(frame, cardFrom - 1));
   const line = lines[current.index];
 
   if (!line)
@@ -41,6 +43,7 @@ export const Episode: React.FC<EpisodeProps> = ({
         cast={cast}
         backgrounds={backgrounds}
         props={props}
+        scenery={scenery}
         speechRate={speechRate}
       />
 
@@ -53,11 +56,9 @@ export const Episode: React.FC<EpisodeProps> = ({
 
       <Hook text={hook} />
 
-      {showHandle ? (
-        <Handle durationInFrames={durationInFrames} outro={outro} />
-      ) : null}
+      <EndCard from={cardFrom} />
 
-      <Sound lines={lines} timed={timed} />
+      <Sound lines={lines} timed={timed} music={music} cardFrom={cardFrom} />
 
       {timed.map((t) => {
         const l = lines[t.index];

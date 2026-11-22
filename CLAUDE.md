@@ -2,7 +2,9 @@
 
 Série cômica em vídeo vertical ambientada numa galeria comercial de bairro. Promove o Garimpo
 (garimpoeditais.com.br, sem ponto entre "garimpo" e "editais") de forma indireta: a marca aparece em
-piscadelas (os nomes Lici e Zé Garimpo, a bateia que brilha), no link da bio e no comentário fixado.
+piscadelas (os nomes Lici e Zé Garimpo, a bateia que brilha), no link da bio, no comentário fixado e no
+fecho fixo de todo vídeo (íris, bateia e o endereço escrito na tela, com a vinheta da série). O fecho é
+canônico: não há opção de desligar por episódio, e nenhuma fala cita o site.
 
 ## Antes de escrever ou revisar qualquer roteiro
 
@@ -15,6 +17,8 @@ A pesquisa que o embasa está em `reports/Comédia e drama em esquetes curtos.md
 
 - `npm run lint` roda ESLint e TypeScript (não há testes automatizados).
 - Pipeline: `npm run write`, `art`, `voice -- <slug>`, `render -- <slug>`. Veja o README.
+- `npm run sfx` gera os efeitos e a música original da série (`public/music/trilha.wav` e `vinheta.wav`).
+  Um arquivo `public/music/trilha.mp3` substitui a trilha de fundo.
 
 ## Arte
 

@@ -49,8 +49,9 @@ SAÍDA
 - "hook" é o texto na tela no primeiro frame: 4 a 7 palavras, sem emoji, no tom de fofoca (ex.: "A liquidação da loja da frente").
 - "emotion" de cada fala é a indicação de atuação (ex.: "cochichando, deliciada", "fria, seca").
 - "pose", "camera", "move", "plateia", "som", "fx", "fxProp" e "fxTarget" seguem a seção "Direção de cena" do guia. Quando não se aplicam, use "".
-- "props": lista dos objetos usados em "queda", com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
-- "outro": sempre "".
+- "props": lista dos objetos usados em "queda" e em "cenario", com "id" em kebab-case e "description" em inglês para o desenhista (ex.: "small toy quadcopter drone"). Lista vazia se não houver.
+- "cenario": objetos que ficam em cena o episódio inteiro ao lado de um personagem (ex.: uma torre de caixas junto da Kátia). Cada item tem "prop" (id declarado em "props"), "junto" (personagem), "lado" ("esquerda" ou "direita") e "altura" em pixels (um personagem tem uns 1000). Lista vazia se não houver.
+- Não escreva chamada para o site nem despedida: todo episódio já termina com o fecho fixo da série (íris e endereço na tela), depois do gancho final.
 - "mentionsGarimpo": true só se alguma fala citar o Garimpo ou vender para o governo.
 
 POST
@@ -71,7 +72,8 @@ const schema = {
     "title",
     "hook",
     "mentionsGarimpo",
-    "outro",
+    "props",
+    "cenario",
     "lines",
     "post",
   ],
@@ -80,7 +82,20 @@ const schema = {
     title: { type: "string" },
     hook: { type: "string" },
     mentionsGarimpo: { type: "boolean" },
-    outro: { type: "string" },
+    cenario: {
+      type: "array",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["prop", "junto", "lado", "altura"],
+        properties: {
+          prop: { type: "string" },
+          junto: { type: "string", enum: ids },
+          lado: { type: "string", enum: ["esquerda", "direita"] },
+          altura: { type: "number" },
+        },
+      },
+    },
     props: {
       type: "array",
       items: {

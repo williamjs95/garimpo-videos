@@ -1,4 +1,10 @@
-import { DROP_MS, type EpisodeProps, FPS, GAP_MS, TAIL_MS } from "./types.ts";
+import {
+  DROP_MS,
+  END_CARD_MS,
+  type EpisodeProps,
+  FPS,
+  GAP_MS,
+} from "./types.ts";
 
 export type TimedLine = {
   index: number;
@@ -26,6 +32,9 @@ export const layoutLines = (
   });
 };
 
+export const END_CARD_FRAMES = msToFrames(END_CARD_MS);
+
+/** Every episode is its lines followed by the closing card. */
 export const totalFrames = (
   lines: EpisodeProps["lines"],
   speechRate = 1,
@@ -33,5 +42,5 @@ export const totalFrames = (
   const laid = layoutLines(lines, speechRate);
   const last = laid[laid.length - 1];
   const end = last ? last.from + last.durationInFrames : FPS;
-  return end + msToFrames(TAIL_MS);
+  return end + END_CARD_FRAMES;
 };

@@ -1,0 +1,946 @@
+{
+  "slug": "monopolio-do-cafe",
+  "hook": "Ela comprou TODO o café do bairro",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. A Kátia comprou todo o café do bairro.",
+      "emotion": "falando rápido, deliciada com a fofoca, sem pausas",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/lici-6a2a15f299.mp3",
+      "durationMs": 2730,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 480
+        },
+        {
+          "text": "senta.",
+          "startMs": 760,
+          "endMs": 860
+        },
+        {
+          "text": "A",
+          "startMs": 1000,
+          "endMs": 1120
+        },
+        {
+          "text": "Kátia",
+          "startMs": 1120,
+          "endMs": 1360
+        },
+        {
+          "text": "comprou",
+          "startMs": 1360,
+          "endMs": 1680
+        },
+        {
+          "text": "todo",
+          "startMs": 1680,
+          "endMs": 1920
+        },
+        {
+          "text": "o",
+          "startMs": 1920,
+          "endMs": 2100
+        },
+        {
+          "text": "café",
+          "startMs": 2100,
+          "endMs": 2140
+        },
+        {
+          "text": "do",
+          "startMs": 2140,
+          "endMs": 2380
+        },
+        {
+          "text": "bairro.",
+          "startMs": 2380,
+          "endMs": 2580
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Quatrocentos quilos. Agora só eu vendo.",
+      "emotion": "fria, superior, saboreando a vitória",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/katia-34fcbd7a3a.mp3",
+      "durationMs": 3430,
+      "words": [
+        {
+          "text": "Quatrocentos",
+          "startMs": 0,
+          "endMs": 960
+        },
+        {
+          "text": "quilos.",
+          "startMs": 960,
+          "endMs": 1760
+        },
+        {
+          "text": "Agora",
+          "startMs": 2140,
+          "endMs": 2280
+        },
+        {
+          "text": "só",
+          "startMs": 2280,
+          "endMs": 2720
+        },
+        {
+          "text": "eu",
+          "startMs": 2720,
+          "endMs": 3000
+        },
+        {
+          "text": "vendo.",
+          "startMs": 3000,
+          "endMs": 3280
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Fornecedora única? Isso tem que ser formalizado.",
+      "emotion": "solene, desconfiado, ditando regra",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/norberto-b97904d579.mp3",
+      "durationMs": 3470,
+      "words": [
+        {
+          "text": "Fornecedora",
+          "startMs": 0,
+          "endMs": 720
+        },
+        {
+          "text": "única?",
+          "startMs": 720,
+          "endMs": 1160
+        },
+        {
+          "text": "Isso",
+          "startMs": 2100,
+          "endMs": 2100
+        },
+        {
+          "text": "tem",
+          "startMs": 2100,
+          "endMs": 2260
+        },
+        {
+          "text": "que",
+          "startMs": 2260,
+          "endMs": 2440
+        },
+        {
+          "text": "ser",
+          "startMs": 2440,
+          "endMs": 2640
+        },
+        {
+          "text": "formalizado.",
+          "startMs": 2640,
+          "endMs": 3320
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Uai! Eu prometi duzentas xícaras pra amanhã!",
+      "emotion": "apavorado, chegando correndo",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/ze-0cef6a9edd.mp3",
+      "durationMs": 2550,
+      "words": [
+        {
+          "text": "Uai!",
+          "startMs": 0,
+          "endMs": 253
+        },
+        {
+          "text": "Eu",
+          "startMs": 253,
+          "endMs": 379
+        },
+        {
+          "text": "prometi",
+          "startMs": 379,
+          "endMs": 821
+        },
+        {
+          "text": "duzentas",
+          "startMs": 821,
+          "endMs": 1326
+        },
+        {
+          "text": "xícaras",
+          "startMs": 1326,
+          "endMs": 1768
+        },
+        {
+          "text": "pra",
+          "startMs": 1768,
+          "endMs": 1958
+        },
+        {
+          "text": "amanhã!",
+          "startMs": 1958,
+          "endMs": 2400
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Compra de mim. Cem reais o quilo.",
+      "emotion": "doce e venenosa, negociando",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/katia-c1b1483f2c.mp3",
+      "durationMs": 3070,
+      "words": [
+        {
+          "text": "Compra",
+          "startMs": 0,
+          "endMs": 340
+        },
+        {
+          "text": "de",
+          "startMs": 340,
+          "endMs": 480
+        },
+        {
+          "text": "mim.",
+          "startMs": 480,
+          "endMs": 1260
+        },
+        {
+          "text": "Cem",
+          "startMs": 1900,
+          "endMs": 2380
+        },
+        {
+          "text": "reais",
+          "startMs": 2380,
+          "endMs": 2620
+        },
+        {
+          "text": "o",
+          "startMs": 2620,
+          "endMs": 2840
+        },
+        {
+          "text": "quilo.",
+          "startMs": 2840,
+          "endMs": 2920
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Eu tenho doze.",
+      "emotion": "baixinho, sem graça",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/ze-054f681d9e.mp3",
+      "durationMs": 1310,
+      "words": [
+        {
+          "text": "Eu",
+          "startMs": 0,
+          "endMs": 380
+        },
+        {
+          "text": "tenho",
+          "startMs": 380,
+          "endMs": 660
+        },
+        {
+          "text": "doze.",
+          "startMs": 660,
+          "endMs": 1160
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Cento e vinte.",
+      "emotion": "seca, sem piscar",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/katia-3e70f4821f.mp3",
+      "durationMs": 730,
+      "words": [
+        {
+          "text": "Cento",
+          "startMs": 0,
+          "endMs": 280
+        },
+        {
+          "text": "e",
+          "startMs": 280,
+          "endMs": 380
+        },
+        {
+          "text": "vinte.",
+          "startMs": 380,
+          "endMs": 580
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "E se a reunião for de chá?",
+      "emotion": "iluminado, tendo a ideia, cada vez mais empolgado",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "pensando",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/ze-032e60f2f8.mp3",
+      "durationMs": 2470,
+      "words": [
+        {
+          "text": "E",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "se",
+          "startMs": 300,
+          "endMs": 520
+        },
+        {
+          "text": "a",
+          "startMs": 520,
+          "endMs": 680
+        },
+        {
+          "text": "reunião",
+          "startMs": 680,
+          "endMs": 1320
+        },
+        {
+          "text": "for",
+          "startMs": 1320,
+          "endMs": 1820
+        },
+        {
+          "text": "de",
+          "startMs": 1820,
+          "endMs": 2120
+        },
+        {
+          "text": "chá?",
+          "startMs": 2120,
+          "endMs": 2320
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Página catorze: café ou bebida quente equivalente.",
+      "emotion": "lendo a prancheta em voz alta, pausado e solene",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/norberto-8ee8d8ccdd.mp3",
+      "durationMs": 4190,
+      "words": [
+        {
+          "text": "Página",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "catorze:",
+          "startMs": 460,
+          "endMs": 1320
+        },
+        {
+          "text": "café",
+          "startMs": 2000,
+          "endMs": 2240
+        },
+        {
+          "text": "ou",
+          "startMs": 2240,
+          "endMs": 2640
+        },
+        {
+          "text": "bebida",
+          "startMs": 2640,
+          "endMs": 2960
+        },
+        {
+          "text": "quente",
+          "startMs": 2960,
+          "endMs": 3360
+        },
+        {
+          "text": "equivalente.",
+          "startMs": 3360,
+          "endMs": 4040
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Chá é quente.",
+      "emotion": "seca, constatando o óbvio",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/lici-dede4b66e7.mp3",
+      "durationMs": 910,
+      "words": [
+        {
+          "text": "Chá",
+          "startMs": 0,
+          "endMs": 380
+        },
+        {
+          "text": "é",
+          "startMs": 380,
+          "endMs": 500
+        },
+        {
+          "text": "quente.",
+          "startMs": 500,
+          "endMs": 760
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Deferido!",
+      "emotion": "triunfante, como quem bate um carimbo",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/norberto-714ea285b7.mp3",
+      "durationMs": 990,
+      "words": [
+        {
+          "text": "Deferido!",
+          "startMs": 0,
+          "endMs": 840
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Então eu compro todo o chá!",
+      "emotion": "desesperada, mas ainda mandona",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/katia-56a3252e92.mp3",
+      "durationMs": 1490,
+      "words": [
+        {
+          "text": "Então",
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "text": "eu",
+          "startMs": 300,
+          "endMs": 580
+        },
+        {
+          "text": "compro",
+          "startMs": 580,
+          "endMs": 860
+        },
+        {
+          "text": "todo",
+          "startMs": 860,
+          "endMs": 1080
+        },
+        {
+          "text": "o",
+          "startMs": 1080,
+          "endMs": 1340
+        },
+        {
+          "text": "chá!",
+          "startMs": 1340,
+          "endMs": 1340
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Com que dinheiro, menina? Virou tudo café.",
+      "emotion": "debochada, com gosto",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "fx": "queda",
+      "fxProp": "saca-de-cafe",
+      "fxTarget": "katia",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/lici-7087bd2b2a.mp3",
+      "durationMs": 3130,
+      "words": [
+        {
+          "text": "Com",
+          "startMs": 0,
+          "endMs": 248
+        },
+        {
+          "text": "que",
+          "startMs": 248,
+          "endMs": 497
+        },
+        {
+          "text": "dinheiro,",
+          "startMs": 497,
+          "endMs": 1242
+        },
+        {
+          "text": "menina?",
+          "startMs": 1242,
+          "endMs": 1821
+        },
+        {
+          "text": "Virou",
+          "startMs": 1821,
+          "endMs": 2235
+        },
+        {
+          "text": "tudo",
+          "startMs": 2235,
+          "endMs": 2566
+        },
+        {
+          "text": "café.",
+          "startMs": 2566,
+          "endMs": 2980
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Amadores.",
+      "emotion": "voz fraquinha e tonta, mas ainda arrogante",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 0,
+      "audio": "episodes/monopolio-do-cafe/katia-9dace38fd6.mp3",
+      "durationMs": 890,
+      "words": [
+        {
+          "text": "Amadores.",
+          "startMs": 0,
+          "endMs": 740
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Menina… o Zé só achou chá de camomila. Duzentas xícaras.",
+      "emotion": "falando rápido, escandalizada, sem pausas",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "offsetMs": 580,
+      "audio": "episodes/monopolio-do-cafe/lici-7e9180afd9.mp3",
+      "durationMs": 4470,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 60,
+          "endMs": 660
+        },
+        {
+          "text": "o",
+          "startMs": 660,
+          "endMs": 700
+        },
+        {
+          "text": "Zé",
+          "startMs": 700,
+          "endMs": 1020
+        },
+        {
+          "text": "só",
+          "startMs": 1020,
+          "endMs": 1280
+        },
+        {
+          "text": "achou",
+          "startMs": 1280,
+          "endMs": 1560
+        },
+        {
+          "text": "chá",
+          "startMs": 1560,
+          "endMs": 1820
+        },
+        {
+          "text": "de",
+          "startMs": 1820,
+          "endMs": 2220
+        },
+        {
+          "text": "camomila.",
+          "startMs": 2220,
+          "endMs": 2420
+        },
+        {
+          "text": "Duzentas",
+          "startMs": 3120,
+          "endMs": 3720
+        },
+        {
+          "text": "xícaras.",
+          "startMs": 3720,
+          "endMs": 4320
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "saca-de-cafe": "props/saca-de-cafe.png",
+    "torre-de-sacas": "props/torre-de-sacas.png"
+  },
+  "scenery": [
+    {
+      "prop": "torre-de-sacas",
+      "beside": "katia",
+      "side": -1,
+      "height": 1150
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

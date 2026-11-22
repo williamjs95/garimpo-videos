@@ -1,6 +1,7 @@
 /**
- * Synthesizes the few sound effects the Remotion library lacks (a soft thud
- * and a footstep) as small WAV files in public/sfx. Run once: npm run sfx
+ * Synthesizes the sounds the Remotion library lacks as WAV files: a soft thud
+ * and a footstep in public/sfx, plus the series' own music in public/music
+ * (the looping background theme and the closing jingle). Run once: npm run sfx
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -62,8 +63,148 @@ const step = render(0.12, (t) => {
   );
 });
 
+// ---------------------------------------------------------------------------
+// Music. An original theme, so no licence applies: a bouncy tune in C with a
+// choro feel, played on marimba over a plucked bass, soft chords and a shaker.
+
+const hz = (midi: number): number => 440 * 2 ** ((midi - 69) / 12);
+
+type Voice = (freq: number, t: number) => number;
+
+const marimba: Voice = (f, t) =>
+  (Math.sin(2 * Math.PI * f * t) * Math.exp(-t * 7) +
+    Math.sin(2 * Math.PI * f * 4 * t) * Math.exp(-t * 22) * 0.35) *
+  Math.min(1, t * 400);
+
+const bass: Voice = (f, t) =>
+  (Math.sin(2 * Math.PI * f * t) + Math.sin(2 * Math.PI * f * 2 * t) * 0.3) *
+  Math.exp(-t * 5) *
+  Math.min(1, t * 200);
+
+const pad: Voice = (f, t) =>
+  (Math.sin(2 * Math.PI * f * t) + Math.sin(2 * Math.PI * f * 3 * t) * 0.12) *
+  Math.exp(-t * 11) *
+  Math.min(1, t * 300);
+
+const bell: Voice = (f, t) =>
+  (Math.sin(2 * Math.PI * f * t) +
+    Math.sin(2 * Math.PI * f * 2.76 * t) * 0.4 * Math.exp(-t * 6)) *
+  Math.exp(-t * 2.6) *
+  Math.min(1, t * 500);
+
+/** Adds one note to a track. With `wrap`, the tail carries over to the start, so the loop has no seam. */
+const play = (
+  track: number[],
+  voice: Voice,
+  midi: number,
+  at: number,
+  gain: number,
+  wrap = false,
+  length = 1.4,
+): void => {
+  const start = Math.floor(at * RATE);
+  const f = hz(midi);
+  for (let i = 0; i < length * RATE; i++) {
+    const index = wrap ? (start + i) % track.length : start + i;
+    if (index >= track.length) break;
+    track[index] = (track[index] ?? 0) + voice(f, i / RATE) * gain;
+  }
+};
+
+const BPM = 112;
+const EIGHTH = 60 / BPM / 2;
+/** Off-beat eighths land a little late, for a light swing. */
+const beatAt = (eighth: number): number =>
+  (eighth + (eighth % 2 === 1 ? 0.16 : 0)) * EIGHTH;
+
+// Eight bars, eight eighth-notes each. 0 is a rest.
+const MELODY = [
+  [76, 79, 76, 72, 74, 76, 72, 0],
+  [67, 72, 76, 79, 76, 0, 72, 0],
+  [77, 81, 77, 72, 74, 77, 81, 0],
+  [79, 77, 74, 71, 74, 0, 67, 0],
+  [76, 79, 76, 72, 74, 76, 79, 0],
+  [81, 79, 76, 72, 69, 72, 76, 0],
+  [77, 76, 74, 69, 67, 71, 74, 77],
+  [76, 0, 72, 0, 67, 69, 71, 0],
+].flat();
+// One chord per half bar: [bass root, bass fifth, chord notes].
+const C = [36, 43, 60, 64, 67];
+const F = [41, 36, 60, 65, 69];
+const G7 = [43, 38, 59, 62, 65];
+const AM = [45, 40, 60, 64, 69];
+const DM = [38, 45, 62, 65, 69];
+const HARMONY = [C, C, C, C, F, F, G7, G7, C, C, AM, AM, DM, G7, C, G7];
+
+const theme = new Array<number>(Math.floor(64 * EIGHTH * RATE)).fill(0);
+MELODY.forEach((note, i) => {
+  if (note) play(theme, marimba, note, beatAt(i), 0.3, true);
+});
+HARMONY.forEach((chord, half) => {
+  const [root = 36, fifth = 43, ...notes] = chord;
+  const first = half * 4;
+  play(theme, bass, root, beatAt(first), 0.42, true);
+  play(theme, bass, fifth, beatAt(first + 2), 0.34, true);
+  // Chords answer on the off-beats: the "pah" of an oom-pah.
+  for (const eighth of [first + 1, first + 3]) {
+    for (const n of notes) play(theme, pad, n, beatAt(eighth), 0.07, true, 0.5);
+  }
+});
+for (let i = 0; i < 64; i++) {
+  const start = Math.floor(beatAt(i) * RATE);
+  const gain = i % 2 === 1 ? 0.05 : 0.025;
+  let low = 0;
+  for (let n = 0; n < 0.05 * RATE; n++) {
+    const white = noise();
+    low += (white - low) * 0.5;
+    // High-passed noise: the hiss without the rumble.
+    const index = (start + n) % theme.length;
+    theme[index] =
+      (theme[index] ?? 0) + (white - low) * Math.exp((-n / RATE) * 90) * gain;
+  }
+}
+
+// Closing jingle, timed to the end card: a falling whistle as the iris shuts,
+// the theme's opening run as the card appears, then two chords to finish.
+const jingle = new Array<number>(Math.floor(2.8 * RATE)).fill(0);
+let phase = 0;
+for (let i = 0; i < 0.55 * RATE; i++) {
+  const t = i / RATE;
+  const freq = 1250 * Math.exp(-t * 2.4) * (1 + 0.02 * Math.sin(t * 50));
+  phase += (2 * Math.PI * freq) / RATE;
+  const shape = Math.min(1, t * 40) * Math.min(1, (0.55 - t) * 12);
+  jingle[i] = Math.sin(phase) * shape * 0.22;
+}
+[67, 72, 76, 79].forEach((n, i) => {
+  play(jingle, marimba, n, 0.65 + i * 0.09, 0.4);
+});
+[81, 79, 76].forEach((n, i) => {
+  play(jingle, marimba, n, 1.04 + i * 0.15, 0.4);
+});
+for (const n of [43, 59, 62, 65, 67]) play(jingle, pad, n, 1.52, 0.16);
+play(jingle, bass, 36, 1.8, 0.5, false, 1);
+for (const n of [60, 64, 67, 72]) play(jingle, marimba, n, 1.8, 0.24);
+play(jingle, bell, 84, 1.8, 0.2, false, 1);
+play(jingle, bell, 91, 1.86, 0.1, false, 1);
+// Fade the very end so the file never clicks.
+for (let i = 0; i < 0.25 * RATE; i++) {
+  const index = jingle.length - 1 - i;
+  jingle[index] = (jingle[index] ?? 0) * (i / (0.25 * RATE));
+}
+
+/** Scales a track so its loudest sample sits just under full volume. */
+const normalize = (track: number[]): number[] => {
+  const peak = track.reduce((m, v) => Math.max(m, Math.abs(v)), 0.001);
+  return track.map((v) => (v / peak) * 0.85);
+};
+
+const music = join(PUBLIC, "music");
+mkdirSync(music, { recursive: true });
+writeFileSync(join(music, "trilha.wav"), wav(normalize(theme)));
+writeFileSync(join(music, "vinheta.wav"), wav(normalize(jingle)));
+
 const dir = join(PUBLIC, "sfx");
 mkdirSync(dir, { recursive: true });
 writeFileSync(join(dir, "thud.wav"), wav(thud));
 writeFileSync(join(dir, "step.wav"), wav(step));
-log("Efeitos gerados em public/sfx");
+log("Efeitos gerados em public/sfx e música em public/music");

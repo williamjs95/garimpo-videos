@@ -42,6 +42,8 @@ export const findMouth = (
   band: [number, number] = [0.15, 0.45],
   /** Take every changed patch in the band (two eyes), not only the strongest one. */
   whole = false,
+  /** Horizontal range to search, as fractions of the image width. */
+  across: [number, number] = [0.3, 0.7],
 ): Mouth | undefined => {
   const a = PNG.sync.read(readFileSync(closed));
   const b = PNG.sync.read(readFileSync(open));
@@ -57,7 +59,14 @@ export const findMouth = (
     const q = B[n];
     const fx = ((n % cols) + 0.5) / cols;
     const fy = ((Math.floor(n / cols) + 0.5) * BLOCK) / a.height;
-    if (!p || !q || fx < 0.3 || fx > 0.7 || fy < band[0] || fy > band[1]) {
+    if (
+      !p ||
+      !q ||
+      fx < across[0] ||
+      fx > across[1] ||
+      fy < band[0] ||
+      fy > band[1]
+    ) {
       return 0;
     }
     return p.reduce((s, v, c) => s + Math.abs(v - (q[c] ?? 0)), 0);

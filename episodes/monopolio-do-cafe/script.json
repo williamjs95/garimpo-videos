@@ -1,0 +1,250 @@
+{
+  "slug": "monopolio-do-cafe",
+  "title": "O monopólio do café",
+  "hook": "Ela comprou TODO o café do bairro",
+  "mentionsGarimpo": false,
+  "props": [
+    {
+      "id": "saca-de-cafe",
+      "description": "one plump beige burlap sack tied at the top with rope, with a simple dark brown coffee bean symbol printed on the front, absolutely no letters, no words, no numbers"
+    },
+    {
+      "id": "torre-de-sacas",
+      "description": "very tall narrow tower of plump beige burlap sacks stacked one on top of another, ten sacks high and two sacks wide, slightly crooked and wobbly, each sack with a simple dark brown coffee bean symbol, the tower fills the full height of the image, absolutely no letters, no words, no numbers"
+    }
+  ],
+  "cenario": [
+    {
+      "prop": "torre-de-sacas",
+      "junto": "katia",
+      "lado": "esquerda",
+      "altura": 1150
+    }
+  ],
+  "lines": [
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "falando rápido, deliciada com a fofoca, sem pausas",
+      "text": "Menina, senta. A Kátia comprou todo o café do bairro.",
+      "som": ""
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "close",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "fria, superior, saboreando a vitória",
+      "text": "Quatrocentos quilos. Agora só eu vendo.",
+      "som": ""
+    },
+    {
+      "character": "norberto",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "move": "entra",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "solene, desconfiado, ditando regra",
+      "text": "Fornecedora única? Isso tem que ser formalizado.",
+      "som": ""
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "move": "entra",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "apavorado, chegando correndo",
+      "text": "Uai! Eu prometi duzentas xícaras pra amanhã!",
+      "som": ""
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "move": "",
+      "plateia": "chocado",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "doce e venenosa, negociando",
+      "text": "Compra de mim. Cem reais o quilo.",
+      "som": ""
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "normal",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "baixinho, sem graça",
+      "text": "Eu tenho doze.",
+      "som": ""
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "seca, sem piscar",
+      "text": "Cento e vinte.",
+      "som": ""
+    },
+    {
+      "character": "ze",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "move": "",
+      "plateia": "pensando",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "iluminado, tendo a ideia, cada vez mais empolgado",
+      "text": "E se a reunião for de chá?",
+      "som": ""
+    },
+    {
+      "character": "norberto",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "normal",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "lendo a prancheta em voz alta, pausado e solene",
+      "text": "Página catorze: café ou bebida quente equivalente.",
+      "som": ""
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "seca, constatando o óbvio",
+      "text": "Chá é quente.",
+      "som": ""
+    },
+    {
+      "character": "norberto",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "move": "",
+      "plateia": "chocado",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "triunfante, como quem bate um carimbo",
+      "text": "Deferido!",
+      "som": ""
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "normal",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "desesperada, mas ainda mandona",
+      "text": "Então eu compro todo o chá!",
+      "som": ""
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "move": "",
+      "plateia": "",
+      "fx": "queda",
+      "fxProp": "saca-de-cafe",
+      "fxTarget": "katia",
+      "emotion": "debochada, com gosto",
+      "text": "Com que dinheiro, menina? Virou tudo café.",
+      "som": "scratch"
+    },
+    {
+      "character": "katia",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "voz fraquinha e tonta, mas ainda arrogante",
+      "text": "Amadores.",
+      "som": ""
+    },
+    {
+      "character": "lici",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "move": "",
+      "plateia": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "emotion": "falando rápido, escandalizada, sem pausas",
+      "text": "Menina… o Zé só achou chá de camomila. Duzentas xícaras.",
+      "som": ""
+    }
+  ],
+  "post": {
+    "tiktok": "Toda galeria tem uma Kátia que prefere falir a perder 😅 Marca a pessoa mais competitiva que você conhece.",
+    "reels": "Ela comprou todo o café do bairro só pra ninguém mais vender 😅 Quem é a Kátia da sua rua?",
+    "shortsTitle": "O monopólio do café 😅",
+    "shortsDescription": "Quatrocentos quilos de café, uma reunião de condomínio e uma cláusula na página catorze.",
+    "hashtags": [
+      "humor",
+      "condominio",
+      "lojista",
+      "pequenosnegocios",
+      "concorrencia",
+      "vidadelojista"
+    ]
+  }
+}

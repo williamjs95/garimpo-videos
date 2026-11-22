@@ -5,12 +5,17 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { bodyFont, colors, displayFont } from "./theme";
-import { type CastMember, END_CARD_MS, type Line } from "./types";
+import { bodyFont, colors, displayFont, scriptFont } from "./theme";
+import { type CastMember, type Line, SITE } from "./types";
 
 // 9:16 safe zones (1080x1920): keep top ~120px, bottom ~320px and right ~120px clear.
 const CAPTION_BOTTOM = 400;
 const WORDS_PER_PAGE = 4;
+// Closing card: where a close-up face sits, when the card opens, and the pan's size.
+const IRIS_X = 540;
+const IRIS_Y = 860;
+const CARD_AT = 19;
+const PAN = 1000;
 
 export const Captions: React.FC<{
   line: Line;
@@ -131,56 +136,144 @@ export const Hook: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-/** Optional end card: site handle, plus the series call to action when there is one. */
-export const Handle: React.FC<{ durationInFrames: number; outro?: string }> = ({
-  durationInFrames,
-  outro,
-}) => {
+/**
+ * The closing every episode ends on, in the tradition of classic cartoon
+ * sign-offs: an iris shuts on the last speaker, then opens on the gold pan
+ * seen from above while the site address writes itself across it.
+ */
+export const EndCard: React.FC<{ from: number }> = ({ from }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const start = durationInFrames - Math.round((END_CARD_MS / 1000) * fps);
-  if (frame < start) return null;
-  const opacity = interpolate(frame, [start, start + 8], [0, 1], {
+  const t = frame - from;
+  if (t < 0) return null;
+
+  // Close fast, hesitate on the face, then shut.
+  const iris = interpolate(t, [0, 9, 14, 18], [1300, 190, 170, 0], {
     extrapolateRight: "clamp",
   });
-  const pop = spring({
-    frame: frame - start - 6,
+  const open = spring({
+    frame: t - CARD_AT,
     fps,
-    config: { damping: 10, stiffness: 200 },
+    config: { damping: 15, stiffness: 120 },
   });
+  const wrote = (start: number, end: number): number =>
+    interpolate(t, [start, end], [0, 100], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    });
+  const sparkle = spring({
+    frame: t - 53,
+    fps,
+    config: { damping: 8, stiffness: 200 },
+  });
+  const settle = spring({
+    frame: t - 53,
+    fps,
+    config: { damping: 10, stiffness: 220 },
+  });
+  const script = {
+    fontFamily: scriptFont,
+    color: colors.card,
+    WebkitTextStroke: `14px ${colors.ink}`,
+    paintOrder: "stroke fill",
+    textShadow: `0 10px 0 ${colors.ink}`,
+    lineHeight: 1.25,
+    padding: "0 30px",
+    whiteSpace: "nowrap",
+  } as const;
+  const [name, tld] = [
+    SITE.slice(0, SITE.indexOf(".")),
+    SITE.slice(SITE.indexOf(".")),
+  ];
+
   return (
-    <AbsoluteFill
-      style={{ alignItems: "center", paddingTop: 170, gap: 24, opacity }}
-    >
-      {outro ? (
-        <div
+    <AbsoluteFill>
+      <AbsoluteFill
+        style={{
+          background: `radial-gradient(circle at ${IRIS_X}px ${IRIS_Y}px, transparent ${iris}px, ${colors.ink} ${iris + 3}px)`,
+        }}
+      />
+      {t >= CARD_AT ? (
+        <AbsoluteFill
           style={{
-            fontFamily: displayFont,
-            fontSize: 96,
-            color: colors.card,
             backgroundColor: colors.terra,
-            padding: "18px 44px",
-            borderRadius: 28,
-            boxShadow: `0 10px 0 ${colors.ink}`,
-            transform: `scale(${pop}) rotate(-2deg)`,
+            alignItems: "center",
+            justifyContent: "center",
+            clipPath: `circle(${open * 1300}px at 50% 50%)`,
           }}
         >
-          {outro}
-        </div>
+          {/* The pan from above: its ridges are the rings of the sign-off. */}
+          <div
+            style={{
+              position: "absolute",
+              width: PAN,
+              height: PAN,
+              borderRadius: "50%",
+              background: `repeating-radial-gradient(circle, ${colors.goldBright} 0 46px, ${colors.gold} 46px 92px)`,
+              border: `22px solid ${colors.ink}`,
+              boxShadow: `0 26px 0 ${colors.ink}`,
+              transform: `scale(${0.9 + 0.1 * open})`,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              width: PAN,
+              height: PAN,
+              borderRadius: "50%",
+              opacity: 0.5,
+              background:
+                "conic-gradient(from 0deg, transparent 0 8%, white 14%, transparent 22% 55%, white 61%, transparent 68%)",
+              transform: `rotate(${t * 1.2 - 30}deg)`,
+              mixBlendMode: "soft-light",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              transform: `rotate(-7deg) scale(${1 + 0.06 * settle * (1 - settle) * 4})`,
+            }}
+          >
+            <div
+              style={{
+                ...script,
+                fontSize: 138,
+                clipPath: `inset(-40px ${100 - wrote(CARD_AT + 8, CARD_AT + 24)}% -40px 0)`,
+              }}
+            >
+              {name}
+            </div>
+            <div
+              style={{
+                ...script,
+                fontSize: 112,
+                marginTop: -34,
+                marginLeft: 300,
+                clipPath: `inset(-40px ${100 - wrote(CARD_AT + 24, CARD_AT + 33)}% -40px 0)`,
+              }}
+            >
+              {tld}
+            </div>
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              left: 820,
+              top: 660,
+              fontSize: 150,
+              lineHeight: "150px",
+              color: colors.card,
+              WebkitTextStroke: `8px ${colors.ink}`,
+              paintOrder: "stroke fill",
+              transform: `scale(${sparkle}) rotate(${t * 2}deg)`,
+            }}
+          >
+            ✦
+          </div>
+        </AbsoluteFill>
       ) : null}
-      <div
-        style={{
-          fontFamily: displayFont,
-          fontSize: 48,
-          color: colors.ink,
-          backgroundColor: colors.card,
-          padding: "10px 28px",
-          borderRadius: 999,
-          border: `4px solid ${colors.gold}`,
-        }}
-      >
-        garimpoeditais.com.br
-      </div>
     </AbsoluteFill>
   );
 };

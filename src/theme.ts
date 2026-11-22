@@ -1,5 +1,6 @@
 import { loadFont as loadFraunces } from "@remotion/google-fonts/Fraunces";
 import { loadFont as loadPlex } from "@remotion/google-fonts/IBMPlexSans";
+import { loadFont as loadPacifico } from "@remotion/google-fonts/Pacifico";
 
 // "Terra e ouro", the same palette as the Garimpo app.
 export const colors = {
@@ -10,6 +11,11 @@ export const colors = {
   gold: "#a87a1f",
   goldBright: "#f2c14e",
 };
+
+export const scriptFont = loadPacifico("normal", {
+  weights: ["400"],
+  subsets: ["latin"],
+}).fontFamily;
 
 export const displayFont = loadFraunces("normal", {
   weights: ["800"],

@@ -7,13 +7,14 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { colors } from "./theme";
+import { colors, displayFont } from "./theme";
 import type { TimedLine } from "./timing";
 import {
   type CastMember,
   DROP_FALL_FRAMES as FALL,
   type Line,
   type Mouth,
+  type Scenery,
 } from "./types";
 
 // The stage is a wide world the 9:16 camera travels over. Characters keep
@@ -56,6 +57,16 @@ export const presentIn = (lines: Line[], location: string): string[] => {
 const heightOf = (cast: CastMember[], id: string): number =>
   CHAR_H * (cast.find((c) => c.id === id)?.scale ?? 1);
 
+/**
+ * Height of a point on a character's drawing (0 = soles line of the image,
+ * 1 = top), in world pixels. Drawings have empty space under the shoes, so
+ * each one is lowered until its soles touch the floor.
+ */
+const levelOf = (cast: CastMember[], id: string, at: number): number => {
+  const feet = cast.find((c) => c.id === id)?.feet ?? 1;
+  return FLOOR - heightOf(cast, id) * (at - (1 - feet));
+};
+
 const slotX = (count: number, index: number): number =>
   WORLD_W / 2 + (index - (count - 1) / 2) * SPACING;
 
@@ -69,8 +80,18 @@ export const Stage: React.FC<{
   cast: CastMember[];
   backgrounds: Record<string, string>;
   props: Record<string, string>;
+  scenery: Scenery[];
   speechRate: number;
-}> = ({ lines, timed, index, cast, backgrounds, props, speechRate }) => {
+}> = ({
+  lines,
+  timed,
+  index,
+  cast,
+  backgrounds,
+  props,
+  scenery,
+  speechRate,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const line = lines[index];
@@ -87,7 +108,7 @@ export const Stage: React.FC<{
     l.camera === "close"
       ? {
           x: xOf(l.character),
-          y: FLOOR - heightOf(cast, l.character) * 0.74,
+          y: levelOf(cast, l.character, 0.74),
           z: 1.5,
         }
       : { x: xOf(l.character), y: 1040, z: 1.12 };
@@ -202,7 +223,7 @@ export const Stage: React.FC<{
 
   const background = backgrounds[line.location];
   const speakerX = xOf(line.character);
-  const glowY = FLOOR - heightOf(cast, line.character) * 0.72;
+  const glowY = levelOf(cast, line.character, 0.72);
   // Speaker is drawn last so they overlap their neighbours.
   const order = [...present].sort(
     (a, b) => Number(a === line.character) - Number(b === line.character),
@@ -225,6 +246,36 @@ export const Stage: React.FC<{
             style={{ position: "absolute", width: WORLD_W, height: WORLD_H }}
           />
         ) : null}
+
+        {scenery.map((s) => {
+          const src = props[s.prop];
+          if (!src || !present.includes(s.beside)) return null;
+          // It sways before something falls off it, and shudders after.
+          const falls = line.fx.includes("queda") && line.fxTarget === s.beside;
+          const sway = falls
+            ? Math.sin(local * 0.9) *
+              (sinceImpact >= 0
+                ? 3 * Math.exp(-sinceImpact / 8)
+                : 2.5 * Math.min(1, Math.max(0, (local - dropStart + 14) / 14)))
+            : 0;
+          return (
+            <Img
+              key={`${s.prop}-${s.beside}`}
+              src={staticFile(src)}
+              style={{
+                position: "absolute",
+                left: xOf(s.beside) + s.side * 300 - s.height / 2,
+                top: FLOOR - 30 - s.height,
+                width: s.height,
+                height: s.height,
+                objectFit: "contain",
+                objectPosition: "50% 100%",
+                transformOrigin: "50% 100%",
+                transform: `rotate(${sway}deg)`,
+              }}
+            />
+          );
+        })}
 
         {line.fx.includes("brilho") ? (
           <Rays x={speakerX} y={glowY} local={local} />
@@ -267,13 +318,32 @@ export const Stage: React.FC<{
           <Sparkles x={speakerX} y={glowY} local={local} />
         ) : null}
 
+        {present.map((id) => {
+          if (walkOf(id).gone) return null;
+          const top = levelOf(cast, id, 0.97);
+          if ((hit && id === line.fxTarget) || stillShocked(id)) {
+            return <Dizzy key={id} x={xOf(id)} y={top} local={local} />;
+          }
+          const glyph = id === line.character ? undefined : MARKS[line.plateia];
+          return glyph ? (
+            <Mark
+              key={id}
+              glyph={glyph}
+              x={xOf(id)}
+              y={top}
+              local={local}
+              phase={present.indexOf(id)}
+            />
+          ) : null;
+        })}
+
         {aftermath.map((l) =>
           props[l.fxProp] ? (
             <Drop
               key={`${l.fxProp}-${l.fxTarget}`}
               src={props[l.fxProp] as string}
               x={xOf(l.fxTarget)}
-              headTop={FLOOR - heightOf(cast, l.fxTarget) * 0.96}
+              headTop={levelOf(cast, l.fxTarget, 0.96)}
               since={999}
             />
           ) : null,
@@ -283,7 +353,7 @@ export const Stage: React.FC<{
           <Drop
             src={props[line.fxProp] as string}
             x={xOf(line.fxTarget)}
-            headTop={FLOOR - heightOf(cast, line.fxTarget) * 0.96}
+            headTop={levelOf(cast, line.fxTarget, 0.96)}
             since={local - dropStart}
           />
         ) : null}
@@ -380,61 +450,159 @@ const Character: React.FC<{
   // Lip sync: flap the mouth about six times a second while a word is spoken.
   const mouthOpen = talking && Math.floor(local / 2.5) % 2 === 0;
   const shown = poses.includes(pose) ? pose : "neutro";
+  // Soles on the floor line, with a shadow that shrinks as the body lifts.
+  const sink = (1 - (member.feet ?? 1)) * CHAR_H * member.scale;
+  const shadowW = CHAR_W * member.scale * 0.56;
+  const lift = Math.min(1, Math.max(0, -bob) / 90);
 
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          left: x - shadowW / 2,
+          top: FLOOR - 26,
+          width: shadowW,
+          height: 52,
+          borderRadius: "50%",
+          backgroundColor: colors.ink,
+          opacity: 0.26 * (1 - 0.5 * lift),
+          filter: "blur(6px)",
+          transform: `scale(${(1 - 0.3 * lift) * (1 + 0.14 * squash)})`,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: x - (CHAR_W * member.scale) / 2,
+          top: FLOOR - CHAR_H * member.scale + sink,
+          width: CHAR_W * member.scale,
+          height: CHAR_H * member.scale,
+          transformOrigin: "50% 100%",
+          transform: `translateY(${bob}px) rotate(${tilt}deg) scale(${scaleX}, ${scaleY})`,
+          filter: speaker ? undefined : "brightness(0.9) saturate(0.9)",
+        }}
+      >
+        {poses.map((p) => {
+          const mouth = member.mouths[p];
+          const fill = {
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+          } as const;
+          // Only the mouth region of the talking drawing is shown, so the
+          // slight color drift between the two drawings never flickers.
+          const mask = mouth ? region(mouth) : undefined;
+          return (
+            <div key={p} style={{ ...fill, opacity: p === shown ? 1 : 0 }}>
+              <Img src={staticFile(`${member.dir}/${p}.png`)} style={fill} />
+              {mouth ? (
+                <Img
+                  src={staticFile(`${member.dir}/${p}-fala.png`)}
+                  style={{
+                    ...fill,
+                    opacity: mouthOpen ? 1 : 0,
+                    maskImage: mask,
+                    WebkitMaskImage: mask,
+                  }}
+                />
+              ) : null}
+              {p === "neutro" && member.blink ? (
+                <Img
+                  src={staticFile(`${member.dir}/neutro-pisca.png`)}
+                  style={{
+                    ...fill,
+                    opacity: blinking ? 1 : 0,
+                    maskImage: region(member.blink),
+                    WebkitMaskImage: region(member.blink),
+                  }}
+                />
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+/** Comic-book mark over a listener's head, by reaction pose. */
+const MARKS: Record<string, string> = { chocado: "!", pensando: "?" };
+
+const Mark: React.FC<{
+  glyph: string;
+  x: number;
+  y: number;
+  local: number;
+  phase: number;
+}> = ({ glyph, x, y, local, phase }) => {
+  const { fps } = useVideoConfig();
+  const pop = spring({
+    frame: local - 3 - phase * 2,
+    fps,
+    config: { damping: 8, stiffness: 220 },
+  });
+  const size = 190;
   return (
     <div
       style={{
         position: "absolute",
-        left: x - (CHAR_W * member.scale) / 2,
-        top: FLOOR - CHAR_H * member.scale,
-        width: CHAR_W * member.scale,
-        height: CHAR_H * member.scale,
+        left: x - size / 2 + 70,
+        top: y - size - 10 - 34 * Math.min(1, pop),
+        width: size,
+        height: size,
+        fontFamily: displayFont,
+        fontWeight: 800,
+        fontSize: size,
+        lineHeight: `${size}px`,
+        textAlign: "center",
+        color: colors.goldBright,
+        WebkitTextStroke: `16px ${colors.ink}`,
+        paintOrder: "stroke fill",
         transformOrigin: "50% 100%",
-        transform: `translateY(${bob}px) rotate(${tilt}deg) scale(${scaleX}, ${scaleY})`,
-        filter: speaker ? undefined : "brightness(0.9) saturate(0.9)",
+        transform: `scale(${pop}) rotate(${10 + Math.sin(local / 5 + phase) * 5}deg)`,
       }}
     >
-      {poses.map((p) => {
-        const mouth = member.mouths[p];
-        const fill = {
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-        } as const;
-        // Only the mouth region of the talking drawing is shown, so the
-        // slight color drift between the two drawings never flickers.
-        const mask = mouth ? region(mouth) : undefined;
-        return (
-          <div key={p} style={{ ...fill, opacity: p === shown ? 1 : 0 }}>
-            <Img src={staticFile(`${member.dir}/${p}.png`)} style={fill} />
-            {mouth ? (
-              <Img
-                src={staticFile(`${member.dir}/${p}-fala.png`)}
-                style={{
-                  ...fill,
-                  opacity: mouthOpen ? 1 : 0,
-                  maskImage: mask,
-                  WebkitMaskImage: mask,
-                }}
-              />
-            ) : null}
-            {p === "neutro" && member.blink ? (
-              <Img
-                src={staticFile(`${member.dir}/neutro-pisca.png`)}
-                style={{
-                  ...fill,
-                  opacity: blinking ? 1 : 0,
-                  maskImage: region(member.blink),
-                  WebkitMaskImage: region(member.blink),
-                }}
-              />
-            ) : null}
-          </div>
-        );
-      })}
+      {glyph}
     </div>
   );
 };
+
+/** Stars circling the head of whoever just got hit. */
+const Dizzy: React.FC<{ x: number; y: number; local: number }> = ({
+  x,
+  y,
+  local,
+}) => (
+  <>
+    {Array.from({ length: 3 }, (_, i) => {
+      const angle = local * 0.22 + (i / 3) * Math.PI * 2;
+      const depth = Math.sin(angle);
+      return (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            left: x + Math.cos(angle) * 170 - 35,
+            top: y - 20 + depth * 34 - 35,
+            width: 70,
+            height: 70,
+            fontSize: 70,
+            lineHeight: "70px",
+            textAlign: "center",
+            color: colors.goldBright,
+            WebkitTextStroke: `5px ${colors.ink}`,
+            paintOrder: "stroke fill",
+            opacity: 0.6 + 0.4 * (depth + 1) * 0.5,
+            transform: `scale(${0.75 + 0.25 * depth})`,
+          }}
+        >
+          ✦
+        </div>
+      );
+    })}
+  </>
+);
 
 /** Golden rays behind a character having an idea. */
 const Rays: React.FC<{ x: number; y: number; local: number }> = ({

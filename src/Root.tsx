@@ -27,7 +27,6 @@ export const RemotionRoot: React.FC = () => {
         cast: [],
         backgrounds: {},
         props: {},
-        showHandle: false,
       }}
     />
   );

@@ -10,7 +10,14 @@ import {
   writeFileSync,
 } from "node:fs";
 import { join } from "node:path";
-import type { EpisodeProps, Line, Mouth, Word } from "../src/types.ts";
+import {
+  DEFAULT_MUSIC,
+  type EpisodeProps,
+  type Line,
+  type Mouth,
+  type Word,
+} from "../src/types.ts";
+import { findFeet } from "./lib/feet.ts";
 import {
   type Character,
   type EpisodeScript,
@@ -49,6 +56,15 @@ for (const l of script.lines) {
   }
 }
 
+for (const s of script.cenario ?? []) {
+  if (!propIds.includes(s.prop)) {
+    throw new Error(`Objeto "${s.prop}" do cenário não está em "props".`);
+  }
+  if (!cast.characters.some((c) => c.id === s.junto)) {
+    throw new Error(`Personagem desconhecido no cenário: ${s.junto}`);
+  }
+}
+
 const missingArt = [
   ...cast.characters.flatMap((c) =>
     poseIds.flatMap((p) => [
@@ -64,6 +80,9 @@ if (missingArt.length > 0) {
   throw new Error(
     `Falta arte (${missingArt.length} arquivos). Rode npm run art primeiro.`,
   );
+}
+if (!existsSync(join(PUBLIC, DEFAULT_MUSIC))) {
+  throw new Error("Falta a música da série. Rode npm run sfx primeiro.");
 }
 
 const lines: Line[] = [];
@@ -216,14 +235,22 @@ const props: EpisodeProps = {
       join(PUBLIC, "cast", c.id, "mouths.json"),
     ),
     blink: readJson<Mouth | null>(join(PUBLIC, "cast", c.id, "blink.json")),
+    feet: findFeet(join(PUBLIC, "cast", c.id, "neutro.png")),
   })),
   backgrounds: Object.fromEntries(
     Object.keys(cast.locations).map((l) => [l, `bg/${l}.png`]),
   ),
   props: Object.fromEntries(propIds.map((p) => [p, `props/${p}.png`])),
-  // The series closes on the catchphrase; the site lives in the bio.
-  showHandle: Boolean(script.outro),
-  outro: script.outro ?? "",
+  scenery: (script.cenario ?? []).map((s) => ({
+    prop: s.prop,
+    beside: s.junto,
+    side: s.lado === "direita" ? 1 : -1,
+    height: s.altura ?? 900,
+  })),
+  // Drop a licensed track at public/music/trilha.mp3 to replace the built-in theme.
+  music: existsSync(join(PUBLIC, "music", "trilha.mp3"))
+    ? "music/trilha.mp3"
+    : DEFAULT_MUSIC,
   speechRate: SPEECH_RATE,
 };
 

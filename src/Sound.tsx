@@ -1,8 +1,8 @@
 import { Audio } from "@remotion/media";
 import { ding, recordScratch, whip, whoosh } from "@remotion/sfx";
-import { Sequence, staticFile } from "remotion";
+import { interpolate, Sequence, staticFile } from "remotion";
 import type { TimedLine } from "./timing";
-import { DROP_FALL_FRAMES, type Line } from "./types";
+import { DROP_FALL_FRAMES, JINGLE, type Line } from "./types";
 
 type Cue = { at: number; src: string; volume: number };
 
@@ -45,11 +45,31 @@ const cuesFor = (lines: Line[], timed: TimedLine[]): Cue[] => {
   return cues;
 };
 
-export const Sound: React.FC<{ lines: Line[]; timed: TimedLine[] }> = ({
-  lines,
-  timed,
-}) => (
+/** Quiet enough to sit under the voices. */
+const MUSIC_VOLUME = 0.08;
+
+export const Sound: React.FC<{
+  lines: Line[];
+  timed: TimedLine[];
+  music: string;
+  /** Frame the closing card starts on: the music hands over to the jingle. */
+  cardFrom: number;
+}> = ({ lines, timed, music, cardFrom }) => (
   <>
+    <Audio
+      src={staticFile(music)}
+      loop
+      volume={(f) =>
+        MUSIC_VOLUME *
+        interpolate(f, [0, 12, cardFrom - 6, cardFrom + 8], [0, 1, 1, 0], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        })
+      }
+    />
+    <Sequence from={cardFrom} layout="none">
+      <Audio src={staticFile(JINGLE)} volume={0.6} />
+    </Sequence>
     {cuesFor(lines, timed).map((c, i) => (
       <Sequence key={i} from={c.at} layout="none">
         <Audio src={c.src} volume={c.volume} />

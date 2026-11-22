@@ -37,13 +37,14 @@ Os nomes Lici e Garimpo são piscadela para quem conhece o app. Quem não conhec
 
 - **A bateia do Zé brilha quando ele tem uma ideia.** A ideia é sempre um fracasso, até o dia em que dá certo.
 - Detalhes de cenário: a caneca do Zé, o adesivo na vitrine, o nome do Wi-Fi da galeria.
-- Link na bio e comentário fixado. Sem chamada falada para o site.
-- O fecho é o bordão, não um convite. A pessoa volta pelo personagem e, uma hora, clica no perfil.
+- **O fecho da série mostra o site.** Todo vídeo termina igual, como assinatura de estúdio de desenho animado: a íris se fecha no rosto de quem deu o gancho final e abre numa bateia dourada vista de cima, onde "garimpoeditais.com.br" se escreve sozinho, com a vinheta da série. É o único lugar em que o endereço aparece no vídeo.
+- Link na bio e comentário fixado. Sem chamada falada para o site e sem link nas legendas.
+- A última fala é o bordão ou o gancho final, não um convite. Ninguém em cena menciona o fecho.
 - **Filtro obrigatório: "isso parece anúncio? Então corta."**
 
 ## Estrutura do episódio
 
-Cada episódio tem gancho, início, meio, fim e gancho final, em 30 a 40 segundos.
+Cada episódio tem gancho, início, meio, fim, gancho final e o fecho da série, em 30 a 40 segundos.
 
 | Parte | Tempo | O que acontece |
 |---|---|---|
@@ -51,9 +52,10 @@ Cada episódio tem gancho, início, meio, fim e gancho final, em 30 a 40 segundo
 | **Início** | 3 a 10s | Três reações, cada personagem pela sua perspectiva; a terceira quebra o padrão. |
 | **Meio** | 10 a 25s | Alguém age e piora tudo. A situação escala em falas cada vez mais curtas. |
 | **Fim** | 25 a 35s | Reviravolta e bordão, de preferência com a piada visual (a bateia brilha, algo cai). A história do episódio se resolve aqui. |
-| **Gancho final** | últimos 2 a 3s | Uma fala só, que abre uma porta para o próximo episódio: uma reação ou novidade. Nunca segura a resolução deste. |
+| **Gancho final** | 2 a 3s antes do fecho | Uma fala só, que abre uma porta para o próximo episódio: uma reação ou novidade. Nunca segura a resolução deste. |
+| **Fecho** | últimos 2,8s | Fixo e igual em todos os vídeos (íris, bateia, site e vinheta). Não se escreve no roteiro: a animação acrescenta sozinha. |
 
-Formato: 12 a 15 falas, 75 a 100 palavras, 30 a 40 segundos. O episódio é completo para quem nunca viu
+Formato: 12 a 15 falas, 75 a 100 palavras, 30 a 40 segundos já contando o fecho (as falas somam até uns 37s). O episódio é completo para quem nunca viu
 a série e para quem não voltar: o gancho final é um bônus, não uma "Parte 2".
 
 ## Os dez princípios
@@ -88,7 +90,9 @@ varie a pose de fala para fala e dê reação a quem escuta nos momentos fortes.
 - `som`: efeito no começo da fala. "scratch" (arranhão de disco) para a notícia que estraga a festa; "ding" para uma boa ideia; "whoosh" para uma virada. Use em no máximo duas falas.
 - `fx`: "" na maioria; "brilho" quando o Zé tem uma ideia; "queda" quando um objeto cai em alguém depois da fala; "brilho+queda" para os dois.
 - `fxProp` e `fxTarget`: o objeto que cai (declarado em `props`) e em quem cai.
+- `cenario` (no roteiro, fora das falas): objetos que ficam em cena o episódio inteiro ao lado de um personagem, como a torre de sacas da Kátia. Use para a piada visual já estar no primeiro quadro. O objeto balança quando algo cai em quem está junto dele.
 
+A animação acrescenta sozinha: "!" sobre quem escuta em `plateia` "chocado" e "?" em "pensando"; estrelas girando na cabeça de quem levou a queda; sombra no chão; a trilha de fundo e o fecho.
 Passos, o som da queda, o brilho e o zoom do close já têm efeito sonoro automático.
 Use no máximo uma queda por episódio, guardada para o fim.
 
@@ -102,6 +106,8 @@ Use no máximo uma queda por episódio, guardada para o fim.
 - [ ] Tem gancho, início, meio e fim; o meio escala a situação.
 - [ ] O fim resolve a história num bordão, com gatilho diferente do episódio anterior.
 - [ ] O gancho final é uma fala só e não segura a resolução.
+- [ ] Nenhuma fala cita o site: o endereço aparece só no fecho fixo.
+- [ ] Há pelo menos uma melhoria de roteiro e uma gráfica em relação ao episódio anterior.
 - [ ] 12 a 15 falas, 75 a 100 palavras, lido em voz alta com cronômetro.
 - [ ] Faz sentido sem som e para quem nunca viu a série.
 - [ ] Isso parece anúncio? Então corta.
