@@ -26,8 +26,8 @@ export type Line = {
     | "arremesso";
   fxProp: string;
   fxTarget: string;
-  /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. */
-  move: "" | "entra" | "sai";
+  /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. "frente": steps toward the camera while speaking. */
+  move: "" | "entra" | "sai" | "frente";
   /** Pose of everyone who is listening during this line. Empty means neutro. */
   plateia: string;
   /** Sound effect at the start of the line. */
@@ -112,6 +112,8 @@ export const DEFAULT_MUSIC = "music/trilha.wav";
 export const JINGLE = "music/vinheta.wav";
 /** Extra time after a line for a "queda" gag to play out. */
 export const DROP_MS = 1500;
+/** Extra time after a "sai" line so the walk out finishes on screen. */
+export const EXIT_MS = 750;
 /** Frames a dropped prop hangs in the air first, while everyone looks up. */
 export const DROP_HANG_FRAMES = 13;
 /** Frames a dropped prop takes to reach the target's head. */

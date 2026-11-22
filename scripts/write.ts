@@ -184,7 +184,7 @@ const schema = {
           },
           fxProp: { type: "string" },
           fxTarget: { type: "string", enum: ["", ...ids] },
-          move: { type: "string", enum: ["", "entra", "sai"] },
+          move: { type: "string", enum: ["", "entra", "sai", "frente"] },
           plateia: { type: "string", enum: ["", ...poses] },
           som: {
             type: "string",

@@ -168,6 +168,25 @@ export const Stage: React.FC<{
   }
   // A slow push keeps a held shot alive.
   cam.z *= 1 + 0.025 * Math.min(1, local / time.durationInFrames);
+  // Someone stepping toward the camera: the camera meets them halfway.
+  if (line.move === "frente") {
+    const near =
+      spring({
+        frame: local - 3,
+        fps,
+        config: { damping: 13, stiffness: 140 },
+      }) -
+      spring({
+        frame: local - time.speechFrames,
+        fps,
+        config: { damping: 16, stiffness: 140 },
+      });
+    cam = {
+      ...cam,
+      y: lerp(cam.y, levelOf(cast, line.character, 0.62), near),
+      z: cam.z * (1 + 0.18 * near),
+    };
+  }
 
   const dropStart = time.speechFrames + 2;
   const weight = weightOf(weights, line.fxProp);
@@ -286,9 +305,21 @@ export const Stage: React.FC<{
    * Where a character is relative to their spot: walking in on an "entra"
    * line, walking out after a "sai" line, or off stage in between.
    */
+  /**
+   * Where a character is relative to their spot: walking in on an "entra"
+   * line, walking out after a "sai" line, or off stage in between. The body
+   * leans into the walk, carries a little past the spot and settles back; a
+   * walk out starts with a small step back.
+   */
   const walkOf = (
     id: string,
-  ): { dx: number; gone: boolean; stride: number; landed?: number } => {
+  ): {
+    dx: number;
+    gone: boolean;
+    stride: number;
+    landed?: number;
+    lean: number;
+  } => {
     const side = xOf(id) < WORLD_W / 2 ? -1 : 1;
     const own = lines
       .map((l, i) => ({ l, i }))
@@ -299,33 +330,67 @@ export const Stage: React.FC<{
       if (l.move === "entra") {
         if (i < index) gone = false;
         else {
+          // Walking in means moving toward the middle: away from `side`.
+          const dir = -side;
           const t = Math.min(1, local / WALK);
           const eased = 1 - (1 - t) ** 3;
+          const u = local - WALK;
+          const settle = u >= 0 ? Math.exp(-u / 4) : 0;
           return {
-            dx: (1 - eased) * side * WALK_FROM,
+            dx:
+              (1 - eased) * side * WALK_FROM +
+              (u >= 0 ? dir * 30 * Math.sin(u * 0.5) * settle : 0),
             gone: false,
             stride: t < 1 ? local : 0,
             // Skids to a stop: a squash that springs back.
-            landed: t < 1 ? 0 : Math.exp(-(local - WALK) / 4) * 0.45,
+            landed: t < 1 ? 0 : settle * 0.45,
+            lean: t < 1 ? dir * 8 : dir * 7 * settle * Math.cos(u * 0.6),
           };
         }
       } else if (l.move === "sai") {
         if (i < index) gone = true;
         else {
-          const t = Math.min(
-            1,
-            Math.max(0, (local - time.speechFrames) / WALK),
-          );
+          const after = local - time.speechFrames;
+          const antic = 5;
+          if (after < 0) return { dx: 0, gone: false, stride: 0, lean: 0 };
+          if (after < antic) {
+            const k = Math.sin((Math.PI * after) / antic);
+            return {
+              dx: -side * 18 * k,
+              gone: false,
+              stride: 0,
+              landed: 0.2 * k,
+              lean: -side * 5 * k,
+            };
+          }
+          const t = Math.min(1, (after - antic) / WALK);
           return {
             dx: t * t * side * WALK_FROM,
             gone: t >= 1,
-            stride: t > 0 ? local : 0,
+            stride: local,
+            lean: side * 9,
           };
         }
       } else if (i <= index) gone = false;
     }
-    return { dx: 0, gone, stride: 0 };
+    return { dx: 0, gone, stride: 0, lean: 0 };
   };
+
+  // "frente": the speaker steps toward the camera, leaning back a beat first,
+  // and steps back when the line is done.
+  const approach =
+    line.move === "frente"
+      ? spring({
+          frame: local - 3,
+          fps,
+          config: { damping: 13, stiffness: 140 },
+        }) -
+        spring({
+          frame: local - time.speechFrames,
+          fps,
+          config: { damping: 16, stiffness: 140 },
+        })
+      : 0;
 
   // The speaker gets a small jolt on every word, like a hand beat.
   const lastWord = line.words.findLast((w) => ms >= w.startMs);
@@ -413,6 +478,8 @@ export const Stage: React.FC<{
               x={xOf(id) + walk.dx}
               stride={walk.stride}
               toward={Math.sign(speakerX - xOf(id))}
+              lean={walk.lean}
+              approach={speaker ? approach : 0}
               reacting={!speaker && !stuck[id] && line.plateia !== ""}
               catching={
                 line.fx === "arremesso" && id === line.fxTarget
@@ -573,6 +640,10 @@ const Character: React.FC<{
   reacting: boolean;
   /** Frames since this character caught a thrown prop; negative before. */
   catching: number;
+  /** Degrees the walk tilts the body (into the motion, then settling). */
+  lean: number;
+  /** 0 to 1: how far the character has stepped toward the camera. */
+  approach: number;
   /** Pose held before this line; a change from it plays as a take. */
   from: string;
   /** Frame of the line the change happens on (listeners are staggered). */
@@ -593,6 +664,8 @@ const Character: React.FC<{
   toward,
   reacting,
   catching,
+  lean,
+  approach,
   from,
   changeAt,
   emphasis,
@@ -648,7 +721,8 @@ const Character: React.FC<{
     grab -
     step;
   const tilt =
-    (walking ? Math.sin(stride * 0.75) * 4 + toward * 7 : 0) +
+    (walking ? Math.sin(stride * 0.75) * 4 : 0) +
+    lean +
     (talking ? Math.sin(local * 0.33) * 1.6 : 0) +
     toward * 2.4 * attention;
   // Running stretches the body tall and thin; an impact squashes it flat.
@@ -701,7 +775,8 @@ const Character: React.FC<{
           width: CHAR_W * member.scale,
           height: CHAR_H * member.scale,
           transformOrigin: "50% 100%",
-          transform: `translateY(${bob}px) rotate(${tilt}deg) scale(${scaleX}, ${scaleY})`,
+          // Stepping toward the camera: bigger, and a little lower on screen.
+          transform: `translateY(${bob + 110 * approach}px) rotate(${tilt}deg) scale(${scaleX * (1 + 0.22 * approach)}, ${scaleY * (1 + 0.22 * approach)})`,
           filter: speaker ? undefined : "brightness(0.9) saturate(0.9)",
         }}
       >
@@ -1049,7 +1124,16 @@ const Phone: React.FC<{
           fontFamily: displayFont,
           fontWeight: 800,
           // A short value (a score) fills the screen; a phrase wraps smaller.
-          fontSize: value.length <= 3 ? 210 : value.length <= 6 ? 116 : 70,
+          // The longest word decides: it must fit the screen's width.
+          fontSize:
+            value.length <= 3
+              ? 210
+              : value.length <= 6
+                ? 116
+                : Math.min(
+                    70,
+                    560 / Math.max(...value.split(" ").map((w) => w.length)),
+                  ),
           lineHeight: 1.05,
           color: colors.ink,
         }}

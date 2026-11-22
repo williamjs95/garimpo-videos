@@ -1,5 +1,6 @@
 import {
   DROP_MS,
+  EXIT_MS,
   END_CARD_MS,
   type EpisodeProps,
   FPS,
@@ -25,7 +26,9 @@ export const layoutLines = (
   return lines.map((line, index) => {
     const rate = line.rate ?? speechRate;
     const speechFrames = Math.max(1, msToFrames(line.durationMs / rate));
-    const hold = line.fx.includes("queda") ? DROP_MS : 0;
+    const hold =
+      (line.fx.includes("queda") ? DROP_MS : 0) +
+      (line.move === "sai" ? EXIT_MS : 0);
     const durationInFrames = speechFrames + msToFrames(GAP_MS + hold);
     const timed = { index, from: cursor, durationInFrames, speechFrames };
     cursor += durationInFrames;

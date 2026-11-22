@@ -85,8 +85,8 @@ export type ScriptLine = {
     | "arremesso";
   fxProp: string;
   fxTarget: string;
-  /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. */
-  move?: "" | "entra" | "sai";
+  /** "entra": the speaker walks in as the line starts. "sai": walks out when it ends. "frente": steps toward the camera while speaking. */
+  move?: "" | "entra" | "sai" | "frente";
   /** Pose of everyone who is listening during this line. Empty means neutro. */
   plateia?: string;
   /** Sound effect at the start of the line. */

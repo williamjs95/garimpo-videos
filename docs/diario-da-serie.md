@@ -17,6 +17,7 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 | 7 | A festa da Lici | Dia a dia | Lici e o resto da galeria | Lici: a última a saber da própria festa, que ainda era no mês errado | Lici em jogo pela primeira vez (quer saber, se dá mal, é amada); Zé e Kátia como aliados que se atrapalham; Kátia competente (tirou o alvará no nome do Norberto) | Lici: aberta e ninguém senta, fechada invertida ("senta… que eu já sabia"); Kátia contra o próprio aliado | Sem queda: virada pela prancheta e gancho em plano de dois | Kátia: já tirou o alvará, no nome do Norberto |
 | 8 | O artigo quarenta e um | Dia a dia (condomínio) | Norberto e Kátia (estreia do par) | Norberto: tenta escapar da festa pelo regimento e perde pelo artigo seguinte | Norberto rebaixado pela própria regra; Kátia leu o regimento inteiro e usa a "página catorze" contra ele | Página catorze dita pela Kátia; Norberto vereditos | Regimento pesado cai no Norberto e fica na cabeça | Lici: chegou um cliente que só vai dar uma olhadinha |
+| 9 | Só uma olhadinha | Dia a dia (cliente) | Os quatro contra um cliente (POV) | Todos: disputam o cliente até ele ir embora | Primeiro episódio em POV (o espectador é o cliente); Zé e Kátia disputam juntos, sem romance; Norberto transforma a venda em licitação | Zé: "Mas ele olhou" (afeto depois da derrota); Kátia direto; ninguém diz o bordão da Lici inteiro | Sem objeto: o cliente some e sobra a briga | Norberto: toda fofoca agora precisa constar em ata |
 ## Pares
 
 | Par | Episódios em que contracenaram de verdade | O que ainda não foi usado |
@@ -45,7 +46,8 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 - A Kátia ficou com o edital dos duzentos buquês (do episódio 6). O Zé agora vende guarda-chuva.
 - O Norberto tem que pagar a festa da Lici em março (do episódio 8, artigo 41).
-- Chegou um cliente que "só vai dar uma olhadinha" (do episódio 8): abre o episódio 9.
+- A partir de hoje, toda fofoca precisa constar em ata (do episódio 9): abre a Lici contra o Norberto, o
+  episódio 10 do plano.
 - A festa da Lici é em março; a galeria fez em novembro (do episódio 7).
 - A Kátia sonhou com o Zé; ele ficou feliz mesmo sabendo que era para ser esmagado (do episódio 4).
 - O Norberto se elegeu síndico vitalício numa ata que ninguém assinou (do episódio 3).
@@ -54,5 +56,4 @@ cada episódio fez com cada personagem, para que o desenvolvimento seja pensado 
 
 | Ep. | Ideia | O que desenvolve |
 |---|---|---|
-| 9 | Um cliente de fora ("só vou dar uma olhadinha") atravessa a galeria inteira | Tema dos 80%; alguém de fora; gancho final de outro personagem |
 | 10 | Lici contra Norberto: a fofoca contra a ata | Par inédito; gesto de afeto da Kátia |

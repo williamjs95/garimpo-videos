@@ -1,0 +1,888 @@
+{
+  "slug": "so-uma-olhadinha",
+  "number": 9,
+  "order": [
+    "lici",
+    "ze",
+    "katia",
+    "norberto"
+  ],
+  "hook": "POV: você só vai dar uma olhadinha",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina… cliente novo. Ninguém se mexe.",
+      "emotion": "cochichando, tensa, como em cena de suspense",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 820,
+      "audio": "episodes/so-uma-olhadinha/lici-22707bfa99.nivel.mp3",
+      "durationMs": 3090,
+      "words": [
+        {
+          "text": "Menina…",
+          "startMs": 60,
+          "endMs": 700
+        },
+        {
+          "text": "cliente",
+          "startMs": 700,
+          "endMs": 880
+        },
+        {
+          "text": "novo.",
+          "startMs": 880,
+          "endMs": 1200
+        },
+        {
+          "text": "Ninguém",
+          "startMs": 2300,
+          "endMs": 2300
+        },
+        {
+          "text": "se",
+          "startMs": 2300,
+          "endMs": 2800
+        },
+        {
+          "text": "mexe.",
+          "startMs": 2800,
+          "endMs": 2940
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Bem-vindo! Essa semana eu vou vender de tudo!",
+      "emotion": "empolgado, falando direto para o cliente",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/ze-407bb0fbf0.nivel.mp3",
+      "durationMs": 3850,
+      "words": [
+        {
+          "text": "Bem-vindo!",
+          "startMs": 0,
+          "endMs": 974
+        },
+        {
+          "text": "Essa",
+          "startMs": 974,
+          "endMs": 1363
+        },
+        {
+          "text": "semana",
+          "startMs": 1363,
+          "endMs": 1947
+        },
+        {
+          "text": "eu",
+          "startMs": 1947,
+          "endMs": 2142
+        },
+        {
+          "text": "vou",
+          "startMs": 2142,
+          "endMs": 2434
+        },
+        {
+          "text": "vender",
+          "startMs": 2434,
+          "endMs": 3018
+        },
+        {
+          "text": "de",
+          "startMs": 3018,
+          "endMs": 3213
+        },
+        {
+          "text": "tudo!",
+          "startMs": 3213,
+          "endMs": 3700
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "O que ele vende, eu vendo melhor.",
+      "emotion": "fria, sedutora, falando direto para o cliente",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/katia-62ac014c75.nivel.mp3",
+      "durationMs": 2010,
+      "words": [
+        {
+          "text": "O",
+          "startMs": 0,
+          "endMs": 140
+        },
+        {
+          "text": "que",
+          "startMs": 140,
+          "endMs": 240
+        },
+        {
+          "text": "ele",
+          "startMs": 240,
+          "endMs": 460
+        },
+        {
+          "text": "vende,",
+          "startMs": 460,
+          "endMs": 760
+        },
+        {
+          "text": "eu",
+          "startMs": 1220,
+          "endMs": 1400
+        },
+        {
+          "text": "vendo",
+          "startMs": 1400,
+          "endMs": 1600
+        },
+        {
+          "text": "melhor.",
+          "startMs": 1600,
+          "endMs": 1860
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Ele disse que só vai dar uma olhadinha.",
+      "emotion": "horrorizada, como quem conta uma tragédia",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/lici-a29708cd31.nivel.mp3",
+      "durationMs": 3250,
+      "words": [
+        {
+          "text": "Ele",
+          "startMs": 0,
+          "endMs": 400
+        },
+        {
+          "text": "disse",
+          "startMs": 400,
+          "endMs": 1100
+        },
+        {
+          "text": "que",
+          "startMs": 1100,
+          "endMs": 1380
+        },
+        {
+          "text": "só",
+          "startMs": 1380,
+          "endMs": 1600
+        },
+        {
+          "text": "vai",
+          "startMs": 1600,
+          "endMs": 1860
+        },
+        {
+          "text": "dar",
+          "startMs": 1860,
+          "endMs": 2040
+        },
+        {
+          "text": "uma",
+          "startMs": 2040,
+          "endMs": 2240
+        },
+        {
+          "text": "olhadinha.",
+          "startMs": 2240,
+          "endMs": 3100
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Olhadinha exige cadastro de visitante.",
+      "emotion": "solene, burocrático, estendendo a prancheta",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "Visitante|Cadastro obrigatório",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/norberto-d121169760.nivel.mp3",
+      "durationMs": 3710,
+      "words": [
+        {
+          "text": "Olhadinha",
+          "startMs": 0,
+          "endMs": 980
+        },
+        {
+          "text": "exige",
+          "startMs": 980,
+          "endMs": 1840
+        },
+        {
+          "text": "cadastro",
+          "startMs": 1840,
+          "endMs": 2680
+        },
+        {
+          "text": "de",
+          "startMs": 2680,
+          "endMs": 2960
+        },
+        {
+          "text": "visitante.",
+          "startMs": 2960,
+          "endMs": 3560
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Quanto custa uma olhadinha?",
+      "emotion": "matutando, tendo uma ideia",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "close",
+      "com": "",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/ze-c5873d6483.nivel.mp3",
+      "durationMs": 2990,
+      "words": [
+        {
+          "text": "Quanto",
+          "startMs": 0,
+          "endMs": 920
+        },
+        {
+          "text": "custa",
+          "startMs": 920,
+          "endMs": 1640
+        },
+        {
+          "text": "uma",
+          "startMs": 1640,
+          "endMs": 2120
+        },
+        {
+          "text": "olhadinha?",
+          "startMs": 2120,
+          "endMs": 2840
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "A minha olhadinha é gourmet.",
+      "emotion": "esnobe, falando direto para o cliente",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "frente",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/katia-3372a81e34.nivel.mp3",
+      "durationMs": 1870,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 0,
+          "endMs": 200
+        },
+        {
+          "text": "minha",
+          "startMs": 200,
+          "endMs": 420
+        },
+        {
+          "text": "olhadinha",
+          "startMs": 420,
+          "endMs": 1060
+        },
+        {
+          "text": "é",
+          "startMs": 1060,
+          "endMs": 1320
+        },
+        {
+          "text": "gourmet.",
+          "startMs": 1320,
+          "endMs": 1720
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "A minha é dois reais. Com biscoito.",
+      "emotion": "orgulhoso, simples, falando direto para o cliente",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "frente",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/ze-bf88bfca5b.nivel.mp3",
+      "durationMs": 3350,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "minha",
+          "startMs": 320,
+          "endMs": 620
+        },
+        {
+          "text": "é",
+          "startMs": 620,
+          "endMs": 900
+        },
+        {
+          "text": "dois",
+          "startMs": 900,
+          "endMs": 1160
+        },
+        {
+          "text": "reais.",
+          "startMs": 1160,
+          "endMs": 1640
+        },
+        {
+          "text": "Com",
+          "startMs": 2420,
+          "endMs": 2540
+        },
+        {
+          "text": "biscoito.",
+          "startMs": 2540,
+          "endMs": 3200
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Concorrência aberta! Três orçamentos!",
+      "emotion": "eufórico, como quem abre uma licitação",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/norberto-7626a7f1a4.nivel.mp3",
+      "durationMs": 4230,
+      "words": [
+        {
+          "text": "Concorrência",
+          "startMs": 0,
+          "endMs": 1140
+        },
+        {
+          "text": "aberta!",
+          "startMs": 1140,
+          "endMs": 1940
+        },
+        {
+          "text": "Três",
+          "startMs": 3220,
+          "endMs": 3300
+        },
+        {
+          "text": "orçamentos!",
+          "startMs": 3300,
+          "endMs": 4080
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Ele foi embora.",
+      "emotion": "baixinho, desolada",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/lici-1b42f48009.nivel.mp3",
+      "durationMs": 1650,
+      "words": [
+        {
+          "text": "Ele",
+          "startMs": 0,
+          "endMs": 400
+        },
+        {
+          "text": "foi",
+          "startMs": 400,
+          "endMs": 1160
+        },
+        {
+          "text": "embora.",
+          "startMs": 1160,
+          "endMs": 1500
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Amadores.",
+      "emotion": "seca, olhando para os outros",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/katia-ecd05fc1bd.nivel.mp3",
+      "durationMs": 690,
+      "words": [
+        {
+          "text": "Amadores.",
+          "startMs": 0,
+          "endMs": 540
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Mas ele olhou.",
+      "emotion": "sorrindo, feliz mesmo assim",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/ze-afa3e9e35b.nivel.mp3",
+      "durationMs": 1510,
+      "words": [
+        {
+          "text": "Mas",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "ele",
+          "startMs": 540,
+          "endMs": 960
+        },
+        {
+          "text": "olhou.",
+          "startMs": 960,
+          "endMs": 1360
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "A partir de hoje, toda fofoca precisa constar em ata.",
+      "emotion": "solene, ditando regra, olhando para a Lici",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/so-uma-olhadinha/norberto-084f9807b1.nivel.mp3",
+      "durationMs": 4630,
+      "words": [
+        {
+          "text": "A",
+          "startMs": 0,
+          "endMs": 160
+        },
+        {
+          "text": "partir",
+          "startMs": 160,
+          "endMs": 540
+        },
+        {
+          "text": "de",
+          "startMs": 540,
+          "endMs": 900
+        },
+        {
+          "text": "hoje,",
+          "startMs": 900,
+          "endMs": 1140
+        },
+        {
+          "text": "toda",
+          "startMs": 1540,
+          "endMs": 1680
+        },
+        {
+          "text": "fofoca",
+          "startMs": 1680,
+          "endMs": 2460
+        },
+        {
+          "text": "precisa",
+          "startMs": 2460,
+          "endMs": 3120
+        },
+        {
+          "text": "constar",
+          "startMs": 3120,
+          "endMs": 3980
+        },
+        {
+          "text": "em",
+          "startMs": 3980,
+          "endMs": 4160
+        },
+        {
+          "text": "ata.",
+          "startMs": 4160,
+          "endMs": 4480
+        }
+      ]
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {},
+  "weights": {},
+  "scenery": [],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}
