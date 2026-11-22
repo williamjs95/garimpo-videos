@@ -95,6 +95,8 @@ export type ScriptLine = {
   placa?: string;
   /** Length of a silent beat (a line with empty `text`), in milliseconds. */
   pausaMs?: number;
+  /** What the speaker's phone shows, as "label|value" (e.g. "Prazo|hoje"). */
+  tela?: string;
   /** Poses that stick from this line on, e.g. someone falls asleep. Empty pose clears it. */
   estado?: { quem: string; pose: string }[];
 };

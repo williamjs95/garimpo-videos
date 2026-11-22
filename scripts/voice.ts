@@ -169,6 +169,7 @@ for (const [i, l] of script.lines.entries()) {
     plateia: l.plateia ?? "",
     som: l.som ?? "",
     placa: l.placa ?? "",
+    tela: l.tela ?? "",
     estado: l.estado ?? [],
     offsetMs,
     audio: `episodes/${slug}/${file}`,

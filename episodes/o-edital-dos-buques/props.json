@@ -1,0 +1,1016 @@
+{
+  "slug": "o-edital-dos-buques",
+  "number": 6,
+  "order": [
+    "lici",
+    "ze",
+    "norberto",
+    "katia"
+  ],
+  "hook": "A prefeitura quer comprar dele",
+  "lines": [
+    {
+      "character": "lici",
+      "text": "Menina, senta. A prefeitura quer duzentos…",
+      "emotion": "falando rápido, deliciada com a fofoca, e é cortada no meio",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/lici-0062fe291d.mp3",
+      "durationMs": 2790,
+      "words": [
+        {
+          "text": "Menina,",
+          "startMs": 0,
+          "endMs": 380
+        },
+        {
+          "text": "senta.",
+          "startMs": 840,
+          "endMs": 960
+        },
+        {
+          "text": "A",
+          "startMs": 1160,
+          "endMs": 1320
+        },
+        {
+          "text": "prefeitura",
+          "startMs": 1320,
+          "endMs": 1720
+        },
+        {
+          "text": "quer",
+          "startMs": 1720,
+          "endMs": 1900
+        },
+        {
+          "text": "duzentos…",
+          "startMs": 1900,
+          "endMs": 2640
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Buquês! Eu vi primeiro!",
+      "emotion": "empolgado, chegando correndo, atropelando a fala dela",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/ze-dcd8db6438.mp3",
+      "durationMs": 2030,
+      "words": [
+        {
+          "text": "Buquês!",
+          "startMs": 0,
+          "endMs": 820
+        },
+        {
+          "text": "Eu",
+          "startMs": 1220,
+          "endMs": 1340
+        },
+        {
+          "text": "vi",
+          "startMs": 1340,
+          "endMs": 1500
+        },
+        {
+          "text": "primeiro!",
+          "startMs": 1500,
+          "endMs": 1880
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Governo não compra de amador.",
+      "emotion": "fria, superior, seca",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/katia-d38054bcab.mp3",
+      "durationMs": 1850,
+      "words": [
+        {
+          "text": "Governo",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "não",
+          "startMs": 580,
+          "endMs": 780
+        },
+        {
+          "text": "compra",
+          "startMs": 780,
+          "endMs": 1140
+        },
+        {
+          "text": "de",
+          "startMs": 1140,
+          "endMs": 1340
+        },
+        {
+          "text": "amador.",
+          "startMs": 1340,
+          "endMs": 1700
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Edital! Duzentas e catorze páginas!",
+      "emotion": "extasiado, como criança ganhando presente",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "entra",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/norberto-5e13e85d02.mp3",
+      "durationMs": 3150,
+      "words": [
+        {
+          "text": "Edital!",
+          "startMs": 0,
+          "endMs": 540
+        },
+        {
+          "text": "Duzentas",
+          "startMs": 1100,
+          "endMs": 1580
+        },
+        {
+          "text": "e",
+          "startMs": 1580,
+          "endMs": 1900
+        },
+        {
+          "text": "catorze",
+          "startMs": 1900,
+          "endMs": 2420
+        },
+        {
+          "text": "páginas!",
+          "startMs": 2420,
+          "endMs": 3000
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "O aplicativo já leu. Nota noventa.",
+      "emotion": "orgulhoso, simples, mostrando o celular",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "Nota|90",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/ze-268df3fcf6.mp3",
+      "durationMs": 2290,
+      "words": [
+        {
+          "text": "O",
+          "startMs": 0,
+          "endMs": 200
+        },
+        {
+          "text": "aplicativo",
+          "startMs": 200,
+          "endMs": 760
+        },
+        {
+          "text": "já",
+          "startMs": 760,
+          "endMs": 1040
+        },
+        {
+          "text": "leu.",
+          "startMs": 1040,
+          "endMs": 1200
+        },
+        {
+          "text": "Nota",
+          "startMs": 1520,
+          "endMs": 1580
+        },
+        {
+          "text": "noventa.",
+          "startMs": 1580,
+          "endMs": 2140
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Ele leu tudo?",
+      "emotion": "baixinho, abalado, com ciúme, devagar",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/norberto-878bc8480a.mp3",
+      "durationMs": 1770,
+      "words": [
+        {
+          "text": "Ele",
+          "startMs": 0,
+          "endMs": 580
+        },
+        {
+          "text": "leu",
+          "startMs": 580,
+          "endMs": 960
+        },
+        {
+          "text": "tudo?",
+          "startMs": 960,
+          "endMs": 1620
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Só falta a certidão negativa.",
+      "emotion": "matutando, lendo a tela",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "Falta|certidão negativa",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/ze-ad6f6d9959.mp3",
+      "durationMs": 2410,
+      "words": [
+        {
+          "text": "Só",
+          "startMs": 0,
+          "endMs": 320
+        },
+        {
+          "text": "falta",
+          "startMs": 320,
+          "endMs": 900
+        },
+        {
+          "text": "a",
+          "startMs": 900,
+          "endMs": 1120
+        },
+        {
+          "text": "certidão",
+          "startMs": 1120,
+          "endMs": 1700
+        },
+        {
+          "text": "negativa.",
+          "startMs": 1700,
+          "endMs": 2260
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Nome sujo. Me deve dois reais.",
+      "emotion": "doce e venenosa, saboreando",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/katia-ed7d7c646f.mp3",
+      "durationMs": 2690,
+      "words": [
+        {
+          "text": "Nome",
+          "startMs": 0,
+          "endMs": 280
+        },
+        {
+          "text": "sujo.",
+          "startMs": 280,
+          "endMs": 1120
+        },
+        {
+          "text": "Me",
+          "startMs": 1500,
+          "endMs": 1660
+        },
+        {
+          "text": "deve",
+          "startMs": 1660,
+          "endMs": 1740
+        },
+        {
+          "text": "dois",
+          "startMs": 1740,
+          "endMs": 2200
+        },
+        {
+          "text": "reais.",
+          "startMs": 2200,
+          "endMs": 2540
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "E o prazo é hoje!",
+      "emotion": "apavorado, olhando o celular",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "tique",
+      "placa": "",
+      "tela": "Prazo|hoje",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/ze-13ebc5d1cd.mp3",
+      "durationMs": 1330,
+      "words": [
+        {
+          "text": "E",
+          "startMs": 0,
+          "endMs": 160
+        },
+        {
+          "text": "o",
+          "startMs": 160,
+          "endMs": 380
+        },
+        {
+          "text": "prazo",
+          "startMs": 380,
+          "endMs": 700
+        },
+        {
+          "text": "é",
+          "startMs": 700,
+          "endMs": 820
+        },
+        {
+          "text": "hoje!",
+          "startMs": 820,
+          "endMs": 1180
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Quitado. Eu quero concorrência.",
+      "emotion": "seca, sem olhar para ele, disfarçando o favor",
+      "location": "galeria",
+      "pose": "bravo",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/katia-7ac128f677.mp3",
+      "durationMs": 2470,
+      "words": [
+        {
+          "text": "Quitado.",
+          "startMs": 0,
+          "endMs": 663
+        },
+        {
+          "text": "Eu",
+          "startMs": 663,
+          "endMs": 829
+        },
+        {
+          "text": "quero",
+          "startMs": 829,
+          "endMs": 1243
+        },
+        {
+          "text": "concorrência.",
+          "startMs": 1243,
+          "endMs": 2320
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Documentação completa!",
+      "emotion": "emocionado, quase chorando de alegria",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/norberto-4eb3761243.mp3",
+      "durationMs": 1670,
+      "words": [
+        {
+          "text": "Documentação",
+          "startMs": 0,
+          "endMs": 880
+        },
+        {
+          "text": "completa!",
+          "startMs": 880,
+          "endMs": 1520
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "Hoje é segunda, menina.",
+      "emotion": "debochada, avisando com gosto",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "scratch",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/lici-6003bd4662.mp3",
+      "durationMs": 2610,
+      "words": [
+        {
+          "text": "Hoje",
+          "startMs": 0,
+          "endMs": 700
+        },
+        {
+          "text": "é",
+          "startMs": 700,
+          "endMs": 1080
+        },
+        {
+          "text": "segunda,",
+          "startMs": 1080,
+          "endMs": 1640
+        },
+        {
+          "text": "menina.",
+          "startMs": 1700,
+          "endMs": 2460
+        }
+      ]
+    },
+    {
+      "character": "ze",
+      "text": "Essa semana eu vendo guarda-chuva!",
+      "emotion": "eufórico, já indo embora",
+      "location": "galeria",
+      "pose": "animado",
+      "camera": "normal",
+      "com": "",
+      "fx": "brilho",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "sai",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/ze-320a0e9a24.mp3",
+      "durationMs": 2110,
+      "words": [
+        {
+          "text": "Essa",
+          "startMs": 0,
+          "endMs": 261
+        },
+        {
+          "text": "semana",
+          "startMs": 261,
+          "endMs": 653
+        },
+        {
+          "text": "eu",
+          "startMs": 653,
+          "endMs": 784
+        },
+        {
+          "text": "vendo",
+          "startMs": 784,
+          "endMs": 1111
+        },
+        {
+          "text": "guarda-chuva!",
+          "startMs": 1111,
+          "endMs": 1960
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Mas o formulário estava perfeito.",
+      "emotion": "baixinho, de coração partido",
+      "location": "galeria",
+      "pose": "pensando",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/norberto-dae72db10f.mp3",
+      "durationMs": 2910,
+      "words": [
+        {
+          "text": "Mas",
+          "startMs": 0,
+          "endMs": 460
+        },
+        {
+          "text": "o",
+          "startMs": 460,
+          "endMs": 820
+        },
+        {
+          "text": "formulário",
+          "startMs": 820,
+          "endMs": 1440
+        },
+        {
+          "text": "estava",
+          "startMs": 1440,
+          "endMs": 1840
+        },
+        {
+          "text": "perfeito.",
+          "startMs": 1840,
+          "endMs": 2760
+        }
+      ]
+    },
+    {
+      "character": "katia",
+      "text": "Amadores.",
+      "emotion": "fria, vitoriosa, seca",
+      "location": "galeria",
+      "pose": "neutro",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/katia-b9e5c01374.mp3",
+      "durationMs": 630,
+      "words": [
+        {
+          "text": "Amadores.",
+          "startMs": 0,
+          "endMs": 480
+        }
+      ]
+    },
+    {
+      "character": "norberto",
+      "text": "Consta em ata: a Dona Lici foi a última a saber.",
+      "emotion": "solene e burocrático, sem perceber a maldade",
+      "location": "galeria",
+      "pose": "explicando",
+      "camera": "normal",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "chocado",
+      "som": "",
+      "placa": "",
+      "tela": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "episodes/o-edital-dos-buques/norberto-5adaad19bf.mp3",
+      "durationMs": 3870,
+      "words": [
+        {
+          "text": "Consta",
+          "startMs": 0,
+          "endMs": 640
+        },
+        {
+          "text": "em",
+          "startMs": 640,
+          "endMs": 760
+        },
+        {
+          "text": "ata:",
+          "startMs": 760,
+          "endMs": 1140
+        },
+        {
+          "text": "a",
+          "startMs": 1140,
+          "endMs": 1840
+        },
+        {
+          "text": "Dona",
+          "startMs": 1840,
+          "endMs": 2100
+        },
+        {
+          "text": "Lici",
+          "startMs": 2100,
+          "endMs": 2460
+        },
+        {
+          "text": "foi",
+          "startMs": 2460,
+          "endMs": 2740
+        },
+        {
+          "text": "a",
+          "startMs": 2740,
+          "endMs": 3060
+        },
+        {
+          "text": "última",
+          "startMs": 3060,
+          "endMs": 3260
+        },
+        {
+          "text": "a",
+          "startMs": 3260,
+          "endMs": 3560
+        },
+        {
+          "text": "saber.",
+          "startMs": 3560,
+          "endMs": 3720
+        }
+      ]
+    },
+    {
+      "character": "lici",
+      "text": "",
+      "emotion": "",
+      "location": "galeria",
+      "pose": "chocado",
+      "camera": "close",
+      "com": "",
+      "fx": "",
+      "fxProp": "",
+      "fxTarget": "",
+      "move": "",
+      "plateia": "",
+      "som": "",
+      "placa": "",
+      "estado": [],
+      "offsetMs": 0,
+      "audio": "",
+      "durationMs": 880.0000000000001,
+      "words": []
+    }
+  ],
+  "cast": [
+    {
+      "id": "lici",
+      "name": "Dona Lici",
+      "color": "#8a4b2a",
+      "dir": "cast/lici",
+      "scale": 0.92,
+      "mouths": {
+        "neutro": {
+          "x": 0.508,
+          "y": 0.234,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.484,
+          "y": 0.281,
+          "rx": 0.07,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.297,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.484,
+          "y": 0.292,
+          "rx": 0.086,
+          "ry": 0.047
+        },
+        "explicando": {
+          "x": 0.484,
+          "y": 0.313,
+          "rx": 0.07,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.292,
+          "rx": 0.078,
+          "ry": 0.047
+        }
+      },
+      "blink": {
+        "x": 0.477,
+        "y": 0.219,
+        "rx": 0.125,
+        "ry": 0.057
+      },
+      "feet": 0.986328125
+    },
+    {
+      "id": "ze",
+      "name": "Zé Garimpo",
+      "color": "#a87a1f",
+      "dir": "cast/ze",
+      "scale": 0.88,
+      "mouths": {
+        "neutro": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.052
+        },
+        "animado": {
+          "x": 0.516,
+          "y": 0.365,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.484,
+          "y": 0.328,
+          "rx": 0.102,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.052
+        },
+        "explicando": {
+          "x": 0.516,
+          "y": 0.318,
+          "rx": 0.086,
+          "ry": 0.042
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.328,
+          "rx": 0.094,
+          "ry": 0.052
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.229,
+        "rx": 0.227,
+        "ry": 0.089
+      },
+      "feet": 0.9205729166666666
+    },
+    {
+      "id": "norberto",
+      "name": "Seu Norberto",
+      "color": "#5b4a3a",
+      "dir": "cast/norberto",
+      "scale": 0.8,
+      "mouths": {
+        "neutro": {
+          "x": 0.555,
+          "y": 0.344,
+          "rx": 0.141,
+          "ry": 0.036
+        },
+        "animado": {
+          "x": 0.508,
+          "y": 0.297,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.508,
+          "y": 0.323,
+          "rx": 0.109,
+          "ry": 0.057
+        },
+        "chocado": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.094,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.477,
+          "y": 0.302,
+          "rx": 0.094,
+          "ry": 0.047
+        },
+        "pensando": {
+          "x": 0.477,
+          "y": 0.286,
+          "rx": 0.078,
+          "ry": 0.035
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.208,
+        "rx": 0.211,
+        "ry": 0.047
+      },
+      "feet": 0.8665364583333334
+    },
+    {
+      "id": "katia",
+      "name": "Kátia",
+      "color": "#2a2420",
+      "dir": "cast/katia",
+      "scale": 1,
+      "mouths": {
+        "neutro": {
+          "x": 0.531,
+          "y": 0.297,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "animado": {
+          "x": 0.5,
+          "y": 0.302,
+          "rx": 0.06,
+          "ry": 0.035
+        },
+        "bravo": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.078,
+          "ry": 0.042
+        },
+        "chocado": {
+          "x": 0.5,
+          "y": 0.318,
+          "rx": 0.07,
+          "ry": 0.042
+        },
+        "explicando": {
+          "x": 0.492,
+          "y": 0.318,
+          "rx": 0.063,
+          "ry": 0.035
+        },
+        "pensando": {
+          "x": 0.492,
+          "y": 0.307,
+          "rx": 0.094,
+          "ry": 0.042
+        }
+      },
+      "blink": {
+        "x": 0.5,
+        "y": 0.245,
+        "rx": 0.148,
+        "ry": 0.042
+      },
+      "feet": 0.9095052083333334
+    }
+  ],
+  "backgrounds": {
+    "galeria": "bg/galeria.png",
+    "salao": "bg/salao.png",
+    "loja-ze": "bg/loja-ze.png",
+    "administracao": "bg/administracao.png"
+  },
+  "props": {
+    "balde-de-flores": "props/balde-de-flores.png"
+  },
+  "scenery": [
+    {
+      "prop": "balde-de-flores",
+      "beside": "ze",
+      "side": 1,
+      "height": 560
+    }
+  ],
+  "music": "music/trilha.wav",
+  "speechRate": 1.1
+}

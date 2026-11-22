@@ -2,6 +2,8 @@
 
 Este arquivo é carregado por `scripts/write.ts` em todo roteiro gerado. Edite aqui para mudar a regra.
 A base é a pesquisa em `reports/Comédia e drama em esquetes curtos.md` (fontes e ressalvas estão lá).
+As fichas dos personagens e as regras de longo prazo vêm de `reports/Desenvolvimento de personagens cômicos.md`.
+O que cada episódio já fez com cada personagem fica em `docs/diario-da-serie.md`, também carregado em todo roteiro.
 
 Aviso: nenhuma fonte da pesquisa trata de esquetes de 30 segundos. Os números abaixo (falas, palavras)
 são estimativas a calibrar com os resultados da própria conta.
@@ -26,6 +28,53 @@ Cada personagem tem uma perspectiva cômica só e reage a qualquer assunto por e
 | Kátia | Dona da loja da frente, rival de todos | Tudo é competição | "Amadores." |
 
 Os nomes Lici e Garimpo são piscadela para quem conhece o app. Quem não conhece nem percebe.
+
+## Fichas dos personagens
+
+O personagem não muda: o defeito fica igual, e o que cresce é o que o público sabe dele. Cada episódio
+mostra uma faceta, um par ou um gesto que ainda não tinha aparecido, sem contrariar a ficha.
+
+| | Dona Lici | Zé Garimpo | Seu Norberto | Kátia |
+|---|---|---|---|---|
+| **Em uma frase** | Narra a vida dos outros como novela e sempre soube antes | Vê ouro em tudo e troca de negócio toda semana | Tem regra para tudo e quer que alguém leve a regra a sério | Trata a galeria como final de campeonato |
+| **O que quer** | Ser a primeira a saber e a contar | Que o negócio da semana dê certo | Que tudo passe pelo formulário, e ser reconhecido por isso | Ganhar, de preferência do Zé |
+| **O que lhe falta** | Discrição: acerta o fato e erra o gênero (ouve "vou te esmagar" e suspira "que romântico") | Noção de risco: assina antes de ler | Flexibilidade: a regra vence o bom senso, e a vaidade do cargo vence a regra | Noção de custo: gasta tudo para não perder |
+| **Nunca faria** | Guardar segredo; ser a última a saber | Desistir; ficar amargo | Abrir mão de uma regra | Admitir que perdeu; pedir ajuda |
+| **Status que prefere** | Alto pela informação; comenta de fora | Baixo e contente: perde e segue feliz | Alto pela autoridade do cargo | Alto pelo desprezo; não suporta ficar por baixo |
+| **Facetas já vistas** | Torce pelo romance dos outros; empresta dinheiro que nem é dela | Pobre de verdade ("dois reais é o lucro da semana"); romântico que não deixa de vender | Emociona-se quando leem o formulário; usa a regra em proveito próprio | Sonha com o Zé, ainda que seja para esmagá-lo |
+| **Derrota fixa** | Nunca é ela o assunto, e nunca entende direito o que soube primeiro | Nunca fecha o grande negócio | Nunca recebe o formulário certo | Nunca vence de vez |
+| **Marca de fala e de cena** | "Menina…"; a escova como microfone | "Uai", "sô"; a bateia | Vereditos de carimbo ("Deferido!", "Quitado!"); a "página catorze" | Frases de duas palavras; o olhar parado antes de responder; uma pilha de mercadoria ao lado |
+
+**A loja da Kátia** vende o que o vizinho estiver vendendo, só que mais caro. Por isso ela já teve café
+gourmet, todo o café do bairro e uma floricultura: ela entra no ramo de quem quer derrotar.
+
+## Desenvolvimento no longo prazo
+
+Antes de escrever, leia `docs/diario-da-serie.md` e decida o que este episódio acrescenta a pelo menos
+um personagem. Depois de produzir, registre lá.
+
+1. **Todo episódio acrescenta algo a alguém:** uma faceta nova, um par que ainda não contracenou ou um
+   gesto de afeto. Nunca uma mudança de personalidade.
+2. **Ninguém fica só na moldura.** Cada personagem precisa, de tempos em tempos, de um episódio em que
+   ele quer algo, age, piora tudo e sai humilhado. A Lici é a prioridade: ainda não teve o dela.
+3. **O "Menina, senta" é assinatura, mas varia.** A cada dois ou três episódios muda um elemento: alguém
+   a interrompe, alguém já sabia, outro personagem diz a frase. Em um a cada três episódios, o gancho
+   final é de outro personagem.
+4. **Zé e Kátia: racionar e nunca resolver.** O par fica no centro em no máximo metade dos episódios.
+   Quando aparece, é ritual: ela nega, ele se derrete, a Lici torce, nada avança. O sentimento nunca é
+   confirmado.
+5. **A Kátia é protegida.** Ela é boa de verdade no que faz. De vez em quando faz um gesto curto por
+   alguém e nega em seguida. Quando ela vence, foi provocada.
+6. **Os pares se revezam.** Use a tabela de pares do diário para escolher quem contracena. Dois pares
+   ainda não tiveram episódio: Norberto com Kátia, e Lici com Norberto.
+7. **O episódio se sustenta sozinho.** O gancho final abre uma porta, mas o episódio seguinte não é
+   obrigado a entrar por ela. A cada três episódios, pelo menos um não nasce do gancho anterior e trata
+   de um tema dos 80% (o cliente do Pix, o grupo de WhatsApp). Gente de fora da galeria pode aparecer.
+8. **A forma também varia.** Não repita no episódio seguinte a mesma ordem de entrada, a mesma batida
+   muda nem o mesmo tipo de final (objeto que cai, placa, briga).
+9. **O Zé não fecha o grande negócio.** Na menção direta, ele chega perto de vender para o governo e
+   perde pelo próprio defeito. O Garimpo acerta sempre: quem falha é o Zé. O "dia em que dá certo" fica
+   guardado para um momento que o dono da série escolher.
 
 ## Temas (proporção)
 
@@ -73,7 +122,7 @@ a série e para quem não voltar: o gancho final é um bônus, não uma "Parte 2
 
 ## Leis do mundo
 
-- A ideia do Zé sempre fracassa, de um jeito que atinge outra pessoa (quase sempre o Seu Norberto).
+- A ideia do Zé sempre fracassa, e quem paga quase sempre é o próprio Zé. Às vezes sobra para os outros (a camomila).
 - Os personagens saem humilhados, nunca feridos.
 - Seu Norberto nunca abre mão de uma regra. Kátia nunca admite que perdeu. Dona Lici sempre já sabia.
 - Nos 5% de menção direta, o Garimpo só faz três coisas: nota de 0 a 100 (vale participar?), documentos que faltam, prazo. Nunca invente outro recurso.
@@ -94,6 +143,7 @@ varie a pose de fala para fala e dê reação a quem escuta nos momentos fortes.
 
 - **Batida muda:** uma fala com `text` vazio e `pausaMs` (800 a 1500). É a pausa cômica: o olhar parado para a câmera depois do absurdo, o ronco, a placa. No máximo três por episódio, cada uma com um motivo.
 - `placa`: o texto da placa que o personagem levanta, numa batida muda (em vez de falar) ou junto com a fala (como o "QUITADO" do Norberto). Funciona sem som. Use a câmera "normal".
+- `tela`: o que aparece no celular de quem fala, como "rótulo|valor" ("Prazo|hoje", "Grupo da galeria|37 mensagens"). O celular surge grande ao lado do personagem. Use a câmera "normal".
 - `estado`: pose que passa a valer daquela fala em diante para alguém, como `{quem: "katia", pose: "dormindo"}`. Quem dorme não reage à plateia.
 - `posicoes` (no roteiro, fora das falas): ordem dos personagens da esquerda para a direita, para a piada visual caber no primeiro quadro.
 - `number`: todo episódio tem número, que aparece no cartão de título, no nome do arquivo e nos textos de postagem.
@@ -121,4 +171,8 @@ Use no máximo uma queda por episódio, guardada para o fim.
 - [ ] Faz sentido sem som e para quem nunca viu a série.
 - [ ] Isso parece anúncio? Então corta.
 - [ ] O tema respeita a proporção 80/15/5 no conjunto dos episódios recentes.
+- [ ] O episódio acrescenta algo a pelo menos um personagem (faceta, par ou gesto) sem contrariar a ficha.
+- [ ] O par central, quem dá o gancho final e o tipo de final não repetem o episódio anterior.
+- [ ] O episódio faz sentido para quem não viu o anterior.
+- [ ] Depois de produzir, o `docs/diario-da-serie.md` foi atualizado.
 - [ ] Uma segunda pessoa leu antes da produção.

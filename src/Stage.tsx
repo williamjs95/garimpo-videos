@@ -437,6 +437,15 @@ export const Stage: React.FC<{
           />
         ) : null}
 
+        {line.tela ? (
+          <Phone
+            screen={line.tela}
+            x={speakerX + 235}
+            y={levelOf(cast, line.character, 0.52)}
+            local={local}
+          />
+        ) : null}
+
         {aftermath.map((l) =>
           props[l.fxProp] ? (
             <Drop
@@ -869,6 +878,87 @@ const Snore: React.FC<{ x: number; y: number; phase: number }> = ({
         );
       })}
     </>
+  );
+};
+
+/** The speaker's phone, held up big enough to read: a label and a value. */
+const Phone: React.FC<{
+  screen: string;
+  x: number;
+  y: number;
+  local: number;
+}> = ({ screen, x, y, local }) => {
+  const { fps } = useVideoConfig();
+  const [label = "", value = ""] = screen.split("|");
+  const up = spring({
+    frame: local - 5,
+    fps,
+    config: { damping: 10, stiffness: 170 },
+  });
+  const width = 370;
+  const height = 560;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: x - width / 2,
+        top: y - height,
+        width,
+        height,
+        boxSizing: "border-box",
+        padding: "56px 20px 30px",
+        borderRadius: 54,
+        border: `14px solid ${colors.ink}`,
+        backgroundColor: colors.card,
+        boxShadow: `0 14px 0 ${colors.ink}`,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 18,
+        textAlign: "center",
+        transformOrigin: "30% 100%",
+        transform: `scale(${up}) rotate(${7 + Math.sin(local / 7) * 1.5}deg)`,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: 20,
+          width: 96,
+          height: 16,
+          borderRadius: 8,
+          backgroundColor: colors.ink,
+        }}
+      />
+      <div
+        style={{
+          fontFamily: displayFont,
+          fontWeight: 800,
+          fontSize: 50,
+          lineHeight: 1,
+          color: colors.card,
+          backgroundColor: colors.terra,
+          padding: "12px 26px",
+          borderRadius: 999,
+          textTransform: "uppercase",
+        }}
+      >
+        {label}
+      </div>
+      <div
+        style={{
+          fontFamily: displayFont,
+          fontWeight: 800,
+          // A short value (a score) fills the screen; a phrase wraps smaller.
+          fontSize: value.length <= 3 ? 210 : value.length <= 6 ? 116 : 70,
+          lineHeight: 1.05,
+          color: colors.ink,
+        }}
+      >
+        {value}
+      </div>
+    </div>
   );
 };
 

@@ -29,6 +29,19 @@ const previous = existsSync(EPISODES)
       .map((d) => readJson<EpisodeScript>(join(EPISODES, d, "script.json")))
   : [];
 const guide = readFileSync(join(ROOT, "docs", "guia-de-comedia.md"), "utf8");
+const diary = readFileSync(join(ROOT, "docs", "diario-da-serie.md"), "utf8");
+
+// Counted from the scripts themselves, so it is right even if the diary is behind.
+const usage = [...previous]
+  .sort((a, b) => (a.number ?? 0) - (b.number ?? 0))
+  .map((e) => {
+    const said = e.lines.filter((l) => l.text.trim());
+    const count = ids
+      .map((id) => `${id} ${said.filter((l) => l.character === id).length}`)
+      .join(", ");
+    return `- Ep. ${e.number ?? "?"} "${e.title}": abre ${said[0]?.character}, fecha ${said.at(-1)?.character}; falas: ${count}`;
+  })
+  .join("\n");
 
 const mentions = previous.filter((e) => e.mentionsGarimpo).length;
 
@@ -40,10 +53,16 @@ ${cast.characters.map((c) => `- ${c.id} (${c.name}): ${c.role} Bordão: "${c.cat
 CENÁRIOS DISPONÍVEIS: ${locations.join(", ")}
 POSES DISPONÍVEIS: ${poses.join(", ")}
 
-HISTÓRICO: ${previous.length} episódios escritos, ${mentions} com menção direta a vender para o governo ou ao Garimpo. Respeite a proporção 80/15/5 do guia: só escreva menção direta se o histórico estiver abaixo de 5%.
+HISTÓRICO: ${previous.length} episódios escritos, ${mentions} com menção direta a vender para o governo ou ao Garimpo. Respeite a proporção 80/15/5 do guia: só escreva menção direta se o histórico estiver abaixo de 5% ou se o plano do diário pedir.
 
-GUIA DE COMÉDIA (obrigatório; siga os princípios, o formato, as leis do mundo e passe no checklist)
+GUIA DE COMÉDIA (obrigatório; siga os princípios, as fichas, as regras de longo prazo, o formato, as leis do mundo e passe no checklist)
 ${guide}
+
+DIÁRIO DA SÉRIE (o que já aconteceu com cada personagem; escolha o par, a faceta nova e o tipo de final a partir dele, sem repetir o episódio anterior)
+${diary}
+
+QUEM FALOU EM CADA EPISÓDIO (contado dos roteiros)
+${usage || "(nenhum episódio ainda)"}
 
 SAÍDA
 - "hook" é o texto na tela no primeiro frame: 4 a 7 palavras, sem emoji, no tom de fofoca (ex.: "A liquidação da loja da frente").
@@ -53,6 +72,7 @@ SAÍDA
 - "cenario": objetos que ficam em cena o episódio inteiro ao lado de um personagem (ex.: uma torre de caixas junto da Kátia). Cada item tem "prop" (id declarado em "props"), "junto" (personagem), "lado" ("esquerda" ou "direita") e "altura" em pixels (um personagem tem uns 1000). Lista vazia se não houver.
 - "posicoes": ordem dos personagens em cena, da esquerda para a direita. Lista vazia usa a ordem em que aparecem.
 - Batida muda (olhar para a câmera, ronco, placa levantada): fala com "text" e "emotion" vazios e "pausaMs" entre 800 e 1500. "placa" é o texto da placa que o personagem levanta, ou "". Nas falas normais, "pausaMs" é 0 e "placa" é "".
+- "tela": o que aparece no celular de quem fala, no formato "rótulo|valor" (ex.: "Prazo|hoje", "Grupo da galeria|37 mensagens"), ou "". Use a câmera "normal".
 - "estado": lista de {quem, pose} que passa a valer daquela fala em diante (ex.: alguém dorme: pose "dormindo"). Pose "" desfaz. Lista vazia na maioria das falas. A pose "dormindo" nunca fala.
 - Não escreva chamada para o site nem despedida: todo episódio já termina com o fecho fixo da série (íris e endereço na tela), depois do gancho final.
 - "mentionsGarimpo": true só se alguma fala citar o Garimpo ou vender para o governo.
@@ -133,6 +153,7 @@ const schema = {
           "plateia",
           "som",
           "placa",
+          "tela",
           "pausaMs",
           "estado",
         ],
@@ -169,6 +190,7 @@ const schema = {
             enum: ["", "scratch", "ding", "whoosh", "ronco", "tique"],
           },
           placa: { type: "string" },
+          tela: { type: "string" },
           pausaMs: { type: "number" },
           estado: {
             type: "array",

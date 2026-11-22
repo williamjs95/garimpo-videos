@@ -34,6 +34,8 @@ export type Line = {
   som: "" | "scratch" | "ding" | "whoosh" | "ronco" | "tique";
   /** Text on a sign the character holds up. Lines with no `text` are silent beats. */
   placa?: string;
+  /** What the speaker's phone shows, as "label|value" (e.g. "Prazo|hoje"). */
+  tela?: string;
   /** Poses that stick from this line on (someone falls asleep), until changed. */
   estado?: { quem: string; pose: string }[];
   /** Silence trimmed from the start of the audio file. */

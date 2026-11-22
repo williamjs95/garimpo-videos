@@ -8,7 +8,9 @@ canônico: não há opção de desligar por episódio, e nenhuma fala cita o sit
 
 ## Antes de escrever ou revisar qualquer roteiro
 
-Leia `docs/guia-de-comedia.md` e passe o roteiro pelo checklist dele. O guia traz a premissa, o elenco,
+Leia `docs/guia-de-comedia.md` e `docs/diario-da-serie.md`, e passe o roteiro pelo checklist do guia.
+Todo episódio considera o desenvolvimento dos personagens no longo prazo: decida, pelo diário, o que ele
+acrescenta a pelo menos um personagem (faceta, par ou gesto), e atualize o diário depois de produzir. O guia traz a premissa, o elenco,
 a proporção de temas (80/15/5), a estrutura do episódio e o filtro "isso parece anúncio? Então corta".
 A pesquisa que o embasa está em `reports/Comédia e drama em esquetes curtos.md` (notas brutas em
 `research_notes/`). `scripts/write.ts` já injeta o guia no prompt.
